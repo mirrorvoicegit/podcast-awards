@@ -3,68 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="台灣與香港華語 Podcast 獎項徵件情報整理" />
-  <title>華語 Podcast 獎項雷達</title>
+  <meta name="description" content="台灣與香港華語 Podcast 獎項年度排程" />
+  <title>華語 Podcast 獎項曆</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#">Podcast Awards Radar</a>
-    <div class="header-meta"><span class="live-dot"></span>資料持續更新</div>
+  <header class="topbar">
+    <div><p class="overline">TAIWAN × HONG KONG · PODCAST AWARDS</p><h1>華語 Podcast 獎項曆</h1></div>
+    <div class="period"><span>資料區間</span><strong>2025.07 — 2026.07</strong></div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">TAIWAN × HONG KONG</p>
-        <h1>找到下一個<br /><em>值得投稿</em>的獎項</h1>
-        <p class="hero-description">追蹤華語 Podcast 與音訊作品可參加的新聞、內容與專業獎項。資料來自官方公告，資格不明項目會保留人工審核標記。</p>
+  <main class="app-shell">
+    <section class="calendar-view" aria-labelledby="calendar-title">
+      <div class="calendar-heading">
+        <div><h2 id="calendar-title">年度排程</h2><p>點選任一節點，右側查看該屆完整規則、資格與官方來源。</p></div>
+        <div class="legend"><span><i class="dot active"></i>進行／待追蹤</span><span><i class="dot past"></i>已結束</span><span><i class="dot uncertain"></i>待確認</span></div>
       </div>
-      <aside class="next-award" id="nextAward" aria-live="polite"></aside>
+      <div class="view-tabs" role="tablist" aria-label="排程檢視">
+        <button class="view-tab active" id="upcomingTab" role="tab" aria-selected="true" data-view="upcoming">即將舉辦 <span id="upcomingCount"></span></button>
+        <button class="view-tab" id="archiveTab" role="tab" aria-selected="false" data-view="archive">歷史紀錄 <span id="archiveCount"></span></button>
+      </div>
+      <div class="controls">
+        <label class="search"><span>搜尋</span><input id="searchInput" type="search" placeholder="獎項、主辦單位、主題" /></label>
+        <label><span>地區</span><select id="regionFilter"><option value="all">全部</option><option value="台灣">台灣</option><option value="香港">香港</option></select></label>
+        <label><span>狀態</span><select id="phaseFilter"><option value="all">全部節點</option><option value="open">徵件／截止</option><option value="result">入圍／得獎</option><option value="monitor">待公告／待確認</option></select></label>
+      </div>
+      <div class="summary" id="summary"></div>
+      <div class="timeline" id="timeline" aria-live="polite"></div>
+      <div class="empty" id="emptyState" hidden>沒有符合篩選條件的節點。</div>
     </section>
 
-    <section class="dashboard" aria-labelledby="awards-title">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">AWARD DIRECTORY</p>
-          <h2 id="awards-title">獎項情報</h2>
-        </div>
-        <p class="result-count" id="resultCount"></p>
-      </div>
-
-      <div class="toolbar">
-        <label class="search-box">
-          <span class="sr-only">搜尋獎項</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
-          <input id="searchInput" type="search" placeholder="搜尋獎項、主辦單位或主題" />
-        </label>
-        <div class="filters" role="group" aria-label="獎項篩選">
-          <select id="regionFilter" aria-label="地區"><option value="all">全部地區</option><option value="台灣">台灣</option><option value="香港">香港</option></select>
-          <select id="statusFilter" aria-label="徵件狀態"><option value="all">全部狀態</option><option value="open">徵件中</option><option value="upcoming">即將徵件</option><option value="judging">評選中</option><option value="completed">已完成</option><option value="unannounced">尚未公告</option></select>
-          <select id="eligibilityFilter" aria-label="Podcast 資格"><option value="all">全部資格</option><option value="明確可報">明確可報</option><option value="有條件可報">有條件可報</option><option value="歷年可報；當屆待核">當屆待核</option></select>
-        </div>
-      </div>
-
-      <div class="active-filters" id="activeFilters"></div>
-      <div class="award-grid" id="awardGrid" aria-live="polite"></div>
-      <div class="empty-state" id="emptyState" hidden><strong>找不到符合條件的獎項</strong><span>試著清除部分篩選條件。</span></div>
-    </section>
-
-    <section class="methodology">
-      <p class="eyebrow">HOW IT WORKS</p>
-      <h2>公開來源，人工把關</h2>
-      <div class="method-grid">
-        <article><span>01</span><h3>定期抓取</h3><p>依獎項週期檢查官方網站、簡章與附件是否更新。</p></article>
-        <article><span>02</span><h3>資格判讀</h3><p>辨識 Podcast、音訊與融媒體類別，國籍及資格疑慮不自動放行。</p></article>
-        <article><span>03</span><h3>人工核實</h3><p>重要日期與資格在公開前重新核對，保留來源供追溯。</p></article>
-      </div>
-    </section>
+    <aside class="detail-panel" id="detailPanel" aria-live="polite">
+      <div class="detail-empty"><p class="overline">DETAIL</p><h2>選一個節點</h2><p>左側會保留全年度的歷史紀錄；已結束的項目以灰階顯示，但仍可查看完整資料。</p></div>
+    </aside>
   </main>
 
-  <footer><p>華語 Podcast 獎項雷達</p><p>最後更新：<time id="lastUpdated"></time></p></footer>
+  <footer><span>資料以官方公告為準；資格不明項目保留人工審核標記。</span><span>最後整理：<time id="lastUpdated"></time></span></footer>
   <script type="module" src="./app.js"></script>
 </body>
 </html>

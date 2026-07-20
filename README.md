@@ -1,24 +1,14 @@
-# 華語 Podcast 獎項雷達
+# 華語 Podcast 獎項曆
 
-台灣與香港華語 Podcast、音訊及相關新聞獎項的公開查詢頁面。
+以 2025-07 至 2026-07 為範圍的獎項時程頁。預設分頁只顯示即將舉辦與待追蹤節點，並依最近日期排序；結束的節點則收進「歷史紀錄」。點擊節點會在右側展開該獎項的資格、人工審核註記、已核實得獎節目與官方來源。
 
-## 本機預覽
+## 資料更新
 
-這是無建置步驟的靜態網站。請用 HTTP server 開啟，避免瀏覽器阻擋 JSON 載入：
+前端只讀取 `data/awards.json`：
 
-```bash
-python3 -m http.server 4173
-```
+- `awards`：獎項系列主檔；資格不明者不可自動標為「明確可報」。
+- `timeline`：排程節點。`date` 為 ISO 日期；沒有精確日期時可設為 `null`，並將 `phase` 設為 `monitor`。
+- `phase`：`open`（徵件／截止）、`result`（入圍／得獎）、`monitor`（待公告／待確認）。
+- `winners`：已由官方得獎公告與人工審核確認的節目。不得以搜尋結果或未驗證的網頁內容直接寫入。
 
-開啟 `http://localhost:4173`。
-
-## 資料更新介面
-
-前端只讀取 `data/awards.json`。後續爬蟲每次完成並通過人工審核後，只需更新這個檔案：
-
-- `updatedAt`：ISO 日期
-- `awards`：獎項陣列
-- `status`：`open`、`upcoming`、`judging`、`completed`、`unannounced`
-- `eligibility`：人工判讀的 Podcast 參賽資格
-
-資格不明的獎項不得自動標成「明確可報」。
+畫面會依使用者當下日期，自動將已過期節點轉為灰階，仍可點開檢視。
