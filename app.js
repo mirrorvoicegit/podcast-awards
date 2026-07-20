@@ -1,4 +1,4 @@
-import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=21";
+import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=23";
 
 const state = { data:null, discoveries:[], region:"all", view:"upcoming", selected:null };
 const $ = selector => document.querySelector(selector);
@@ -105,7 +105,7 @@ function renderDetail(type,id) {
     <h2>${escapeHtml(award.name)}</h2>
     <p class="detail-organizer">${escapeHtml(award.organizer)}</p>
     ${deadlineBlock}
-    <section class="detail-section"><h3>參賽資訊</h3><dl class="detail-meta">${entryFeeRow}<div><dt>類別</dt><dd>${escapeHtml(award.category)}</dd></div><div><dt>主題</dt><dd>${escapeHtml(award.topic)}</dd></div><div><dt>可報主體</dt><dd>${escapeHtml(award.applicant)}</dd></div><div><dt>可信度</dt><dd>${escapeHtml(award.confidence)}</dd></div></dl></section>
+    <section class="detail-section"><h3>參賽資訊</h3><dl class="detail-meta">${entryFeeRow}<div><dt>類別</dt><dd>${escapeHtml(award.category)}</dd></div><div><dt>主題</dt><dd>${escapeHtml(award.topic)}</dd></div><div><dt>可報主體</dt><dd>${escapeHtml(award.applicant)}</dd></div></dl></section>
     <section class="detail-section source-section"><a class="source-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">${sourceLabel} <span>↗</span></a></section>
     <section class="detail-section recommendation-section"><div class="detail-section-heading"><h3>鏡好聽節目建議</h3><span>內部初篩</span></div>${recommendationBlock(award.id)}</section>`;
   els.detail.classList.add("show"); els.detail.setAttribute("aria-hidden","false"); els.backdrop.hidden = false;
