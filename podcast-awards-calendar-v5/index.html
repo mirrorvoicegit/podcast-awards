@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="華語 Podcast 獎項年度排程" />
+  <title>華語 Podcast 獎項曆</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css?v=5" />
+</head>
+<body>
+  <header class="topbar">
+    <div><p class="overline">PODCAST AWARDS CALENDAR</p><h1>華語 Podcast 獎項曆</h1></div>
+    <div class="period"><span>資料區間</span><strong>2025.07 — 2026.07</strong></div>
+  </header>
+
+  <main class="app-shell">
+    <section class="calendar-view" aria-labelledby="calendar-title">
+      <div class="calendar-heading">
+        <div><h2 id="calendar-title">年度排程</h2><p>點選任一節點，右側查看該屆完整規則、資格與官方來源。</p></div>
+        <div class="legend"><span><i class="dot active"></i>進行／待追蹤</span><span><i class="dot past"></i>已結束</span><span><i class="dot uncertain"></i>待確認</span></div>
+      </div>
+      <div class="view-tabs" role="tablist" aria-label="排程檢視">
+        <button class="view-tab active" id="upcomingTab" role="tab" aria-selected="true" data-view="upcoming">即將舉辦 <span id="upcomingCount"></span></button>
+        <button class="view-tab" id="archiveTab" role="tab" aria-selected="false" data-view="archive">歷史紀錄 <span id="archiveCount"></span></button>
+      </div>
+      <div class="controls">
+        <label class="search"><span>搜尋</span><input id="searchInput" type="search" placeholder="獎項、主辦單位、主題" /></label>
+        <label><span>地區</span><select id="regionFilter"><option value="all">全部</option><option value="台灣">台灣</option><option value="香港">香港</option></select></label>
+        <label><span>狀態</span><select id="phaseFilter"><option value="all">全部節點</option><option value="open">徵件／截止</option><option value="result">入圍／得獎</option><option value="monitor">待公告／待確認</option></select></label>
+      </div>
+      <div class="summary" id="summary"></div>
+      <div class="timeline" id="timeline" aria-live="polite"></div>
+      <div class="empty" id="emptyState" hidden>沒有符合篩選條件的節點。</div>
+    </section>
+
+    <aside class="detail-panel" id="detailPanel" aria-live="polite">
+      <div class="detail-empty"><p class="overline">DETAIL</p><h2>選一個節點</h2><p>左側會保留全年度的歷史紀錄；已結束的項目以灰階顯示，但仍可查看完整資料。</p></div>
+    </aside>
+  </main>
+
+  <footer><span>資料以官方公告為準；資格不明項目保留人工審核標記。</span><span>最後整理：<time id="lastUpdated"></time></span></footer>
+  <script type="module" src="./app.js?v=5"></script>
+</body>
+</html>
