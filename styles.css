@@ -5,10 +5,9 @@
   --muted:#0a0a0a;
   --faint:#0a0a0a;
   --line:#0a0a0a;
-  --action:#0a0a0a;
+  --action:#0057ff;
   --fit-high:#0a0a0a;
   --fit-priority:#0a0a0a;
-  --fit-possible:#0a0a0a;
   --text-xs:13px;
   --text-sm:14px;
   --text-base:16px;
@@ -48,7 +47,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
 .brand h1 { margin:0; font-size:20px; font-weight:550; letter-spacing:-.025em; }
 .monitor-state { display:flex; align-items:center; gap:9px; color:var(--muted); font-size:var(--text-xs); }
 .monitor-state strong { color:var(--ink); font-size:var(--text-sm); font-weight:500; }
-.pulse { width:7px; height:7px; border-radius:50%; background:var(--ink); }
+.pulse { position:relative; width:17px; height:17px; flex:0 0 auto; overflow:hidden; border:1.5px solid var(--ink); border-radius:50%; background:radial-gradient(circle,var(--ink) 0 1.5px,transparent 1.7px); }
+.pulse::before { content:""; position:absolute; top:.5px; left:7.25px; width:1px; height:7.5px; background:var(--ink); transform-origin:50% 100%; animation:radar-sweep 2.4s linear infinite; }
+.pulse::after { content:""; position:absolute; inset:3px; border:1px solid var(--ink); border-radius:50%; }
+@keyframes radar-sweep { to { transform:rotate(360deg); } }
 
 .main-view {
   width:min(1060px,calc(100% - 48px));
@@ -115,16 +117,19 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
 .application-card:hover h3 { text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:5px; }
 .application-card.actionable::before { content:""; position:absolute; top:25px; bottom:25px; left:0; width:2px; background:var(--action); }
 .deadline-block { display:flex; align-items:end; gap:10px; }
-.deadline-date { color:var(--ink); font-size:58px; font-weight:500; line-height:.92; letter-spacing:-.065em; font-variant-numeric:tabular-nums; }
+.deadline-date { width:4.4ch; display:grid; grid-template-columns:2ch .35ch 2ch; align-items:baseline; color:var(--ink); font-size:58px; font-weight:500; line-height:.92; letter-spacing:-.065em; font-variant-numeric:tabular-nums; font-feature-settings:"tnum" 1; }
+.deadline-month { text-align:right; }
+.deadline-separator { text-align:center; }
+.deadline-day { text-align:left; }
 .deadline-word { padding-bottom:5px; color:var(--muted); font-size:var(--text-sm); font-weight:500; }
 .application-card h3 { margin:0 0 7px; font-size:22px; line-height:1.4; font-weight:550; letter-spacing:-.025em; }
 .application-meta { margin:0; color:var(--muted); font-size:var(--text-sm); line-height:1.65; }
-.application-tag { display:inline-flex; align-items:center; padding:4px 9px; border:1px solid var(--ink); border-radius:999px; color:#fff; background:var(--ink); font-size:var(--text-xs); font-weight:550; white-space:nowrap; }
+.application-tag { display:inline-flex; align-items:center; padding:4px 9px; border:1px solid var(--action); border-radius:999px; color:#fff; background:var(--action); font-size:var(--text-xs); font-weight:550; white-space:nowrap; }
 .application-tag::before { content:none; }
 .days-left { display:block; margin-top:8px; color:var(--action); text-align:right; font-size:var(--text-sm); font-weight:500; }
 .archive-card { color:var(--ink); filter:none; }
 .archive-card .deadline-date,.archive-card .deadline-word { color:var(--ink); }
-.archive-card .application-tag { color:var(--ink); background:#fff; }
+.archive-card .application-tag { border-color:var(--ink); color:var(--ink); background:#fff; }
 
 .monitor-section,.discovery-section { margin-top:62px; padding-top:0; border-top:0; }
 .discovery-section { margin-top:46px; }
@@ -193,9 +198,9 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
 .detail-top { display:flex; justify-content:space-between; align-items:center; gap:18px; }
 .detail-close { padding:8px 0; border:0; color:var(--muted); background:transparent; font-size:var(--text-sm); cursor:pointer; }
 .detail-kicker { margin:0; color:var(--muted); font-size:var(--text-xs); font-weight:500; letter-spacing:.025em; }
-.detail-status { display:inline-flex; align-items:center; margin:30px 0 16px; padding:4px 9px; border:1px solid var(--ink); border-radius:999px; color:#fff; background:var(--ink); font-size:var(--text-xs); font-weight:550; }
+.detail-status { display:inline-flex; align-items:center; margin:30px 0 16px; padding:4px 9px; border:1px solid var(--action); border-radius:999px; color:#fff; background:var(--action); font-size:var(--text-xs); font-weight:550; }
 .detail-status::before { content:none; }
-.detail-status.monitor,.detail-status.archive { color:var(--ink); background:#fff; }
+.detail-status.monitor,.detail-status.archive { border-color:var(--ink); color:var(--ink); background:#fff; }
 .detail-panel h2 { margin-bottom:10px; font-size:34px; line-height:1.25; font-weight:500; letter-spacing:-.04em; }
 .detail-organizer { margin-bottom:32px; color:var(--muted); font-size:var(--text-base); }
 .detail-deadline { margin:12px 0 34px; padding:23px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); border-radius:0; background:transparent; }
@@ -224,8 +229,8 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
   background:transparent;
   box-shadow:none;
 }
-.recommendation-item.fit-high,.recommendation-item.fit-priority,.recommendation-item.fit-possible { border-color:var(--line); box-shadow:none; }
-.recommendation-item.fit-high:hover,.recommendation-item.fit-priority:hover,.recommendation-item.fit-possible:hover { border-color:var(--line); background:transparent; }
+.recommendation-item.fit-high,.recommendation-item.fit-priority { border-color:var(--line); box-shadow:none; }
+.recommendation-item.fit-high:hover,.recommendation-item.fit-priority:hover { border-color:var(--line); background:transparent; }
 .recommendation-main { width:100%; display:grid; gap:6px; }
 .recommendation-main strong { font-size:var(--text-lg); line-height:1.45; font-weight:550; }
 .recommendation-main small { color:var(--muted); font-size:var(--text-xs); }
@@ -233,11 +238,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
 .program-link { display:flex; align-items:center; justify-content:space-between; gap:16px; color:var(--ink); text-decoration:none; }
 .program-link>span { color:var(--muted); font-size:var(--text-xs); font-weight:500; white-space:nowrap; }
 .program-link:hover strong { text-decoration:underline; text-underline-offset:4px; }
-.fit-tag { width:max-content; display:inline-flex; align-items:center; padding:5px 11px; border:1px solid currentColor; border-radius:999px; color:var(--fit-possible); background:transparent; font-size:var(--text-xs); font-weight:600; letter-spacing:.01em; }
+.fit-tag { width:max-content; display:inline-flex; align-items:center; padding:5px 11px; border:1px solid var(--ink); border-radius:999px; color:var(--ink); background:transparent; font-size:var(--text-xs); font-weight:600; letter-spacing:.01em; }
 .fit-tag::before { content:none; }
 .fit-high .fit-tag { border-color:var(--ink); color:#fff; background:var(--ink); }
 .fit-priority .fit-tag { border:2px solid var(--ink); color:var(--ink); background:#fff; }
-.fit-possible .fit-tag { border:1px dashed var(--ink); color:var(--ink); background:#fff; }
 .episode-examples { display:grid; gap:0; margin-top:15px; padding-top:14px; border-top:1px solid var(--line); }
 .episode-label { margin-bottom:5px; color:var(--muted) !important; font-size:var(--text-xs) !important; font-weight:500; }
 .episode-link { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:11px 0; border-radius:0; color:var(--ink); background:transparent; text-decoration:none; }
@@ -264,6 +268,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
 .winner-item span { margin-top:4px; color:var(--muted); font-size:var(--text-sm); }
 
 footer { width:min(1060px,calc(100% - 48px)); display:flex; justify-content:space-between; gap:24px; margin:0 auto; padding:24px 0 32px; border-top:1px solid var(--line); color:var(--muted); font-size:var(--text-xs); }
+
+@media(prefers-reduced-motion:reduce) {
+  .pulse::before { animation:none; transform:rotate(45deg); }
+}
 
 @media(max-width:760px) {
   .topbar { width:min(100% - 32px,1060px); min-height:70px; padding:18px 0; }

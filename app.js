@@ -1,3 +1,5 @@
+import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=17";
+
 const state = { data:null, discoveries:[], query:"", region:"all", view:"upcoming", selected:null };
 const $ = selector => document.querySelector(selector);
 const els = { list:$("#applicationList"), monitors:$("#monitorList"), monitorSection:$("#monitorSection"), discoveries:$("#discoveryList"), discoverySection:$("#discoverySection"), summary:$("#summary"), empty:$("#emptyState"), search:$("#searchInput"), region:$("#regionFilter"), detail:$("#detailPanel"), backdrop:$("#panelBackdrop"), updated:$("#lastUpdated"), upcomingCount:$("#upcomingCount"), archiveCount:$("#archiveCount") };
@@ -11,9 +13,7 @@ function isClosed(application) { return localDate(application.deadline) < todayS
 function isOpen(application) { return application.openDate && localDate(application.openDate) <= todayStart() && !isClosed(application); }
 function daysRemaining(application) { return Math.ceil((localDate(application.deadline) - todayStart()) / 86400000); }
 function awardFor(id) { return state.data.awards.find(award => award.id === id); }
-function programFor(id) { return (state.data.mirrorPrograms || []).find(program => program.id === id); }
-function episodeFor(id) { return (state.data.programEpisodes || []).find(episode => episode.id === id); }
-function deadlineDigits(value) { const date = localDate(value); return `${date.getMonth() + 1}.${String(date.getDate()).padStart(2,"0")}`; }
+function deadlineParts(value) { const date = localDate(value); return { month:String(date.getMonth() + 1).padStart(2,"0"), day:String(date.getDate()).padStart(2,"0") }; }
 function matchesFilters(award, extra="") { const q = state.query.trim().toLocaleLowerCase("zh-Hant"); const text = [award.name, award.organizer, award.topic, extra].join(" ").toLocaleLowerCase("zh-Hant"); return (!q || text.includes(q)) && (state.region === "all" || award.region === state.region); }
 
 function applicationsForView() {
@@ -25,9 +25,10 @@ function applicationsForView() {
 
 function renderApplication(application) {
   const award = awardFor(application.awardId); const archive = isClosed(application); const days = archive ? null : daysRemaining(application);
+  const deadline = deadlineParts(application.deadline);
   const tag = archive ? "徵件已結束" : isOpen(application) ? "徵件中" : "報名資訊已公開";
   return `<button class="application-card ${archive ? "archive-card" : "actionable"}" data-type="application" data-id="${application.id}">
-    <span class="deadline-block"><span class="deadline-date">${escapeHtml(deadlineDigits(application.deadline))}</span><span class="deadline-word">截止</span></span>
+    <span class="deadline-block"><span class="deadline-date"><span class="deadline-month">${escapeHtml(deadline.month)}</span><span class="deadline-separator">.</span><span class="deadline-day">${escapeHtml(deadline.day)}</span></span><span class="deadline-word">截止</span></span>
     <span><h3>${escapeHtml(award.name)}</h3><p class="application-meta">${escapeHtml(application.edition)}${application.openDate ? ` · ${escapeHtml(shortDate.format(localDate(application.openDate)))} 開放報名` : ""}</p></span>
     <span><span class="application-tag">${tag}</span>${days !== null ? `<span class="days-left">${days === 0 ? "今天截止" : `剩 ${days} 天`}</span>` : ""}</span>
   </button>`;
@@ -67,25 +68,21 @@ function winnerBlock(awardId) {
 function recommendationBlock(awardId) {
   const fitMeta = {
     "高度相符":{ rank:3, className:"fit-high" },
-    "優先檢視":{ rank:2, className:"fit-priority" },
-    "可檢視":{ rank:1, className:"fit-possible" }
+    "優先檢視":{ rank:2, className:"fit-priority" }
   };
-  const recommendations = (state.data.programRecommendations || [])
-    .filter(item => item.awardId === awardId)
-    .map(item => ({ ...item, program:programFor(item.programId), fitMeta:fitMeta[item.fit] || fitMeta["可檢視"] }))
-    .filter(item => item.program && item.program.crawlStatus === "verified")
-    .sort((a,b) => b.fitMeta.rank - a.fitMeta.rank || a.program.name.localeCompare(b.program.name,"zh-Hant"));
+  const rule = recommendationRuleFor(state.data,awardId);
+  const recommendations = buildRecommendations(state.data,awardId).map(item => ({ ...item, fitMeta:fitMeta[item.fit] }));
   if (!recommendations.length) {
-    return `<div class="recommendation-empty"><strong>目前沒有明確候選節目</strong><span>不為了填滿清單而推薦；待節目題材或當屆資格更新後再比對。</span></div>`;
+    const note = rule?.emptyNote || "只有通過獎項門檻、節目類型、主題重合與單集證據檢查後才會出現推薦。";
+    return `<div class="recommendation-empty"><strong>目前沒有足夠相符的候選節目</strong><span>${escapeHtml(note)}不為了填滿清單而推薦。</span></div>`;
   }
-  const exampleBlock = programId => {
-    const match = (state.data.episodeRecommendations || []).find(item => item.awardId === awardId && item.programId === programId);
-    const episodes = (match?.episodeIds || []).map(episodeFor).filter(Boolean).slice(0,2);
+  const exampleBlock = episodes => {
+    episodes = episodes.slice(0,2);
     if (!episodes.length) return `<div class="episode-pending">推薦集數待進一步比對</div>`;
     return `<div class="episode-examples"><span class="episode-label">推薦集數舉例</span>${episodes.map(episode => `<a class="episode-link" href="${escapeHtml(episode.url)}" target="_blank" rel="noreferrer"><span><strong>${escapeHtml(episode.title)}</strong><small>${escapeHtml(episode.publishedAt)} 發布</small></span><span>↗</span></a>`).join("")}</div>`;
   };
-  return `<div class="recommendation-note">依節目定位與獎項主題初步比對，仍須逐集確認語言、原創採訪與報名資格。</div><div class="selection-disclaimer"><strong>選件提醒</strong><span>單集只會作為選件例子，不代表已確認符合參賽期間。</span></div>
-    <div class="recommendation-list">${recommendations.map(item => `<article class="recommendation-item ${item.fitMeta.className}"><div class="recommendation-main"><span class="fit-tag">${escapeHtml(item.fit)}</span><a class="program-link" href="${escapeHtml(item.program.url)}" target="_blank" rel="noreferrer"><strong>${escapeHtml(item.program.name)}</strong><span>節目頁 ↗</span></a><small>${escapeHtml(item.program.category)} · ${escapeHtml(item.program.host)}</small><span class="recommendation-reason">${escapeHtml(item.reason)}</span>${exampleBlock(item.program.id)}</div></article>`).join("")}</div>`;
+  return `<div class="recommendation-note">系統依獎項門檻、節目類型、主題詞與單集線索即時計算；仍須人工確認語言、原創採訪與報名資格。</div><div class="selection-disclaimer"><strong>選件提醒</strong><span>單集只會作為選件例子，不代表已確認符合參賽期間。</span></div>
+    <div class="recommendation-list">${recommendations.map(item => `<article class="recommendation-item ${item.fitMeta.className}"><div class="recommendation-main"><span class="fit-tag">${escapeHtml(item.fit)}</span><a class="program-link" href="${escapeHtml(item.program.url)}" target="_blank" rel="noreferrer"><strong>${escapeHtml(item.program.name)}</strong><span>節目頁 ↗</span></a><small>${escapeHtml(item.program.category)} · ${escapeHtml(item.program.host)}</small><span class="recommendation-reason">${escapeHtml(item.reason)}</span>${exampleBlock(item.matchedEpisodes)}</div></article>`).join("")}</div>`;
 }
 function renderDetail(type,id) {
   const application = type === "application" ? state.data.applications.find(item => item.id === id) : null;
