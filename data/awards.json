@@ -1,0 +1,19 @@
+{
+  "updatedAt": "2026-07-20",
+  "awards": [
+    {"id":"TW001","name":"廣播金鐘獎 Podcast 獎","region":"台灣","organizer":"文化部影視及流行音樂產業局","type":"Podcast 專門獎","eligibility":"明確可報","status":"judging","watchPeriod":"3–10 月","deadlineLabel":"評選中","topic":"綜合內容","category":"Podcast","url":"https://www.bamid.gov.tw/"},
+    {"id":"TW002","name":"卓越新聞獎","region":"台灣","organizer":"財團法人卓越新聞獎基金會","type":"專業新聞獎","eligibility":"明確可報","status":"upcoming","watchPeriod":"6–11 月","deadlineLabel":"8 月徵件","topic":"新聞、公共議題","category":"Podcast 新聞節目","url":"https://feja.org.tw/"},
+    {"id":"TW003","name":"平冤年度新聞獎","region":"台灣","organizer":"社團法人台灣冤獄平反協會","type":"NGO 主題新聞獎","eligibility":"明確可報","status":"judging","watchPeriod":"4–8 月","deadlineLabel":"評選中","topic":"冤案、錯誤、刑事司法","category":"Podcast 組","url":"https://twinnocenceproject.org/"},
+    {"id":"TW004","name":"客聲獎 Podcast 類","region":"台灣","organizer":"財團法人客家公共傳播基金會","type":"Podcast 專門獎","eligibility":"明確可報","status":"judging","watchPeriod":"4–9 月","deadlineLabel":"9 月頒獎","topic":"客家文化、客語內容","category":"Podcast","url":"https://hva.hpcf.tw/"},
+    {"id":"TW005","name":"Podcast YeAr 優質聲音節目競賽","region":"台灣","organizer":"正聲廣播股份有限公司","type":"Podcast 專門競賽","eligibility":"明確可報","status":"unannounced","watchPeriod":"7–12 月","deadlineLabel":"待公告","topic":"生活風格、永續、品牌內容","category":"Podcast","url":"https://www.csbc.com.tw/"},
+    {"id":"TW006","name":"台灣兒童及少年優質節目評選","region":"台灣","organizer":"財團法人台灣媒體觀察教育基金會","type":"NGO 內容評選","eligibility":"明確可報","status":"judging","watchPeriod":"5–12 月","deadlineLabel":"評選中","topic":"兒童及少年內容","category":"Podcast／聲音節目","url":"https://www.mediawatch.org.tw/taxonomy/term/44"},
+    {"id":"TW007","name":"全球華文永續報導獎","region":"台灣","organizer":"TVBS 信望愛永續基金會","type":"基金會主題新聞獎","eligibility":"明確可報","status":"judging","watchPeriod":"5–11 月","deadlineLabel":"評選中","topic":"SDGs、永續報導","category":"專業組音頻類","url":"https://www.newsaward.org/"},
+    {"id":"TW008","name":"銀響力新聞獎","region":"台灣","organizer":"弘道老人福利基金會","type":"NGO 主題新聞獎","eligibility":"明確可報","status":"unannounced","watchPeriod":"1–6 月","deadlineLabel":"待公告","topic":"高齡、長照、社會關懷","category":"廣播及網路音頻","url":"https://jia-elderly.com/"},
+    {"id":"TW009","name":"消費者權益報導獎","region":"台灣","organizer":"行政院消費者保護處等單位","type":"主題新聞獎","eligibility":"有條件可報","status":"upcoming","watchPeriod":"8–11 月","deadlineLabel":"8 月監測","topic":"消費權益、詐騙、食安","category":"融媒體／其他類別","url":"https://www.mediawatch.org.tw/news/category/8"},
+    {"id":"TW010","name":"臺灣醫療報導獎","region":"台灣","organizer":"中華民國醫師公會全國聯合會","type":"專業主題報導獎","eligibility":"有條件可報","status":"unannounced","watchPeriod":"3–11 月","deadlineLabel":"待公告","topic":"醫療、醫病關係、健康政策","category":"新媒體類","url":"https://www.tma.tw/"},
+    {"id":"HK001","name":"消費權益新聞報道獎","region":"香港","organizer":"香港消費者委員會","type":"專業主題新聞獎","eligibility":"有條件可報","status":"unannounced","watchPeriod":"3–7 月","deadlineLabel":"待公告","topic":"消費權益","category":"聲音廣播／網路音訊待核","url":"https://www.consumer.org.hk/tc/event/"},
+    {"id":"HK002","name":"人權新聞獎","region":"香港","organizer":"主辦聯盟依年度公告","type":"人權新聞獎","eligibility":"歷年可報；當屆待核","status":"unannounced","watchPeriod":"11–5 月","deadlineLabel":"監測觀察","topic":"亞洲人權議題","category":"Podcast 類待核","url":"https://humanrightspressawards.org/zh-hant/"},
+    {"id":"HK003","name":"香港最佳新聞獎","region":"香港","organizer":"香港報業公會","type":"專業新聞獎","eligibility":"歷年可報；當屆待核","status":"unannounced","watchPeriod":"11–5 月","deadlineLabel":"監測觀察","topic":"香港新聞","category":"目前無音訊類別","url":"https://www.nshk.org.hk/activitiesTimetable.php?lang=bi"},
+    {"id":"HK004","name":"亞洲出版業協會卓越新聞獎（SOPA）","region":"香港","organizer":"Society of Publishers in Asia","type":"亞洲專業新聞獎","eligibility":"明確可報","status":"completed","watchPeriod":"12–6 月","deadlineLabel":"2026 已完成","topic":"政治、經濟、社會、文化新聞","category":"卓越音頻報道獎","url":"https://sopawards.com/"}
+  ]
+}
