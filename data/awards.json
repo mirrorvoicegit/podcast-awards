@@ -57,7 +57,7 @@
   "applications": [
     {"id":"app-TW002-2025","awardId":"TW002","edition":"2025 第24屆","infoPublished":true,"openDate":"2025-08-01","deadline":"2025-08-10"},
     {"id":"app-TW005-2025","awardId":"TW005","edition":"2025 優質聲音節目競賽","infoPublished":true,"openDate":"2025-08-02","deadline":"2025-10-01"},
-    {"id":"app-HK004-2026","awardId":"HK004","edition":"2026 SOPA","infoPublished":true,"openDate":"2025-12-01","deadline":"2026-02-26"},
+    {"id":"app-HK004-2026","awardId":"HK004","edition":"2026 SOPA","infoPublished":true,"openDate":"2025-12-01","deadline":"2026-02-26","entryFee":"中文組每件：非會員 HK$1,300／SOPA 會員 HK$1,100；另加 PayPal 信用卡 2.5% 手續費。符合小型或首次參賽媒體補助者每件 HK$200。","entryFeeUrl":"https://sopawards.com/the-sopa-awards/entry-fees/"},
     {"id":"app-TW010-2025","awardId":"TW010","edition":"2025／114年","infoPublished":true,"openDate":null,"deadline":"2025-07-15"},
     {"id":"app-TW001-2026","awardId":"TW001","edition":"2026 第61屆","infoPublished":true,"openDate":"2026-04-10","deadline":"2026-05-08"},
     {"id":"app-TW006-2026","awardId":"TW006","edition":"2026 第26屆","infoPublished":true,"openDate":null,"deadline":"2026-06-01"},

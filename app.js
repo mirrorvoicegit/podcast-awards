@@ -1,4 +1,4 @@
-import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=17";
+import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=19";
 
 const state = { data:null, discoveries:[], query:"", region:"all", view:"upcoming", selected:null };
 const $ = selector => document.querySelector(selector);
@@ -15,6 +15,17 @@ function daysRemaining(application) { return Math.ceil((localDate(application.de
 function awardFor(id) { return state.data.awards.find(award => award.id === id); }
 function deadlineParts(value) { const date = localDate(value); return { month:String(date.getMonth() + 1).padStart(2,"0"), day:String(date.getDate()).padStart(2,"0") }; }
 function matchesFilters(award, extra="") { const q = state.query.trim().toLocaleLowerCase("zh-Hant"); const text = [award.name, award.organizer, award.topic, extra].join(" ").toLocaleLowerCase("zh-Hant"); return (!q || text.includes(q)) && (state.region === "all" || award.region === state.region); }
+function yearMonth(value) { const date=localDate(value); return date ? `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,"0")}` : null; }
+function applicationReference(awardId) {
+  const previous=(state.data.applications || []).filter(item=>item.awardId===awardId && item.deadline).sort((a,b)=>b.deadline.localeCompare(a.deadline))[0];
+  if(previous){
+    const start=yearMonth(previous.openDate); const end=yearMonth(previous.deadline);
+    if(start && end) return start.slice(0,4)===end.slice(0,4) ? `${start}–${end.slice(5)}` : `${start}–${end}`;
+    if(end) return end;
+  }
+  const knownStart=(state.data.timeline || []).filter(item=>item.awardId===awardId && item.phase==="open" && item.date && /開始|徵件/.test(item.label)).sort((a,b)=>b.date.localeCompare(a.date))[0];
+  return knownStart ? `${yearMonth(knownStart.date)} 起` : null;
+}
 
 function applicationsForView() {
   return state.data.applications.filter(application => {
@@ -41,7 +52,7 @@ function monitorItems() {
 function renderMonitors() {
   const awards = monitorItems();
   els.monitorSection.hidden = state.view === "archive" || awards.length === 0;
-  els.monitors.innerHTML = awards.map(award => `<button class="monitor-card" data-type="monitor" data-id="${award.id}"><span><strong>${escapeHtml(award.name)}</strong><span>持續監控中 · 報名時程待公告</span></span><span class="arrow">›</span></button>`).join("");
+  els.monitors.innerHTML = awards.map(award => { const reference=applicationReference(award.id); return `<button class="monitor-card" data-type="monitor" data-id="${award.id}"><span><strong>${escapeHtml(award.name)}</strong><span>持續監控中 · ${reference ? `最近一屆徵件 ${escapeHtml(reference)}` : "上屆月份待補"}</span></span><span class="arrow">›</span></button>`; }).join("");
 }
 function renderDiscoveries() {
   const items = state.discoveries.filter(item => item.status === "review_needed").slice(0,10);
@@ -88,7 +99,10 @@ function renderDetail(type,id) {
   const application = type === "application" ? state.data.applications.find(item => item.id === id) : null;
   const award = application ? awardFor(application.awardId) : awardFor(id); const statusClass = application ? (isClosed(application) ? "archive" : "") : "monitor";
   const statusText = application ? (isClosed(application) ? "歷史紀錄" : isOpen(application) ? "徵件中" : "報名資訊已公開") : "持續監控中";
-  const deadlineBlock = application ? `<div class="detail-deadline"><span>徵件截止日</span><strong>${escapeHtml(dateText.format(localDate(application.deadline)))}</strong>${application.openDate ? `<span>開放報名：${escapeHtml(dateText.format(localDate(application.openDate)))}</span>` : ""}</div>` : "";
+  const reference=applicationReference(award.id);
+  const deadlineBlock = application ? `<div class="detail-deadline"><span>徵件截止日</span><strong>${escapeHtml(dateText.format(localDate(application.deadline)))}</strong>${application.openDate ? `<span>開放報名：${escapeHtml(dateText.format(localDate(application.openDate)))}</span>` : ""}</div>` : reference ? `<div class="detail-deadline monitor-reference"><span>最近一屆徵件月份</span><strong>${escapeHtml(reference)}</strong><span>僅供預排工作參考，仍以本屆公告為準。</span></div>` : "";
+  const entryFee=application?.entryFee || (application ? "待官方確認" : "待當屆公告");
+  const entryFeeLink=application?.entryFeeUrl ? ` <a class="meta-link" href="${escapeHtml(application.entryFeeUrl)}" target="_blank" rel="noreferrer">費用來源 ↗</a>` : "";
   els.detail.innerHTML = `
     <div class="detail-top"><p class="detail-kicker">${escapeHtml(award.region)} · ${escapeHtml(award.type)}</p><button class="detail-close" aria-label="關閉詳細資料">關閉 ×</button></div>
     <span class="detail-status ${statusClass}">${statusText}</span>
@@ -96,9 +110,9 @@ function renderDetail(type,id) {
     <p class="detail-organizer">${escapeHtml(award.organizer)}</p>
     ${deadlineBlock}
     <section class="detail-section"><h3>Podcast 資格</h3><p><strong>${escapeHtml(award.eligibility)}</strong>。${escapeHtml(award.eligibilityNote)}</p></section>
-    <section class="detail-section"><h3>參賽資訊</h3><dl class="detail-meta"><div><dt>類別</dt><dd>${escapeHtml(award.category)}</dd></div><div><dt>主題</dt><dd>${escapeHtml(award.topic)}</dd></div><div><dt>可報主體</dt><dd>${escapeHtml(award.applicant)}</dd></div><div><dt>可信度</dt><dd>${escapeHtml(award.confidence)}</dd></div></dl></section>
+    <section class="detail-section"><h3>參賽資訊</h3><dl class="detail-meta"><div><dt>報名費</dt><dd>${escapeHtml(entryFee)}${entryFeeLink}</dd></div><div><dt>類別</dt><dd>${escapeHtml(award.category)}</dd></div><div><dt>主題</dt><dd>${escapeHtml(award.topic)}</dd></div><div><dt>可報主體</dt><dd>${escapeHtml(award.applicant)}</dd></div><div><dt>可信度</dt><dd>${escapeHtml(award.confidence)}</dd></div></dl></section>
     <section class="detail-section"><h3>人工審核註記</h3><p>${escapeHtml(award.reviewNote)}</p></section>
-    <a class="source-link" href="${escapeHtml(award.url)}" target="_blank" rel="noreferrer">查看官方來源 <span>↗</span></a>
+    <section class="detail-section source-section"><a class="source-link" href="${escapeHtml(award.url)}" target="_blank" rel="noreferrer">查看官方來源 <span>↗</span></a></section>
     <section class="detail-section"><h3>已核實得獎節目</h3>${winnerBlock(award.id)}</section>
     <section class="detail-section recommendation-section"><div class="detail-section-heading"><h3>鏡好聽節目建議</h3><span>內部初篩</span></div>${recommendationBlock(award.id)}</section>`;
   els.detail.classList.add("show"); els.detail.setAttribute("aria-hidden","false"); els.backdrop.hidden = false;
