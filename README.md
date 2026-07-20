@@ -1,4 +1,4 @@
-# 華語 Podcast 獎項曆
+# Podcast 報獎雷達
 
 以截止日為核心的 Podcast 獎項處理工具。只要報名資訊已公開且尚未截止，就以醒目的橘色卡片放在「處理中」；截止隔天自動移進「歷史紀錄」。尚未公布完整報名時程的獎項保留在灰階的「持續監控中」。點擊卡片後才會展開右側詳細資料。
 
@@ -19,6 +19,8 @@
 ## 鏡好聽節目監測
 
 GitHub Actions 每月執行 `scripts/crawl-mirror-programs.mjs`，把 9 個指定節目的公開頁面資料寫入 `data/program-crawl-candidates.json`。這份候選資料只供人工比對，不會直接改動推薦結果，避免網站改版或解析錯誤污染正式資料。也可在 Actions 頁面手動執行「Monthly Mirror Voice program crawl」。
+
+側欄的「推薦集數舉例」來自已人工核實的 `programEpisodes` 與 `episodeRecommendations`。單集只作為選件例子，不代表已確認符合參賽期間；每月爬蟲抓到的新單集仍須人工確認後才能加入正式推薦。
 
 ## 新獎項發現
 

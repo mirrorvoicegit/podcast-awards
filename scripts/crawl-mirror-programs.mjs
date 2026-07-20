@@ -22,6 +22,16 @@ const attr = (html, property) => {
 };
 const pageTitle = html => clean(attr(html, "og:title") || html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1])
   .replace(/\s*[｜|]\s*鏡好聽.*$/i, "").trim();
+const extractEpisodes = (html, sourceId) => {
+  const pattern = new RegExp(`<a[^>]+href=["'](/podcasts/${sourceId}/\\d+/?)['"][^>]*>([\\s\\S]*?)<\\/a>`, "gi");
+  const episodes = []; const seen = new Set();
+  for (const match of html.matchAll(pattern)) {
+    const title = clean(match[2]); const relativeUrl = match[1].replace(/\/$/, "");
+    if (title.length < 6 || title.length > 180 || seen.has(relativeUrl) || /看全部|開始播放|試聽/.test(title)) continue;
+    seen.add(relativeUrl); episodes.push({ title, url:`https://www.mirrorvoice.com.tw${relativeUrl}` });
+  }
+  return episodes.slice(0,20);
+};
 
 async function crawl(program) {
   const checkedAt = new Date().toISOString();
@@ -45,7 +55,8 @@ async function crawl(program) {
         name:title || null,
         description:attr(html, "og:description") || attr(html, "description") || null,
         image:attr(html, "og:image") || null,
-        updatedAt:updated
+        updatedAt:updated,
+        episodes:extractEpisodes(html,program.sourceId)
       }
     };
   } catch (error) {

@@ -12,6 +12,7 @@ function isOpen(application) { return application.openDate && localDate(applicat
 function daysRemaining(application) { return Math.ceil((localDate(application.deadline) - todayStart()) / 86400000); }
 function awardFor(id) { return state.data.awards.find(award => award.id === id); }
 function programFor(id) { return (state.data.mirrorPrograms || []).find(program => program.id === id); }
+function episodeFor(id) { return (state.data.programEpisodes || []).find(episode => episode.id === id); }
 function deadlineDigits(value) { const date = localDate(value); return `${date.getMonth() + 1}.${String(date.getDate()).padStart(2,"0")}`; }
 function matchesFilters(award, extra="") { const q = state.query.trim().toLocaleLowerCase("zh-Hant"); const text = [award.name, award.organizer, award.topic, extra].join(" ").toLocaleLowerCase("zh-Hant"); return (!q || text.includes(q)) && (state.region === "all" || award.region === state.region); }
 
@@ -64,22 +65,34 @@ function winnerBlock(awardId) {
 }
 
 function recommendationBlock(awardId) {
+  const fitMeta = {
+    "高度相符":{ rank:3, className:"fit-high" },
+    "優先檢視":{ rank:2, className:"fit-priority" },
+    "可檢視":{ rank:1, className:"fit-possible" }
+  };
   const recommendations = (state.data.programRecommendations || [])
     .filter(item => item.awardId === awardId)
-    .map(item => ({ ...item, program:programFor(item.programId) }))
-    .filter(item => item.program && item.program.crawlStatus === "verified");
+    .map(item => ({ ...item, program:programFor(item.programId), fitMeta:fitMeta[item.fit] || fitMeta["可檢視"] }))
+    .filter(item => item.program && item.program.crawlStatus === "verified")
+    .sort((a,b) => b.fitMeta.rank - a.fitMeta.rank || a.program.name.localeCompare(b.program.name,"zh-Hant"));
   if (!recommendations.length) {
     return `<div class="recommendation-empty"><strong>目前沒有明確候選節目</strong><span>不為了填滿清單而推薦；待節目題材或當屆資格更新後再比對。</span></div>`;
   }
-  return `<div class="recommendation-note">依節目定位與獎項主題初步比對，仍須逐集確認作品期間、語言、原創採訪與報名資格。</div>
-    <div class="recommendation-list">${recommendations.map(item => `<a class="recommendation-item" href="${escapeHtml(item.program.url)}" target="_blank" rel="noreferrer"><span class="recommendation-main"><span class="fit-tag">${escapeHtml(item.fit)}</span><strong>${escapeHtml(item.program.name)}</strong><small>${escapeHtml(item.program.category)} · ${escapeHtml(item.program.host)}</small><span>${escapeHtml(item.reason)}</span></span><span class="recommendation-arrow">↗</span></a>`).join("")}</div>`;
+  const exampleBlock = programId => {
+    const match = (state.data.episodeRecommendations || []).find(item => item.awardId === awardId && item.programId === programId);
+    const episodes = (match?.episodeIds || []).map(episodeFor).filter(Boolean).slice(0,2);
+    if (!episodes.length) return `<div class="episode-pending">推薦集數待進一步比對</div>`;
+    return `<div class="episode-examples"><span class="episode-label">推薦集數舉例</span>${episodes.map(episode => `<a class="episode-link" href="${escapeHtml(episode.url)}" target="_blank" rel="noreferrer"><span><strong>${escapeHtml(episode.title)}</strong><small>${escapeHtml(episode.publishedAt)} 發布</small></span><span>↗</span></a>`).join("")}</div>`;
+  };
+  return `<div class="recommendation-note">依節目定位與獎項主題初步比對，仍須逐集確認語言、原創採訪與報名資格。</div><div class="selection-disclaimer"><strong>選件提醒</strong><span>單集只會作為選件例子，不代表已確認符合參賽期間。</span></div>
+    <div class="recommendation-list">${recommendations.map(item => `<article class="recommendation-item ${item.fitMeta.className}"><div class="recommendation-main"><span class="fit-tag">${escapeHtml(item.fit)}</span><a class="program-link" href="${escapeHtml(item.program.url)}" target="_blank" rel="noreferrer"><strong>${escapeHtml(item.program.name)}</strong><span>節目頁 ↗</span></a><small>${escapeHtml(item.program.category)} · ${escapeHtml(item.program.host)}</small><span class="recommendation-reason">${escapeHtml(item.reason)}</span>${exampleBlock(item.program.id)}</div></article>`).join("")}</div>`;
 }
 function renderDetail(type,id) {
   const application = type === "application" ? state.data.applications.find(item => item.id === id) : null;
   const award = application ? awardFor(application.awardId) : awardFor(id); const statusClass = application ? (isClosed(application) ? "archive" : "") : "monitor";
   const statusText = application ? (isClosed(application) ? "歷史紀錄" : isOpen(application) ? "徵件中" : "報名資訊已公開") : "持續監控中";
   const deadlineBlock = application ? `<div class="detail-deadline"><span>徵件截止日</span><strong>${escapeHtml(dateText.format(localDate(application.deadline)))}</strong>${application.openDate ? `<span>開放報名：${escapeHtml(dateText.format(localDate(application.openDate)))}</span>` : ""}</div>` : "";
-  els.detail.innerHTML = `<div class="detail-top"><p class="detail-kicker">${escapeHtml(award.region)} · ${escapeHtml(award.type)}</p><button class="detail-close" aria-label="關閉詳細資料">關閉 ×</button></div><span class="detail-status ${statusClass}">${statusText}</span><h2>${escapeHtml(award.name)}</h2><p class="detail-organizer">${escapeHtml(award.organizer)}</p>${deadlineBlock}<section class="detail-section recommendation-section"><div class="detail-section-heading"><h3>鏡好聽節目建議</h3><span>內部初篩</span></div>${recommendationBlock(award.id)}</section><section class="detail-section"><h3>PODCAST 資格</h3><p><strong>${escapeHtml(award.eligibility)}</strong>。${escapeHtml(award.eligibilityNote)}</p></section><section class="detail-section"><h3>參賽資訊</h3><dl class="detail-meta"><div><dt>類別</dt><dd>${escapeHtml(award.category)}</dd></div><div><dt>主題</dt><dd>${escapeHtml(award.topic)}</dd></div><div><dt>可報主體</dt><dd>${escapeHtml(award.applicant)}</dd></div><div><dt>可信度</dt><dd>${escapeHtml(award.confidence)}</dd></div></dl></section><section class="detail-section"><h3>人工審核註記</h3><p>${escapeHtml(award.reviewNote)}</p></section><section class="detail-section"><h3>已核實得獎節目</h3>${winnerBlock(award.id)}</section><a class="source-link" href="${escapeHtml(award.url)}" target="_blank" rel="noreferrer">查看官方來源 <span>↗</span></a>`;
+  els.detail.innerHTML = `<div class="detail-top"><p class="detail-kicker">${escapeHtml(award.region)} · ${escapeHtml(award.type)}</p><button class="detail-close" aria-label="關閉詳細資料">關閉 ×</button></div><span class="detail-status ${statusClass}">${statusText}</span><h2>${escapeHtml(award.name)}</h2><p class="detail-organizer">${escapeHtml(award.organizer)}</p>${deadlineBlock}<section class="detail-section recommendation-section"><div class="detail-section-heading"><h3>鏡好聽節目建議</h3><span>內部初篩</span></div>${recommendationBlock(award.id)}</section><section class="detail-section"><h3>Podcast 資格</h3><p><strong>${escapeHtml(award.eligibility)}</strong>。${escapeHtml(award.eligibilityNote)}</p></section><section class="detail-section"><h3>參賽資訊</h3><dl class="detail-meta"><div><dt>類別</dt><dd>${escapeHtml(award.category)}</dd></div><div><dt>主題</dt><dd>${escapeHtml(award.topic)}</dd></div><div><dt>可報主體</dt><dd>${escapeHtml(award.applicant)}</dd></div><div><dt>可信度</dt><dd>${escapeHtml(award.confidence)}</dd></div></dl></section><section class="detail-section"><h3>人工審核註記</h3><p>${escapeHtml(award.reviewNote)}</p></section><section class="detail-section"><h3>已核實得獎節目</h3>${winnerBlock(award.id)}</section><a class="source-link" href="${escapeHtml(award.url)}" target="_blank" rel="noreferrer">查看官方來源 <span>↗</span></a>`;
   els.detail.classList.add("show"); els.detail.setAttribute("aria-hidden","false"); els.backdrop.hidden = false;
   els.detail.querySelector(".detail-close").addEventListener("click",closeDetail);
 }
