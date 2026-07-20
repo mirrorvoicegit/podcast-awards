@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="華語 Podcast 獎項徵件截止排程" />
+  <title>華語 Podcast 獎項曆</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css?v=7" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><img src="./favicon.svg" alt="" /><h1>華語 Podcast 獎項曆</h1></div>
+    <div class="monitor-state"><span class="pulse"></span><strong>資料持續監控中</strong><span>最後整理 <time id="lastUpdated"></time></span></div>
+  </header>
+
+  <main class="main-view">
+    <section class="intro">
+      <div><h2>徵件排程</h2><p>以截止日為核心，優先處理目前已公開報名資訊的獎項。</p></div>
+      <div class="period"><span>資料區間</span><strong>2025.07 — 2026.08</strong></div>
+    </section>
+
+    <nav class="view-tabs" role="tablist" aria-label="排程檢視">
+      <button class="view-tab active" role="tab" aria-selected="true" data-view="upcoming">處理中 <span id="upcomingCount"></span></button>
+      <button class="view-tab" role="tab" aria-selected="false" data-view="archive">歷史紀錄 <span id="archiveCount"></span></button>
+    </nav>
+
+    <section class="controls" aria-label="篩選">
+      <label class="search"><span>搜尋</span><input id="searchInput" type="search" placeholder="獎項、主辦單位、主題" /></label>
+      <label><span>地區</span><select id="regionFilter"><option value="all">全部地區</option><option value="台灣">台灣</option><option value="香港">香港</option></select></label>
+    </section>
+
+    <div class="summary" id="summary"></div>
+    <section class="application-list" id="applicationList" aria-live="polite"></section>
+    <section class="monitor-section" id="monitorSection">
+      <div class="section-label"><div><span class="monitor-dot"></span><h3>持續監控中</h3></div><p>尚未公開完整報名日期，不標示為待處理。</p></div>
+      <div class="monitor-list" id="monitorList"></div>
+    </section>
+    <div class="empty" id="emptyState" hidden>沒有符合條件的獎項。</div>
+  </main>
+
+  <div class="panel-backdrop" id="panelBackdrop" hidden></div>
+  <aside class="detail-panel" id="detailPanel" aria-live="polite" aria-hidden="true"></aside>
+
+  <footer><span>資料以官方公告為準；資格不明項目須經人工核實。</span><span>已截止項目會自動移入歷史紀錄。</span></footer>
+  <script type="module" src="./app.js?v=7"></script>
+</body>
+</html>
