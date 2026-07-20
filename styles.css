@@ -119,14 +119,12 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
 .archive-card .deadline-date,.archive-card .deadline-word { color:var(--ink); }
 .archive-card .application-tag { border-color:var(--ink); color:var(--ink); background:#fff; }
 
-.monitor-section,.discovery-section { margin-top:54px; padding-top:0; border-top:0; }
-.discovery-section { margin-top:46px; }
+.monitor-section { margin-top:54px; padding-top:0; border-top:0; }
 .section-label { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:14px; }
 .section-label>div { display:flex; align-items:center; gap:9px; }
 .section-label h3 { margin:0; font-size:var(--text-lg); font-weight:550; }
 .section-label p { margin:0; color:var(--muted); font-size:var(--text-sm); }
-.monitor-dot,.discovery-dot { width:7px; height:7px; border-radius:50%; background:var(--ink); }
-.discovery-dot { background:var(--ink); }
+.monitor-dot { width:7px; height:7px; border-radius:50%; background:var(--ink); }
 .monitor-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:36px; border-top:1px solid var(--line); }
 .monitor-card {
   width:100%;
@@ -148,23 +146,6 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
 .monitor-card span { color:var(--muted); font-size:var(--text-sm); }
 .monitor-card .arrow { color:var(--ink); font-size:23px; font-weight:300; line-height:1; }
 
-.discovery-list { display:grid; border-top:1px solid var(--line); }
-.discovery-card {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:22px;
-  padding:20px 0;
-  border:0;
-  border-bottom:1px solid var(--line);
-  border-radius:0;
-  color:var(--ink);
-  text-decoration:none;
-}
-.discovery-card strong,.discovery-card span { display:block; }
-.discovery-card strong { margin-bottom:5px; font-size:var(--text-base); font-weight:550; }
-.discovery-card span span { color:var(--muted); font-size:var(--text-sm); }
-.discovery-state { color:var(--muted); font-size:var(--text-sm); font-weight:500; white-space:nowrap; }
 .empty { margin-top:28px; padding:64px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); color:var(--muted); text-align:center; font-size:var(--text-base); }
 
 .panel-backdrop { position:fixed; z-index:10; inset:0; background:transparent; }
@@ -275,7 +256,6 @@ footer { width:min(1060px,calc(100% - 48px)); display:flex; justify-content:spac
   .days-left { text-align:left; }
   .monitor-list { grid-template-columns:1fr; }
   .section-label { align-items:start; flex-direction:column; gap:8px; }
-  .discovery-card { align-items:start; flex-direction:column; }
   .detail-panel { padding:30px 25px 64px; }
   .detail-panel h2 { font-size:30px; }
   .detail-deadline strong { font-size:33px; }

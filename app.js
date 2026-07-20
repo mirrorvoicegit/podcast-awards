@@ -1,8 +1,8 @@
 import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=26";
 
-const state = { data:null, discoveries:[], view:"upcoming", selected:null };
+const state = { data:null, view:"upcoming", selected:null };
 const $ = selector => document.querySelector(selector);
-const els = { list:$("#applicationList"), monitors:$("#monitorList"), monitorSection:$("#monitorSection"), discoveries:$("#discoveryList"), discoverySection:$("#discoverySection"), summary:$("#summary"), empty:$("#emptyState"), detail:$("#detailPanel"), backdrop:$("#panelBackdrop"), updated:$("#lastUpdated"), upcomingCount:$("#upcomingCount"), archiveCount:$("#archiveCount") };
+const els = { list:$("#applicationList"), monitors:$("#monitorList"), monitorSection:$("#monitorSection"), summary:$("#summary"), empty:$("#emptyState"), detail:$("#detailPanel"), backdrop:$("#panelBackdrop"), updated:$("#lastUpdated"), upcomingCount:$("#upcomingCount"), archiveCount:$("#archiveCount") };
 const dateText = new Intl.DateTimeFormat("zh-TW", { year:"numeric", month:"long", day:"numeric" });
 const shortDate = new Intl.DateTimeFormat("zh-TW", { month:"numeric", day:"numeric" });
 
@@ -54,18 +54,13 @@ function renderMonitors() {
   els.monitorSection.hidden = state.view === "archive" || awards.length === 0;
   els.monitors.innerHTML = awards.map(award => { const reference=applicationReference(award.id); return `<button class="monitor-card" data-type="monitor" data-id="${award.id}"><span><strong>${escapeHtml(award.name)}</strong><span>持續監控中 · ${reference ? `最近一屆徵件 ${escapeHtml(reference)}` : "上屆月份待補"}</span></span><span class="arrow">›</span></button>`; }).join("");
 }
-function renderDiscoveries() {
-  const items = state.discoveries.filter(item => item.status === "review_needed").slice(0,10);
-  els.discoverySection.hidden = state.view === "archive" || items.length === 0;
-  els.discoveries.innerHTML = items.map(item => `<a class="discovery-card" href="${escapeHtml(item.link)}" target="_blank" rel="noreferrer"><span><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml(item.publishedAt || "日期待確認")} · 關鍵字：${escapeHtml(item.matchedQuery)}</span></span><span class="discovery-state">待人工確認 ↗</span></a>`).join("");
-}
 function render() {
   const upcomingTotal = state.data.applications.filter(application => !isClosed(application) && application.infoPublished).length;
   const archiveTotal = state.data.applications.filter(isClosed).length;
   const applications = applicationsForView();
   els.upcomingCount.textContent = upcomingTotal; els.archiveCount.textContent = archiveTotal;
   document.querySelectorAll(".view-tab").forEach(tab => { const active = tab.dataset.view === state.view; tab.classList.toggle("active",active); tab.setAttribute("aria-selected",String(active)); });
-  els.list.innerHTML = applications.map(renderApplication).join(""); renderMonitors(); renderDiscoveries();
+  els.list.innerHTML = applications.map(renderApplication).join(""); renderMonitors();
   els.summary.textContent = state.view === "upcoming" ? `共 ${applications.length} 個已公開報名資訊，依截止日排序` : `共 ${applications.length} 個已結束徵件，依截止日倒序`;
   els.empty.hidden = applications.length > 0 || (state.view === "upcoming" && monitorItems().length > 0);
 }
@@ -119,7 +114,6 @@ function bindEvents() {
 }
 async function init() {
   const response=await fetch("./data/awards.json",{cache:"no-store"}); state.data=await response.json();
-  try { const discoveryResponse=await fetch("./data/award-discovery-candidates.json",{cache:"no-store"}); if(discoveryResponse.ok) state.discoveries=(await discoveryResponse.json()).candidates || []; } catch (_) { state.discoveries=[]; }
   els.updated.textContent=state.data.updatedAt; els.updated.dateTime=state.data.updatedAt; bindEvents(); render();
 }
 init().catch(error => { els.list.innerHTML=`<div class="empty">資料載入失敗：${escapeHtml(error.message)}</div>`; });
