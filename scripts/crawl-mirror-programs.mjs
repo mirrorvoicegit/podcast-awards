@@ -1,11 +1,16 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, appendFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { classifyCrawlResults } from "./lib/crawl-outcome.mjs";
+import { hasSubstantiveChange } from "./lib/data-diff.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dataPath = path.join(root, "data", "awards.json");
 const outputPath = path.join(root, "data", "program-crawl-candidates.json");
 const data = JSON.parse(await readFile(dataPath, "utf8"));
+
+let previous = null;
+try { previous = JSON.parse(await readFile(outputPath, "utf8")); } catch (_) {}
 
 const decodeHtml = value => String(value || "")
   .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
@@ -64,6 +69,29 @@ async function crawl(program) {
   }
 }
 
-const results = await Promise.all((data.mirrorPrograms || []).map(crawl));
-await writeFile(outputPath, `${JSON.stringify({ generatedAt:new Date().toISOString(), reviewRequired:true, programs:results }, null, 2)}\n`);
-console.log(`Checked ${results.length} Mirror Voice programs; ${results.filter(item => item.status === "fetched").length} fetched.`);
+const rawResults = await Promise.all((data.mirrorPrograms || []).map(crawl));
+const outcome = classifyCrawlResults(rawResults, previous?.programs || []);
+const output = { generatedAt:new Date().toISOString(), reviewRequired:true, programs:outcome.results };
+
+const summaryLines = [
+  "## Mirror Voice 節目爬蟲結果",
+  `- 來源總數：${outcome.totalSources}`,
+  `- 成功：${outcome.succeededCount}`,
+  `- 失敗：${outcome.failedCount}`
+];
+if (outcome.failed.length) {
+  summaryLines.push("", "### 失敗來源");
+  for (const item of outcome.failed) summaryLines.push(`- ${item.sourceId}（${item.url}）：${item.error}`);
+}
+console.log(summaryLines.join("\n"));
+if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `${summaryLines.join("\n")}\n`);
+
+if (outcome.allFailed) {
+  console.error("所有節目來源均抓取失敗，保留原檔，不寫入、不建立 commit。");
+  process.exitCode = 1;
+} else if (!previous || hasSubstantiveChange(previous, output)) {
+  await writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`);
+  console.log("資料有實質變化，已更新輸出檔。");
+} else {
+  console.log("僅執行時間不同，資料無實質變化，保留原檔，不寫入。");
+}

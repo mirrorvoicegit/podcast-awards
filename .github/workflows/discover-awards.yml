@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: podcast-awards-data-update
+  cancel-in-progress: false
+
 jobs:
   discover:
     runs-on: ubuntu-latest
@@ -17,9 +21,16 @@ jobs:
         with:
           node-version: "20"
       - run: node scripts/discover-awards.mjs
-      - run: |
+      - name: Commit and push if data changed
+        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/award-discovery-candidates.json
-          git diff --cached --quiet || git commit -m "chore: weekly award discovery scan"
-          git push
+          if git diff --cached --quiet; then
+            echo "No substantive data change; nothing to commit."
+            exit 0
+          fi
+          git commit -m "chore: weekly award discovery scan"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main

@@ -1,13 +1,16 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile, appendFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
+import { classifyQueryResults, mergeCandidates } from "./lib/discovery-outcome.mjs";
+import { hasSubstantiveChange } from "./lib/data-diff.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const readJson = async file => JSON.parse(await readFile(path.join(root, file), "utf8"));
 const config = await readJson("data/discovery-config.json");
 const awards = (await readJson("data/awards.json")).awards;
-let previous = { candidates:[] };
+let previous = null;
 try { previous = await readJson("data/award-discovery-candidates.json"); } catch (_) {}
+const previousCandidates = previous?.candidates || [];
 
 const decodeXml = value => String(value || "")
   .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
@@ -18,7 +21,7 @@ const decodeXml = value => String(value || "")
 const clean = value => decodeXml(value).replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
 const normalize = value => clean(value).toLocaleLowerCase("zh-Hant").replace(/第\d+屆/g, "").replace(/先生/g, "").replace(/[^\p{L}\p{N}]/gu, "");
 const element = (xml, name) => clean(xml.match(new RegExp(`<${name}[^>]*>([\\s\\S]*?)<\\/${name}>`, "i"))?.[1]);
-const previousByTitle = new Map((previous.candidates || []).map(item => [normalize(item.title), item]));
+const previousByTitle = new Map(previousCandidates.map(item => [normalize(item.title), item]));
 const knownNames = awards.flatMap(award => [award.name, ...(award.aliases || [])]).map(normalize).filter(name => name.length >= 4);
 
 function isKnown(title) {
@@ -49,18 +52,37 @@ async function search(query) {
 }
 
 const settled = await Promise.allSettled(config.queries.map(search));
-const errors = settled.flatMap((result,index) => result.status === "rejected" ? [{ query:config.queries[index], error:String(result.reason?.message || result.reason) }] : []);
-const found = settled.flatMap(result => result.status === "fulfilled" ? result.value : []);
-const excluded = title => config.excludedTitleTerms.some(term => title.toLocaleLowerCase("zh-Hant").includes(term.toLocaleLowerCase("zh-Hant")));
-const unique = new Map();
-for (const item of found) {
-  if (!item.title || !item.link || excluded(item.title)) continue;
-  const key = normalize(item.title);
-  if (!unique.has(key)) unique.set(key,item);
-}
+const outcome = classifyQueryResults(settled, config.queries);
 
-const candidates = [...unique.values()]
-  .sort((a,b) => (b.publishedAt || "").localeCompare(a.publishedAt || ""))
-  .slice(0,80);
-await writeFile(path.join(root,"data","award-discovery-candidates.json"), `${JSON.stringify({ generatedAt:new Date().toISOString(), reviewRequired:true, errors, candidates }, null, 2)}\n`);
-console.log(`Discovered ${candidates.length} candidates; ${candidates.filter(item => item.status === "review_needed").length} need review.`);
+const summaryLines = [
+  "## 獎項巡檢結果",
+  `- 查詢關鍵字總數：${outcome.totalSources}`,
+  `- 成功：${outcome.succeededCount}`,
+  `- 失敗：${outcome.failedQueries.length}`
+];
+if (outcome.failedQueries.length) {
+  summaryLines.push("", "### 失敗查詢");
+  for (const item of outcome.failedQueries) summaryLines.push(`- ${item.query}：${item.error}`);
+}
+console.log(summaryLines.join("\n"));
+if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `${summaryLines.join("\n")}\n`);
+
+if (outcome.allFailed) {
+  console.error("所有查詢均失敗，保留原檔，不寫入、不建立 commit。");
+  process.exitCode = 1;
+} else {
+  const candidates = mergeCandidates({
+    found:outcome.found,
+    previousCandidates,
+    failedQueries:outcome.failedQueries,
+    excludedTitleTerms:config.excludedTitleTerms,
+    normalize
+  });
+  const output = { generatedAt:new Date().toISOString(), reviewRequired:true, errors:outcome.failedQueries, candidates };
+  if (!previous || hasSubstantiveChange(previous, output)) {
+    await writeFile(path.join(root,"data","award-discovery-candidates.json"), `${JSON.stringify(output, null, 2)}\n`);
+    console.log("資料有實質變化，已更新輸出檔。");
+  } else {
+    console.log("僅執行時間不同，資料無實質變化，保留原檔，不寫入。");
+  }
+}
