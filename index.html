@@ -6,19 +6,19 @@
   <meta name="description" content="Podcast 報獎雷達：徵件截止、獎項追蹤與鏡好聽節目推薦" />
   <title>Podcast 報獎雷達</title>
   <meta name="theme-color" content="#ffffff" />
-  <link rel="icon" href="./radar-favicon.svg?v=20" type="image/svg+xml" sizes="any" />
-  <link rel="shortcut icon" href="./radar-favicon.svg?v=20" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=20" />
+  <link rel="icon" href="./radar-favicon.svg?v=21" type="image/svg+xml" sizes="any" />
+  <link rel="shortcut icon" href="./radar-favicon.svg?v=21" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css?v=21" />
 </head>
 <body>
   <header class="topbar">
-    <div class="brand"><img src="./radar-favicon.svg?v=20" alt="" /><h1>Podcast 報獎雷達</h1></div>
+    <div class="brand"><img src="./radar-favicon.svg?v=21" alt="" /><h1>Podcast 報獎雷達</h1></div>
     <div class="monitor-state"><span class="pulse"></span><strong>資料持續監控中</strong><span>最後整理 <time id="lastUpdated"></time></span></div>
   </header>
 
   <main class="main-view">
     <section class="intro">
-      <div><h2>徵件排程</h2><p>以截止日為核心，優先處理目前已公開報名資訊的獎項。</p></div>
+      <div><h2>徵件排程</h2></div>
       <div class="period"><span>資料區間</span><strong>2025.07 — 2026.08</strong></div>
     </section>
 
@@ -28,7 +28,6 @@
     </nav>
 
     <section class="controls" aria-label="篩選">
-      <label class="search"><span>搜尋</span><input id="searchInput" type="search" placeholder="獎項、主辦單位、主題" /></label>
       <label><span>地區</span><select id="regionFilter"><option value="all">全部地區</option><option value="台灣">台灣</option><option value="香港">香港</option></select></label>
     </section>
 
@@ -48,7 +47,7 @@
   <div class="panel-backdrop" id="panelBackdrop" hidden></div>
   <aside class="detail-panel" id="detailPanel" aria-live="polite" aria-hidden="true"></aside>
 
-  <footer><span>資料以官方公告為準；資格不明項目須經人工核實。</span><span>已截止項目會自動移入歷史紀錄。</span></footer>
-  <script type="module" src="./app.js?v=20"></script>
+  <footer><span>資料以官方公告為準，資格不明項目須經人工核對。</span><span>已截止項目會自動移入歷史紀錄。</span></footer>
+  <script type="module" src="./app.js?v=21"></script>
 </body>
 </html>

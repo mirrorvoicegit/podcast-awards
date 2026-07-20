@@ -1,8 +1,8 @@
-import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=20";
+import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=21";
 
-const state = { data:null, discoveries:[], query:"", region:"all", view:"upcoming", selected:null };
+const state = { data:null, discoveries:[], region:"all", view:"upcoming", selected:null };
 const $ = selector => document.querySelector(selector);
-const els = { list:$("#applicationList"), monitors:$("#monitorList"), monitorSection:$("#monitorSection"), discoveries:$("#discoveryList"), discoverySection:$("#discoverySection"), summary:$("#summary"), empty:$("#emptyState"), search:$("#searchInput"), region:$("#regionFilter"), detail:$("#detailPanel"), backdrop:$("#panelBackdrop"), updated:$("#lastUpdated"), upcomingCount:$("#upcomingCount"), archiveCount:$("#archiveCount") };
+const els = { list:$("#applicationList"), monitors:$("#monitorList"), monitorSection:$("#monitorSection"), discoveries:$("#discoveryList"), discoverySection:$("#discoverySection"), summary:$("#summary"), empty:$("#emptyState"), region:$("#regionFilter"), detail:$("#detailPanel"), backdrop:$("#panelBackdrop"), updated:$("#lastUpdated"), upcomingCount:$("#upcomingCount"), archiveCount:$("#archiveCount") };
 const dateText = new Intl.DateTimeFormat("zh-TW", { year:"numeric", month:"long", day:"numeric" });
 const shortDate = new Intl.DateTimeFormat("zh-TW", { month:"numeric", day:"numeric" });
 
@@ -14,7 +14,7 @@ function isOpen(application) { return application.openDate && localDate(applicat
 function daysRemaining(application) { return Math.ceil((localDate(application.deadline) - todayStart()) / 86400000); }
 function awardFor(id) { return state.data.awards.find(award => award.id === id); }
 function deadlineParts(value) { const date = localDate(value); return { month:String(date.getMonth() + 1).padStart(2,"0"), day:String(date.getDate()).padStart(2,"0") }; }
-function matchesFilters(award, extra="") { const q = state.query.trim().toLocaleLowerCase("zh-Hant"); const text = [award.name, award.organizer, award.topic, extra].join(" ").toLocaleLowerCase("zh-Hant"); return (!q || text.includes(q)) && (state.region === "all" || award.region === state.region); }
+function matchesFilters(award) { return state.region === "all" || award.region === state.region; }
 function yearMonth(value) { const date=localDate(value); return date ? `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,"0")}` : null; }
 function applicationReference(awardId) {
   const previous=(state.data.applications || []).filter(item=>item.awardId===awardId && item.deadline).sort((a,b)=>b.deadline.localeCompare(a.deadline))[0];
@@ -30,7 +30,7 @@ function applicationReference(awardId) {
 function applicationsForView() {
   return state.data.applications.filter(application => {
     const matchesView = state.view === "upcoming" ? !isClosed(application) && application.infoPublished : isClosed(application);
-    return matchesView && matchesFilters(awardFor(application.awardId), application.edition);
+    return matchesView && matchesFilters(awardFor(application.awardId));
   }).sort((a,b) => state.view === "upcoming" ? a.deadline.localeCompare(b.deadline) : b.deadline.localeCompare(a.deadline));
 }
 
@@ -70,12 +70,6 @@ function render() {
   els.empty.hidden = applications.length > 0 || (state.view === "upcoming" && monitorItems().length > 0);
 }
 
-function winnerBlock(awardId) {
-  const winners = (state.data.winners || []).filter(item => item.awardId === awardId);
-  if (!winners.length) return `<p class="winner-empty">得獎名單尚未完成官方來源爬取與人工核實。</p>`;
-  return `<div class="winner-list">${winners.map(item => `<div class="winner-item"><strong>${escapeHtml(item.program)}</strong><span>${escapeHtml(item.edition)} · ${escapeHtml(item.category)} · ${escapeHtml(item.rank)}</span></div>`).join("")}</div>`;
-}
-
 function recommendationBlock(awardId) {
   const fitMeta = {
     "高度相符":{ rank:3, className:"fit-high" },
@@ -111,11 +105,8 @@ function renderDetail(type,id) {
     <h2>${escapeHtml(award.name)}</h2>
     <p class="detail-organizer">${escapeHtml(award.organizer)}</p>
     ${deadlineBlock}
-    <section class="detail-section"><h3>Podcast 資格</h3><p><strong>${escapeHtml(award.eligibility)}</strong>。${escapeHtml(award.eligibilityNote)}</p></section>
     <section class="detail-section"><h3>參賽資訊</h3><dl class="detail-meta">${entryFeeRow}<div><dt>類別</dt><dd>${escapeHtml(award.category)}</dd></div><div><dt>主題</dt><dd>${escapeHtml(award.topic)}</dd></div><div><dt>可報主體</dt><dd>${escapeHtml(award.applicant)}</dd></div><div><dt>可信度</dt><dd>${escapeHtml(award.confidence)}</dd></div></dl></section>
-    <section class="detail-section"><h3>人工審核註記</h3><p>${escapeHtml(award.reviewNote)}</p></section>
     <section class="detail-section source-section"><a class="source-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">${sourceLabel} <span>↗</span></a></section>
-    <section class="detail-section"><h3>已核實得獎節目</h3>${winnerBlock(award.id)}</section>
     <section class="detail-section recommendation-section"><div class="detail-section-heading"><h3>鏡好聽節目建議</h3><span>內部初篩</span></div>${recommendationBlock(award.id)}</section>`;
   els.detail.classList.add("show"); els.detail.setAttribute("aria-hidden","false"); els.backdrop.hidden = false;
   els.detail.querySelector(".detail-close").addEventListener("click",closeDetail);
@@ -123,7 +114,7 @@ function renderDetail(type,id) {
 function closeDetail() { els.detail.classList.remove("show"); els.detail.setAttribute("aria-hidden","true"); els.backdrop.hidden = true; }
 function handleCardClick(event) { const card = event.target.closest("[data-type]"); if (card) renderDetail(card.dataset.type,card.dataset.id); }
 function bindEvents() {
-  els.search.addEventListener("input",event => { state.query=event.target.value; render(); }); els.region.addEventListener("change",event => { state.region=event.target.value; render(); });
+  els.region.addEventListener("change",event => { state.region=event.target.value; render(); });
   document.querySelector(".view-tabs").addEventListener("click",event => { const tab=event.target.closest("[data-view]"); if(!tab)return; state.view=tab.dataset.view; closeDetail(); render(); });
   els.list.addEventListener("click",handleCardClick); els.monitors.addEventListener("click",handleCardClick); els.backdrop.addEventListener("click",closeDetail); document.addEventListener("keydown",event => { if(event.key==="Escape")closeDetail(); });
 }
