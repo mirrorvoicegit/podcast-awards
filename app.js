@@ -92,7 +92,18 @@ function renderDetail(type,id) {
   const award = application ? awardFor(application.awardId) : awardFor(id); const statusClass = application ? (isClosed(application) ? "archive" : "") : "monitor";
   const statusText = application ? (isClosed(application) ? "歷史紀錄" : isOpen(application) ? "徵件中" : "報名資訊已公開") : "持續監控中";
   const deadlineBlock = application ? `<div class="detail-deadline"><span>徵件截止日</span><strong>${escapeHtml(dateText.format(localDate(application.deadline)))}</strong>${application.openDate ? `<span>開放報名：${escapeHtml(dateText.format(localDate(application.openDate)))}</span>` : ""}</div>` : "";
-  els.detail.innerHTML = `<div class="detail-top"><p class="detail-kicker">${escapeHtml(award.region)} · ${escapeHtml(award.type)}</p><button class="detail-close" aria-label="關閉詳細資料">關閉 ×</button></div><span class="detail-status ${statusClass}">${statusText}</span><h2>${escapeHtml(award.name)}</h2><p class="detail-organizer">${escapeHtml(award.organizer)}</p>${deadlineBlock}<section class="detail-section recommendation-section"><div class="detail-section-heading"><h3>鏡好聽節目建議</h3><span>內部初篩</span></div>${recommendationBlock(award.id)}</section><section class="detail-section"><h3>Podcast 資格</h3><p><strong>${escapeHtml(award.eligibility)}</strong>。${escapeHtml(award.eligibilityNote)}</p></section><section class="detail-section"><h3>參賽資訊</h3><dl class="detail-meta"><div><dt>類別</dt><dd>${escapeHtml(award.category)}</dd></div><div><dt>主題</dt><dd>${escapeHtml(award.topic)}</dd></div><div><dt>可報主體</dt><dd>${escapeHtml(award.applicant)}</dd></div><div><dt>可信度</dt><dd>${escapeHtml(award.confidence)}</dd></div></dl></section><section class="detail-section"><h3>人工審核註記</h3><p>${escapeHtml(award.reviewNote)}</p></section><section class="detail-section"><h3>已核實得獎節目</h3>${winnerBlock(award.id)}</section><a class="source-link" href="${escapeHtml(award.url)}" target="_blank" rel="noreferrer">查看官方來源 <span>↗</span></a>`;
+  els.detail.innerHTML = `
+    <div class="detail-top"><p class="detail-kicker">${escapeHtml(award.region)} · ${escapeHtml(award.type)}</p><button class="detail-close" aria-label="關閉詳細資料">關閉 ×</button></div>
+    <span class="detail-status ${statusClass}">${statusText}</span>
+    <h2>${escapeHtml(award.name)}</h2>
+    <p class="detail-organizer">${escapeHtml(award.organizer)}</p>
+    ${deadlineBlock}
+    <section class="detail-section"><h3>Podcast 資格</h3><p><strong>${escapeHtml(award.eligibility)}</strong>。${escapeHtml(award.eligibilityNote)}</p></section>
+    <section class="detail-section"><h3>參賽資訊</h3><dl class="detail-meta"><div><dt>類別</dt><dd>${escapeHtml(award.category)}</dd></div><div><dt>主題</dt><dd>${escapeHtml(award.topic)}</dd></div><div><dt>可報主體</dt><dd>${escapeHtml(award.applicant)}</dd></div><div><dt>可信度</dt><dd>${escapeHtml(award.confidence)}</dd></div></dl></section>
+    <section class="detail-section"><h3>人工審核註記</h3><p>${escapeHtml(award.reviewNote)}</p></section>
+    <a class="source-link" href="${escapeHtml(award.url)}" target="_blank" rel="noreferrer">查看官方來源 <span>↗</span></a>
+    <section class="detail-section"><h3>已核實得獎節目</h3>${winnerBlock(award.id)}</section>
+    <section class="detail-section recommendation-section"><div class="detail-section-heading"><h3>鏡好聽節目建議</h3><span>內部初篩</span></div>${recommendationBlock(award.id)}</section>`;
   els.detail.classList.add("show"); els.detail.setAttribute("aria-hidden","false"); els.backdrop.hidden = false;
   els.detail.querySelector(".detail-close").addEventListener("click",closeDetail);
 }
