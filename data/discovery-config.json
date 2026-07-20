@@ -1,0 +1,24 @@
+{
+  "frequency": "weekly",
+  "queries": [
+    "Podcast 新聞獎 徵件 台灣",
+    "Podcast 報導獎 報名 台灣",
+    "Podcast 聲音節目 競賽 徵件 台灣",
+    "音頻類 含Podcast 獎勵辦法",
+    "音頻類 新聞獎 徵件",
+    "聲音節目 評選 報名 台灣",
+    "Podcast類 獎 徵件 台灣",
+    "Podcast組 獎 報名 台灣",
+    "播客 獎項 徵件 台灣",
+    "音頻報道獎 中文 SOPA"
+  ],
+  "excludedTitleTerms": [
+    "大專院校學生",
+    "學生組",
+    "校園組",
+    "高中生",
+    "CPA中文播客獎",
+    "Asia Podcast Awards",
+    "亞洲播客大獎"
+  ]
+}

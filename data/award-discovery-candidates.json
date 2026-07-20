@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-07-20T00:00:00.000Z",
+  "reviewRequired": true,
+  "errors": [],
+  "candidates": [
+    {
+      "id": "discovery-tseng-hsu-pai-2026",
+      "title": "第52屆曾虛白新聞獎7/1徵件 鼓勵關注公共議題",
+      "link": "https://www.cna.com.tw/news/ahel/202606010039.aspx",
+      "publishedAt": "2026-06-01",
+      "matchedQuery": "音頻類 含Podcast 獎勵辦法",
+      "status": "known_award",
+      "note": "已確認公共服務報導獎設音頻類（含 Podcast），並納入 TW011。"
+    }
+  ]
+}

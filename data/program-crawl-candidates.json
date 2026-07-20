@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-07-20T00:00:00.000Z",
+  "reviewRequired": true,
+  "programs": [
+    {"sourceId":"250","url":"https://www.mirrorvoice.com.tw/podcasts/250","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"投資不踩雷【第二季】","category":"投資理財","host":"超馬芭樂","updatedAt":"2026-05-27"}},
+    {"sourceId":"184","url":"https://www.mirrorvoice.com.tw/podcasts/184","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"聲音筆記","updatedAt":"2026-07-11"}},
+    {"sourceId":"38","url":"https://www.mirrorvoice.com.tw/podcasts/38","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"娛樂住海邊","updatedAt":"2026-01-09"}},
+    {"sourceId":"223","url":"https://www.mirrorvoice.com.tw/podcasts/223","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"財經鏡來談","updatedAt":"2026-06-18"}},
+    {"sourceId":"44","url":"https://www.mirrorvoice.com.tw/podcasts/44","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"社會線上","updatedAt":"2026-06-17"}},
+    {"sourceId":"12","url":"https://www.mirrorvoice.com.tw/podcasts/12","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"鏡相人間","updatedAt":"2026-06-03"}},
+    {"sourceId":"37","url":"https://www.mirrorvoice.com.tw/podcasts/37","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"鏡爆點","updatedAt":"2025-10-28"}},
+    {"sourceId":"249","url":"https://www.mirrorvoice.com.tw/podcasts/249","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"裴社長吃喝玩樂","updatedAt":"2026-06-30"}},
+    {"sourceId":"46","url":"https://www.mirrorvoice.com.tw/podcasts/46","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"鏡錶誌","updatedAt":"2025-10-03"}}
+  ]
+}

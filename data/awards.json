@@ -11,6 +11,7 @@
     {"id":"TW008","name":"銀響力新聞獎","region":"台灣","organizer":"弘道老人福利基金會","type":"NGO 主題新聞獎","eligibility":"明確可報","eligibilityNote":"廣播及網路音頻類包含 Podcast。","category":"廣播及網路音頻類","topic":"高齡、長照、社會關懷","applicant":"高齡相關新聞報導之媒體工作者","confidence":"中｜結果日期待補","reviewNote":"2026 截止與得獎日需持續監測。","url":"https://jia-elderly.com/"},
     {"id":"TW009","name":"消費者權益報導獎","region":"台灣","organizer":"行政院消費者保護處等單位","type":"主題新聞獎","eligibility":"有條件可報","eligibilityNote":"Podcast 可能納入融媒體或其他類別，需依當屆簡章確認。","category":"融媒體報導獎等","topic":"消費權益、詐騙、食安","applicant":"消費權益相關公開報導","confidence":"低｜2026 尚未公告","reviewNote":"不得自動對外標示為可報。","url":"https://www.mediawatch.org.tw/news/category/8"},
     {"id":"TW010","name":"臺灣醫療報導獎","region":"台灣","organizer":"中華民國醫師公會全國聯合會","type":"專業主題報導獎","eligibility":"有條件可報","eligibilityNote":"已有 Podcast 以新媒體類獲獎；當屆仍依規則核對。","category":"新媒體類","topic":"醫療、醫病關係、健康政策","applicant":"自然人及國內依法設立媒體資格","confidence":"高｜官方當屆頁","reviewNote":"徵件開始日待補。","url":"https://www.tma.tw/med_paragonAY2026/"},
+    {"id":"TW011","name":"曾虛白先生新聞獎","region":"台灣","organizer":"財團法人曾虛白先生新聞獎基金會","type":"專業新聞獎","eligibility":"明確設有 Podcast 類","eligibilityNote":"公共服務報導獎設音頻類（含 Podcast）；地方創生報導獎亦接受音頻（含 Podcast）。","category":"公共服務報導獎－音頻類（含 Podcast）","topic":"時事、社會公益、公共服務、地方創生","applicant":"依法設立新聞媒體或專業新聞網站之新聞從業人員；機構報名須開立證明","confidence":"高｜2026 官方獎勵辦法","reviewNote":"鏡好聽／鏡週刊應以機構身分確認報名證明；同一機構同一獎項上限 5 件。學生專屬獎項不列入。","url":"https://www.cna.com.tw/project/thp_award/guideline_2026.html"},
     {"id":"HK004","name":"亞洲出版業協會卓越新聞獎（SOPA）","region":"香港","organizer":"Society of Publishers in Asia","type":"亞洲專業新聞獎","eligibility":"明確可報","eligibilityNote":"依使用者指定保留；中文作品有獨立語言組，並設卓越音頻報道獎。","category":"卓越音頻報道獎","topic":"政治、經濟、社會、文化新聞","applicant":"中文或英文合資格新聞出版／網路媒體","confidence":"高｜2026 官方規則","reviewNote":"雖涵蓋全亞洲，依專案篩選規則僅保留此獎項。","url":"https://sopawards.com/"}
   ],
   "timeline": [
@@ -46,7 +47,76 @@
     {"id":"e30","awardId":"TW005","date":null,"phase":"monitor","label":"2026 時程待公告","note":"持續監測主辦官方網站"},
     {"id":"e31","awardId":"TW009","date":null,"phase":"monitor","label":"2026 時程待公告","note":"Podcast 資格須當屆人工確認"},
     {"id":"e32","awardId":"TW002","date":"2026-08-03","phase":"open","label":"開始徵件","note":"第 25 屆卓越新聞獎（下一輪）"},
-    {"id":"e33","awardId":"TW002","date":"2026-08-12","phase":"open","label":"徵件截止","note":"第 25 屆卓越新聞獎（下一輪）"}
+    {"id":"e33","awardId":"TW002","date":"2026-08-12","phase":"open","label":"徵件截止","note":"第 25 屆卓越新聞獎（下一輪）"},
+    {"id":"e34","awardId":"TW008","date":null,"phase":"monitor","label":"2026 截止與結果待確認","note":"持續監測官方網站"}
+    ,{"id":"e35","awardId":"TW011","date":"2025-07-01","phase":"open","label":"開始徵件","note":"第 51 屆曾虛白先生新聞獎"}
+    ,{"id":"e36","awardId":"TW011","date":"2025-07-15","phase":"open","label":"徵件截止","note":"第 51 屆曾虛白先生新聞獎"}
+    ,{"id":"e37","awardId":"TW011","date":"2026-07-01","phase":"open","label":"開始徵件","note":"第 52 屆曾虛白先生新聞獎"}
+    ,{"id":"e38","awardId":"TW011","date":"2026-07-15","phase":"open","label":"徵件截止","note":"第 52 屆曾虛白先生新聞獎"}
+  ],
+  "applications": [
+    {"id":"app-TW002-2025","awardId":"TW002","edition":"2025 第24屆","infoPublished":true,"openDate":"2025-08-01","deadline":"2025-08-10"},
+    {"id":"app-TW005-2025","awardId":"TW005","edition":"2025 優質聲音節目競賽","infoPublished":true,"openDate":"2025-08-02","deadline":"2025-10-01"},
+    {"id":"app-HK004-2026","awardId":"HK004","edition":"2026 SOPA","infoPublished":true,"openDate":"2025-12-01","deadline":"2026-02-26"},
+    {"id":"app-TW010-2025","awardId":"TW010","edition":"2025／114年","infoPublished":true,"openDate":null,"deadline":"2025-07-15"},
+    {"id":"app-TW001-2026","awardId":"TW001","edition":"2026 第61屆","infoPublished":true,"openDate":"2026-04-10","deadline":"2026-05-08"},
+    {"id":"app-TW006-2026","awardId":"TW006","edition":"2026 第26屆","infoPublished":true,"openDate":null,"deadline":"2026-06-01"},
+    {"id":"app-TW004-2026","awardId":"TW004","edition":"2026 第5屆","infoPublished":true,"openDate":"2026-04-10","deadline":"2026-06-21"},
+    {"id":"app-TW007-2026","awardId":"TW007","edition":"2026 第10屆","infoPublished":true,"openDate":"2026-06-01","deadline":"2026-06-30"},
+    {"id":"app-TW003-2026","awardId":"TW003","edition":"2026 第11屆","infoPublished":true,"openDate":"2026-04-01","deadline":"2026-07-03"},
+    {"id":"app-TW010-2026","awardId":"TW010","edition":"2026／115年","infoPublished":true,"openDate":null,"deadline":"2026-07-15"},
+    {"id":"app-TW011-2025","awardId":"TW011","edition":"2025 第51屆","infoPublished":true,"openDate":"2025-07-01","deadline":"2025-07-15"},
+    {"id":"app-TW011-2026","awardId":"TW011","edition":"2026 第52屆","infoPublished":true,"openDate":"2026-07-01","deadline":"2026-07-15"},
+    {"id":"app-TW002-2026","awardId":"TW002","edition":"2026 第25屆","infoPublished":true,"openDate":"2026-08-03","deadline":"2026-08-12"}
+  ],
+  "mirrorPrograms": [
+    {"id":"MV250","sourceId":"250","name":"投資不踩雷【第二季】","url":"https://www.mirrorvoice.com.tw/podcasts/250","category":"投資理財","host":"超馬芭樂","updatedAt":"2026-05-27","tags":["投資理財","財經","台股分析","ETF","投資心法"],"summary":"用市場經驗拆解投資邏輯、ETF、資產配置與風險判斷。","crawlStatus":"verified"},
+    {"id":"MV184","sourceId":"184","name":"聲音筆記","url":"https://www.mirrorvoice.com.tw/podcasts/184","category":"文學生活","host":"鏡好聽","updatedAt":"2026-07-11","tags":["作家","有聲書","出版","文化"],"summary":"分享有聲書內容、閱讀觀點與生活中的聲音陪伴。","crawlStatus":"verified"},
+    {"id":"MV038","sourceId":"38","name":"娛樂住海邊","url":"https://www.mirrorvoice.com.tw/podcasts/38","category":"影視娛樂","host":"宋姐、子薇","updatedAt":"2026-01-09","tags":["娛樂產業","戲劇","電影","動漫","日韓","遊戲"],"summary":"討論影視、娛樂產業與流行文化。","crawlStatus":"verified"},
+    {"id":"MV223","sourceId":"223","name":"財經鏡來談","url":"https://www.mirrorvoice.com.tw/podcasts/223","category":"投資理財","host":"鏡週刊理財組、財經組","updatedAt":"2026-06-18","tags":["財經新聞","產業","投資","房市","保險"],"summary":"以新聞與產業角度解析市場、投資、房市與保險議題。","crawlStatus":"verified"},
+    {"id":"MV044","sourceId":"44","name":"社會線上","url":"https://www.mirrorvoice.com.tw/podcasts/44","category":"新聞直擊","host":"鏡週刊社會組","updatedAt":"2026-06-17","tags":["社會新聞","刑案","警政","環境","工安"],"summary":"追蹤刑案、警政、環境、工安與社會現場。","crawlStatus":"verified"},
+    {"id":"MV012","sourceId":"12","name":"鏡相人間","url":"https://www.mirrorvoice.com.tw/podcasts/12","category":"新聞直擊","host":"鏡週刊人物組","updatedAt":"2026-06-03","tags":["人物","移工","長照","人權","社會議題"],"summary":"以人物故事呈現人權、移工、高齡照顧及各類社會議題。","crawlStatus":"verified"},
+    {"id":"MV037","sourceId":"37","name":"鏡爆點","url":"https://www.mirrorvoice.com.tw/podcasts/37","category":"新聞直擊","host":"鏡週刊調查組","updatedAt":"2025-10-28","tags":["調查報導","司法","政治","公共議題"],"summary":"以調查報導切入司法、政治與重大公共事件。","crawlStatus":"verified"},
+    {"id":"MV249","sourceId":"249","name":"裴社長吃喝玩樂","url":"https://www.mirrorvoice.com.tw/podcasts/249","category":"生活風格","host":"裴偉","updatedAt":"2026-06-30","tags":["美食","旅行","生活風格"],"summary":"以美食、旅行與生活經驗為主題。","crawlStatus":"verified"},
+    {"id":"MV046","sourceId":"46","name":"鏡錶誌","url":"https://www.mirrorvoice.com.tw/podcasts/46","category":"生活風格","host":"鏡錶誌","updatedAt":"2025-10-03","tags":["腕錶","精品","品牌","消費"],"summary":"介紹腕錶、精品品牌與市場趨勢。","crawlStatus":"verified"}
+  ],
+  "programRecommendations": [
+    {"awardId":"TW001","programId":"MV012","fit":"優先檢視","reason":"人物敘事完整，具議題深度與聲音製作發揮空間。"},
+    {"awardId":"TW001","programId":"MV044","fit":"優先檢視","reason":"新聞現場與社會題材可對應新聞類 Podcast 作品。"},
+    {"awardId":"TW001","programId":"MV184","fit":"可檢視","reason":"文化與出版內容適合從主持、敘事及聲音設計角度挑選代表集。"},
+    {"awardId":"TW001","programId":"MV250","fit":"可檢視","reason":"財經知識內容可依當屆類別，從主持表現、企畫與聲音製作挑選代表集。"},
+    {"awardId":"TW002","programId":"MV044","fit":"高度相符","reason":"節目定位為社會新聞，適合檢查 Podcast 新聞節目獎資格。"},
+    {"awardId":"TW002","programId":"MV037","fit":"高度相符","reason":"調查報導與司法、政治公共議題直接符合新聞獎方向。"},
+    {"awardId":"TW002","programId":"MV012","fit":"高度相符","reason":"人物報導涵蓋人權、移工與長照等公共議題。"},
+    {"awardId":"TW002","programId":"MV223","fit":"可檢視","reason":"財經新聞與產業分析可依單集報導性及原創採訪程度評估。"},
+    {"awardId":"TW003","programId":"MV037","fit":"高度相符","reason":"調查與司法題材最接近平冤獎關注的冤案及刑事司法。"},
+    {"awardId":"TW003","programId":"MV044","fit":"可檢視","reason":"刑案與警政內容可能符合，需以單集是否聚焦冤案或刑事司法判斷。"},
+    {"awardId":"TW003","programId":"MV012","fit":"可檢視","reason":"人權與人物報導可能相符，需確認是否涉及冤案或司法改革。"},
+    {"awardId":"TW005","programId":"MV249","fit":"高度相符","reason":"生活風格定位清楚，可挑選具完整企畫與聲音表現的單集。"},
+    {"awardId":"TW005","programId":"MV184","fit":"高度相符","reason":"文學出版與有聲書主題符合優質聲音內容方向。"},
+    {"awardId":"TW005","programId":"MV250","fit":"高度相符","reason":"投資理財知識定位清楚，適合依競賽類別挑選具完整企畫的代表集。"},
+    {"awardId":"TW005","programId":"MV223","fit":"可檢視","reason":"財經內容可依當屆競賽類別與單集企畫選件。"},
+    {"awardId":"TW005","programId":"MV046","fit":"可檢視","reason":"生活風格與品牌內容方向可能符合，仍需核對當屆類別。"},
+    {"awardId":"TW007","programId":"MV012","fit":"可檢視","reason":"移工、長照與社會包容題材可對應 SDGs，需選定具報導性的單集。"},
+    {"awardId":"TW007","programId":"MV044","fit":"可檢視","reason":"環境、工安等單集可對應永續議題。"},
+    {"awardId":"TW007","programId":"MV223","fit":"可檢視","reason":"產業與金融內容若聚焦永續轉型或責任投資可納入候選。"},
+    {"awardId":"TW008","programId":"MV012","fit":"高度相符","reason":"高齡與長照人物報導直接符合銀響力關注主題。"},
+    {"awardId":"TW008","programId":"MV044","fit":"可檢視","reason":"若有高齡照護或老人權益相關單集，可進一步檢查。"},
+    {"awardId":"TW009","programId":"MV223","fit":"高度相符","reason":"投資、房市與保險內容可能涉及消費者權益與金融風險。"},
+    {"awardId":"TW009","programId":"MV250","fit":"可檢視","reason":"ETF、投資風險與金融知識題材可能涉及投資人權益，需以報導性單集判斷。"},
+    {"awardId":"TW009","programId":"MV044","fit":"可檢視","reason":"詐騙、食安或消費爭議相關單集可能符合。"},
+    {"awardId":"TW009","programId":"MV037","fit":"可檢視","reason":"調查報導若涉及重大消費爭議，可列為候選。"},
+    {"awardId":"TW010","programId":"MV012","fit":"高度相符","reason":"長照、醫病與人物故事可對應醫療報導方向。"},
+    {"awardId":"TW010","programId":"MV044","fit":"可檢視","reason":"醫療事件、公共衛生或醫療制度相關單集可能符合。"},
+    {"awardId":"TW011","programId":"MV044","fit":"高度相符","reason":"社會新聞與公共利益報導直接符合公共服務報導獎方向。"},
+    {"awardId":"TW011","programId":"MV037","fit":"高度相符","reason":"司法、政治與重大公共事件的調查報導適合優先選件。"},
+    {"awardId":"TW011","programId":"MV012","fit":"高度相符","reason":"人權、移工與長照人物報導兼具社會關懷及公共服務價值。"},
+    {"awardId":"TW011","programId":"MV223","fit":"可檢視","reason":"若單集具原創採訪並處理重大財經公共議題，可列為候選。"},
+    {"awardId":"TW011","programId":"MV250","fit":"可檢視","reason":"投資人教育具公共服務價值，但需確認單集具新聞報導性與原創採訪。"},
+    {"awardId":"HK004","programId":"MV037","fit":"高度相符","reason":"調查報導及重大公共議題符合專業新聞與音頻報道方向。"},
+    {"awardId":"HK004","programId":"MV044","fit":"高度相符","reason":"社會新聞與現場報導適合進一步核對音頻報道類資格。"},
+    {"awardId":"HK004","programId":"MV012","fit":"高度相符","reason":"具深度的人物與公共議題報導可作為中文作品候選。"},
+    {"awardId":"HK004","programId":"MV223","fit":"可檢視","reason":"原創財經調查或深度產業報導可依單集內容評估。"}
   ],
   "winners": []
 }
