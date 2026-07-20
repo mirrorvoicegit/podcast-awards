@@ -167,7 +167,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
 .discovery-state { color:var(--muted); font-size:var(--text-sm); font-weight:500; white-space:nowrap; }
 .empty { margin-top:28px; padding:64px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); color:var(--muted); text-align:center; font-size:var(--text-base); }
 
-.panel-backdrop { position:fixed; z-index:10; inset:0; background:#0000001f; backdrop-filter:none; }
+.panel-backdrop { position:fixed; z-index:10; inset:0; background:transparent; }
 .detail-panel {
   display:none;
   position:fixed;
