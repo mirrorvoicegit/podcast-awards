@@ -1,4 +1,4 @@
-import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=19";
+import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=20";
 
 const state = { data:null, discoveries:[], query:"", region:"all", view:"upcoming", selected:null };
 const $ = selector => document.querySelector(selector);
@@ -101,8 +101,10 @@ function renderDetail(type,id) {
   const statusText = application ? (isClosed(application) ? "歷史紀錄" : isOpen(application) ? "徵件中" : "報名資訊已公開") : "持續監控中";
   const reference=applicationReference(award.id);
   const deadlineBlock = application ? `<div class="detail-deadline"><span>徵件截止日</span><strong>${escapeHtml(dateText.format(localDate(application.deadline)))}</strong>${application.openDate ? `<span>開放報名：${escapeHtml(dateText.format(localDate(application.openDate)))}</span>` : ""}</div>` : reference ? `<div class="detail-deadline monitor-reference"><span>最近一屆徵件月份</span><strong>${escapeHtml(reference)}</strong><span>僅供預排工作參考，仍以本屆公告為準。</span></div>` : "";
-  const entryFee=application?.entryFee || (application ? "待官方確認" : "待當屆公告");
   const entryFeeLink=application?.entryFeeUrl ? ` <a class="meta-link" href="${escapeHtml(application.entryFeeUrl)}" target="_blank" rel="noreferrer">費用來源 ↗</a>` : "";
+  const entryFeeRow=application?.entryFee ? `<div><dt>報名費</dt><dd>${escapeHtml(application.entryFee)}${entryFeeLink}</dd></div>` : "";
+  const sourceUrl=application?.sourceUrl || award.url;
+  const sourceLabel=application?.sourceUrl ? "查看本屆徵件公告" : "查看獎項官方網站";
   els.detail.innerHTML = `
     <div class="detail-top"><p class="detail-kicker">${escapeHtml(award.region)} · ${escapeHtml(award.type)}</p><button class="detail-close" aria-label="關閉詳細資料">關閉 ×</button></div>
     <span class="detail-status ${statusClass}">${statusText}</span>
@@ -110,9 +112,9 @@ function renderDetail(type,id) {
     <p class="detail-organizer">${escapeHtml(award.organizer)}</p>
     ${deadlineBlock}
     <section class="detail-section"><h3>Podcast 資格</h3><p><strong>${escapeHtml(award.eligibility)}</strong>。${escapeHtml(award.eligibilityNote)}</p></section>
-    <section class="detail-section"><h3>參賽資訊</h3><dl class="detail-meta"><div><dt>報名費</dt><dd>${escapeHtml(entryFee)}${entryFeeLink}</dd></div><div><dt>類別</dt><dd>${escapeHtml(award.category)}</dd></div><div><dt>主題</dt><dd>${escapeHtml(award.topic)}</dd></div><div><dt>可報主體</dt><dd>${escapeHtml(award.applicant)}</dd></div><div><dt>可信度</dt><dd>${escapeHtml(award.confidence)}</dd></div></dl></section>
+    <section class="detail-section"><h3>參賽資訊</h3><dl class="detail-meta">${entryFeeRow}<div><dt>類別</dt><dd>${escapeHtml(award.category)}</dd></div><div><dt>主題</dt><dd>${escapeHtml(award.topic)}</dd></div><div><dt>可報主體</dt><dd>${escapeHtml(award.applicant)}</dd></div><div><dt>可信度</dt><dd>${escapeHtml(award.confidence)}</dd></div></dl></section>
     <section class="detail-section"><h3>人工審核註記</h3><p>${escapeHtml(award.reviewNote)}</p></section>
-    <section class="detail-section source-section"><a class="source-link" href="${escapeHtml(award.url)}" target="_blank" rel="noreferrer">查看官方來源 <span>↗</span></a></section>
+    <section class="detail-section source-section"><a class="source-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">${sourceLabel} <span>↗</span></a></section>
     <section class="detail-section"><h3>已核實得獎節目</h3>${winnerBlock(award.id)}</section>
     <section class="detail-section recommendation-section"><div class="detail-section-heading"><h3>鏡好聽節目建議</h3><span>內部初篩</span></div>${recommendationBlock(award.id)}</section>`;
   els.detail.classList.add("show"); els.detail.setAttribute("aria-hidden","false"); els.backdrop.hidden = false;
