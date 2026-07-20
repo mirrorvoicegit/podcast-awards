@@ -1,15 +1,132 @@
 {
-  "generatedAt": "2026-07-20T00:00:00.000Z",
+  "generatedAt": "2026-07-20T17:31:47.373Z",
   "reviewRequired": true,
   "programs": [
-    {"sourceId":"250","url":"https://www.mirrorvoice.com.tw/podcasts/250","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"投資不踩雷【第二季】","category":"投資理財","host":"超馬芭樂","updatedAt":"2026-05-27"}},
-    {"sourceId":"184","url":"https://www.mirrorvoice.com.tw/podcasts/184","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"聲音筆記","updatedAt":"2026-07-11"}},
-    {"sourceId":"38","url":"https://www.mirrorvoice.com.tw/podcasts/38","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"娛樂住海邊","updatedAt":"2026-01-09"}},
-    {"sourceId":"223","url":"https://www.mirrorvoice.com.tw/podcasts/223","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"財經鏡來談","updatedAt":"2026-06-18"}},
-    {"sourceId":"44","url":"https://www.mirrorvoice.com.tw/podcasts/44","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"社會線上","updatedAt":"2026-06-17"}},
-    {"sourceId":"12","url":"https://www.mirrorvoice.com.tw/podcasts/12","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"鏡相人間","updatedAt":"2026-06-03"}},
-    {"sourceId":"37","url":"https://www.mirrorvoice.com.tw/podcasts/37","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"鏡爆點","updatedAt":"2025-10-28"}},
-    {"sourceId":"249","url":"https://www.mirrorvoice.com.tw/podcasts/249","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"裴社長吃喝玩樂","updatedAt":"2026-06-30"}},
-    {"sourceId":"46","url":"https://www.mirrorvoice.com.tw/podcasts/46","status":"verified","checkedAt":"2026-07-20T00:00:00.000Z","candidate":{"name":"鏡錶誌","updatedAt":"2025-10-03"}}
+    {
+      "sourceId": "250",
+      "url": "https://www.mirrorvoice.com.tw/podcasts/250",
+      "status": "fetched",
+      "checkedAt": "2026-07-20T17:31:45.491Z",
+      "httpStatus": 200,
+      "candidate": {
+        "name": "投資不踩雷【第二季】",
+        "description": "投資市場風大雨大，不想踩雷，得先搞懂背後的邏輯！",
+        "image": "https://storage-cdn.mirrorvoice.com.tw/p/250/og/114236/4rAt1bw8j2ND3fD0.jpg",
+        "updatedAt": "2026-07-20",
+        "episodes": []
+      }
+    },
+    {
+      "sourceId": "184",
+      "url": "https://www.mirrorvoice.com.tw/podcasts/184",
+      "status": "fetched",
+      "checkedAt": "2026-07-20T17:31:45.551Z",
+      "httpStatus": 200,
+      "candidate": {
+        "name": "聲音筆記",
+        "description": "在行進中陪伴，在獨處時對話，用聲音滋養生活，讓聲音豐富視野。",
+        "image": "https://storage-cdn.mirrorvoice.com.tw/p/184/og/113041/FPeW0VZMx3swJdON.jpg",
+        "updatedAt": "2026-07-18",
+        "episodes": []
+      }
+    },
+    {
+      "sourceId": "38",
+      "url": "https://www.mirrorvoice.com.tw/podcasts/38",
+      "status": "fetched",
+      "checkedAt": "2026-07-20T17:31:45.552Z",
+      "httpStatus": 200,
+      "candidate": {
+        "name": "娛樂住海邊",
+        "description": "影劇、動漫、音樂、遊戲，娛樂產業的大小事，就是我們的事！網路看不到的精彩 bonus 通通在這裡！",
+        "image": "https://storage-cdn.mirrorvoice.com.tw/p/38/og/110665/EkIFePyzjD17OXG3.jpg",
+        "updatedAt": "2026-07-17",
+        "episodes": []
+      }
+    },
+    {
+      "sourceId": "223",
+      "url": "https://www.mirrorvoice.com.tw/podcasts/223",
+      "status": "fetched",
+      "checkedAt": "2026-07-20T17:31:45.553Z",
+      "httpStatus": 200,
+      "candidate": {
+        "name": "財經鏡來談",
+        "description": "打開財經視野，洞悉產業趨勢，歡迎收聽由鏡好聽與《鏡週刊》共同製作播出的《財經鏡來談》。",
+        "image": "https://storage-cdn.mirrorvoice.com.tw/p/223/og/97141/CWQwoIOMBCnsj1cH.jpg",
+        "updatedAt": "2026-07-16",
+        "episodes": []
+      }
+    },
+    {
+      "sourceId": "44",
+      "url": "https://www.mirrorvoice.com.tw/podcasts/44",
+      "status": "fetched",
+      "checkedAt": "2026-07-20T17:31:45.554Z",
+      "httpStatus": 200,
+      "candidate": {
+        "name": "社會線上",
+        "description": "當我們走在社會線上，數年前發生的刑案，有什麼樣曲折離奇的過程？警方偵破案件的關鍵是什麼？",
+        "image": "https://storage-cdn.mirrorvoice.com.tw/p/44/og/21772/CUqGoyrCbESZH5Dz.jpg",
+        "updatedAt": "2026-07-15",
+        "episodes": []
+      }
+    },
+    {
+      "sourceId": "12",
+      "url": "https://www.mirrorvoice.com.tw/podcasts/12",
+      "status": "fetched",
+      "checkedAt": "2026-07-20T17:31:45.555Z",
+      "httpStatus": 200,
+      "candidate": {
+        "name": "鏡相人間",
+        "description": "一樣米養百樣人，有多少人，就有多少種生命故事。歡迎收聽由鏡好聽與鏡週刊共同製播的《鏡相人間》。",
+        "image": "https://storage-cdn.mirrorvoice.com.tw/p/12/og/3316/KoHlHatzPhoCO8de.jpg",
+        "updatedAt": "2026-07-15",
+        "episodes": []
+      }
+    },
+    {
+      "sourceId": "37",
+      "url": "https://www.mirrorvoice.com.tw/podcasts/37",
+      "status": "fetched",
+      "checkedAt": "2026-07-20T17:31:45.556Z",
+      "httpStatus": 200,
+      "candidate": {
+        "name": "鏡爆點",
+        "description": "還原調查過程，揭露報導秘辛，歡迎收聽由《鏡好聽》與《鏡週刊》共同製作播出的《鏡爆點》。",
+        "image": "https://storage-cdn.mirrorvoice.com.tw/p/37/og/3320/n0A2pRSlAGHxINHp.jpg",
+        "updatedAt": "2026-07-14",
+        "episodes": []
+      }
+    },
+    {
+      "sourceId": "249",
+      "url": "https://www.mirrorvoice.com.tw/podcasts/249",
+      "status": "fetched",
+      "checkedAt": "2026-07-20T17:31:45.556Z",
+      "httpStatus": 200,
+      "candidate": {
+        "name": "裴社長吃喝玩樂",
+        "description": "生活再忙，都要過得有滋有味！ ——裴偉跨界主持Podcast",
+        "image": "https://storage-cdn.mirrorvoice.com.tw/p/249/og/126580/MiWBoD0ztXRn9RFB.jpg",
+        "updatedAt": "2026-07-21",
+        "episodes": []
+      }
+    },
+    {
+      "sourceId": "46",
+      "url": "https://www.mirrorvoice.com.tw/podcasts/46",
+      "status": "fetched",
+      "checkedAt": "2026-07-20T17:31:45.557Z",
+      "httpStatus": 200,
+      "candidate": {
+        "name": "鏡錶誌",
+        "description": "滴答滴答，循著聲音的軌跡，航向鐘錶的小宇宙。歡迎收聽由《鏡好聽》與《鏡週刊》共同製播的《鏡錶誌》。",
+        "image": null,
+        "updatedAt": "2026-07-20",
+        "episodes": []
+      }
+    }
   ]
 }
