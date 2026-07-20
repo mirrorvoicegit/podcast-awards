@@ -1,8 +1,8 @@
-import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=23";
+import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=24";
 
-const state = { data:null, discoveries:[], region:"all", view:"upcoming", selected:null };
+const state = { data:null, discoveries:[], view:"upcoming", selected:null };
 const $ = selector => document.querySelector(selector);
-const els = { list:$("#applicationList"), monitors:$("#monitorList"), monitorSection:$("#monitorSection"), discoveries:$("#discoveryList"), discoverySection:$("#discoverySection"), summary:$("#summary"), empty:$("#emptyState"), region:$("#regionFilter"), detail:$("#detailPanel"), backdrop:$("#panelBackdrop"), updated:$("#lastUpdated"), upcomingCount:$("#upcomingCount"), archiveCount:$("#archiveCount") };
+const els = { list:$("#applicationList"), monitors:$("#monitorList"), monitorSection:$("#monitorSection"), discoveries:$("#discoveryList"), discoverySection:$("#discoverySection"), summary:$("#summary"), empty:$("#emptyState"), detail:$("#detailPanel"), backdrop:$("#panelBackdrop"), updated:$("#lastUpdated"), upcomingCount:$("#upcomingCount"), archiveCount:$("#archiveCount") };
 const dateText = new Intl.DateTimeFormat("zh-TW", { year:"numeric", month:"long", day:"numeric" });
 const shortDate = new Intl.DateTimeFormat("zh-TW", { month:"numeric", day:"numeric" });
 
@@ -14,7 +14,7 @@ function isOpen(application) { return application.openDate && localDate(applicat
 function daysRemaining(application) { return Math.ceil((localDate(application.deadline) - todayStart()) / 86400000); }
 function awardFor(id) { return state.data.awards.find(award => award.id === id); }
 function deadlineParts(value) { const date = localDate(value); return { month:String(date.getMonth() + 1).padStart(2,"0"), day:String(date.getDate()).padStart(2,"0") }; }
-function matchesFilters(award) { return state.region === "all" || award.region === state.region; }
+function matchesFilters() { return true; }
 function yearMonth(value) { const date=localDate(value); return date ? `${date.getFullYear()}.${String(date.getMonth()+1).padStart(2,"0")}` : null; }
 function applicationReference(awardId) {
   const previous=(state.data.applications || []).filter(item=>item.awardId===awardId && item.deadline).sort((a,b)=>b.deadline.localeCompare(a.deadline))[0];
@@ -114,7 +114,6 @@ function renderDetail(type,id) {
 function closeDetail() { els.detail.classList.remove("show"); els.detail.setAttribute("aria-hidden","true"); els.backdrop.hidden = true; }
 function handleCardClick(event) { const card = event.target.closest("[data-type]"); if (card) renderDetail(card.dataset.type,card.dataset.id); }
 function bindEvents() {
-  els.region.addEventListener("change",event => { state.region=event.target.value; render(); });
   document.querySelector(".view-tabs").addEventListener("click",event => { const tab=event.target.closest("[data-view]"); if(!tab)return; state.view=tab.dataset.view; closeDetail(); render(); });
   els.list.addEventListener("click",handleCardClick); els.monitors.addEventListener("click",handleCardClick); els.backdrop.addEventListener("click",closeDetail); document.addEventListener("keydown",event => { if(event.key==="Escape")closeDetail(); });
 }

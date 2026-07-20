@@ -81,23 +81,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible { 
 .view-tab.active { color:var(--ink); border-bottom-color:var(--ink); }
 .view-tab span { margin-left:6px; color:inherit; font-size:var(--text-xs); }
 
-.list-meta { min-height:52px; display:flex; align-items:center; justify-content:space-between; gap:30px; margin-top:16px; }
-.controls { display:flex; justify-content:flex-end; margin:0; }
-.controls label { display:flex; align-items:center; gap:10px; color:var(--muted); font-size:var(--text-xs); font-weight:500; }
-.controls select {
-  width:142px;
-  height:36px;
-  padding:0 2px;
-  border:0;
-  border-bottom:1px solid var(--line);
-  border-radius:0;
-  outline:0;
-  background:#ffffff;
-  color:var(--ink);
-  font-size:var(--text-base);
-}
-.controls select:focus { border-bottom-color:var(--ink); }
-.summary { color:var(--muted); font-size:var(--text-sm); line-height:1.6; }
+.summary { margin-top:20px; color:var(--muted); font-size:var(--text-sm); line-height:1.6; }
 
 .application-list { display:grid; margin-top:10px; border-top:1px solid var(--line); }
 .application-card {
@@ -284,8 +268,6 @@ footer { width:min(1060px,calc(100% - 48px)); display:flex; justify-content:spac
   .intro p { font-size:var(--text-base); }
   .period { text-align:left; }
   .view-tabs { margin-top:30px; }
-  .list-meta { min-height:0; align-items:flex-start; flex-direction:column-reverse; gap:12px; margin:16px 0 0; }
-  .controls { align-self:flex-end; }
   .application-card { grid-template-columns:1fr; gap:18px; min-height:0; padding:25px 8px 25px 17px; }
   .application-card.actionable::before { top:24px; bottom:24px; }
   .deadline-date { font-size:54px; }
