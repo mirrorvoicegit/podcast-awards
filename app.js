@@ -1,4 +1,4 @@
-import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=26";
+import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=27";
 
 const state = { data:null, view:"upcoming", selected:null };
 const $ = selector => document.querySelector(selector);
