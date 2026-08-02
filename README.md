@@ -11,7 +11,7 @@
 - `entryFee` 與 `entryFeeUrl` 只在官方已明確公布費用時填寫與顯示；沒有確定金額時整列省略，不推測免費，也不顯示待確認文字。
 - `timeline`：排程節點。`date` 為 ISO 日期；沒有精確日期時可設為 `null`，並將 `phase` 設為 `monitor`。
 - `phase`：`open`（徵件／截止）、`result`（入圍／得獎）、`monitor`（待公告／待確認）。
-- `mirrorPrograms`：固定監測的鏡好聽節目主檔。每月爬蟲產出的結果須先人工確認，不直接覆寫已核實欄位。
+- `mirrorPrograms`：固定監測的鏡好聽節目主檔。每兩週爬蟲產出的結果須先人工確認，不直接覆寫已核實欄位。
 - `recommendationRules`：每個獎項的通用推薦門檻，包含允許的節目類型、節目主題詞、單集題材詞與最低分數。系統會將所有已核實節目套用同一套規則，不設定特定節目黑名單。
 - `recommendation-engine.js`：依獎項門檻、節目類型、主題重合與具體單集線索即時計分。只輸出「高度相符」及「優先檢視」；未達門檻時留白，不為了填滿清單而推薦。
 
@@ -21,8 +21,10 @@
 
 ## 鏡好聽節目監測
 
-GitHub Actions 每月執行 `scripts/crawl-mirror-programs.mjs`，把 9 個指定節目的公開頁面資料寫入 `data/program-crawl-candidates.json`。這份候選資料只供人工比對，不會直接改動推薦結果，避免網站改版或解析錯誤污染正式資料。也可在 Actions 頁面手動執行「Monthly Mirror Voice program crawl」。
+GitHub Actions 排程是每週檢查一次，但 `scripts/crawl-mirror-programs.mjs` 會比對上次真正執行（`program-crawl-candidates.json` 的 `generatedAt`）是否已滿 14 天，未滿就直接略過、不發送任何網路請求，確保實際爬取頻率是真正的兩週一次，而不是被 cron 語法概略湊出來的天數。也可在 Actions 頁面手動執行「Biweekly Mirror Voice program crawl」，勾選 `force` 可略過兩週間隔限制立即執行。
 
-側欄的「推薦集數舉例」由推薦引擎從已人工核對的 `programEpisodes` 中，依該獎項的單集題材詞自動挑選。單集只作為選件例子，不代表已確認符合參賽期間；每月爬蟲抓到的新單集仍須人工確認後才能加入正式資料。
+爬到的結果寫入 `data/program-crawl-candidates.json`，只供人工比對，不會直接改動推薦結果，避免網站改版或解析錯誤污染正式資料。首頁「最後整理」顯示的就是這份檔案的 `generatedAt`（爬蟲真正跑過的日期），不是 `data/awards.json` 的人工維護日期；若爬蟲從未成功執行過，才會退回顯示 `data/awards.json` 的 `updatedAt`。
+
+側欄的「推薦集數舉例」由推薦引擎從已人工核對的 `programEpisodes` 中，依該獎項的單集題材詞自動挑選。單集只作為選件例子，不代表已確認符合參賽期間；每次爬蟲抓到的新單集仍須人工確認後才能加入正式資料。
 
 主排程遵守「每個獎項每一屆只有一張徵件卡」：開始日、複選、入圍及頒獎不會產生第二張主卡；主卡只依初次徵件截止日排序與歸檔。

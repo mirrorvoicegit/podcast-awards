@@ -3,7 +3,9 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { classifyCrawlResults } from "./lib/crawl-outcome.mjs";
 import { hasSubstantiveChange } from "./lib/data-diff.mjs";
+import { isRunDue } from "./lib/schedule-gate.mjs";
 
+const CRAWL_INTERVAL_DAYS = 14;
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const dataPath = path.join(root, "data", "awards.json");
 const outputPath = path.join(root, "data", "program-crawl-candidates.json");
@@ -11,6 +13,16 @@ const data = JSON.parse(await readFile(dataPath, "utf8"));
 
 let previous = null;
 try { previous = JSON.parse(await readFile(outputPath, "utf8")); } catch (_) {}
+
+const force = process.env.FORCE_CRAWL === "true";
+const due = isRunDue({ previousGeneratedAt: previous?.generatedAt, now: new Date(), intervalDays: CRAWL_INTERVAL_DAYS, force });
+if (!due) {
+  const nextDue = new Date(new Date(previous.generatedAt).getTime() + CRAWL_INTERVAL_DAYS * 86400000).toISOString().slice(0, 10);
+  const message = `距上次爬蟲（${previous.generatedAt.slice(0, 10)}）未滿 ${CRAWL_INTERVAL_DAYS} 天，本次略過，下次預計 ${nextDue} 之後執行。`;
+  console.log(message);
+  if (process.env.GITHUB_STEP_SUMMARY) await appendFile(process.env.GITHUB_STEP_SUMMARY, `## Mirror Voice 節目爬蟲結果\n${message}\n`);
+  process.exit(0);
+}
 
 const decodeHtml = value => String(value || "")
   .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))

@@ -1,4 +1,4 @@
-import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=27";
+import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=28";
 
 const state = { data:null, view:"upcoming", selected:null };
 const $ = selector => document.querySelector(selector);
@@ -114,6 +114,11 @@ function bindEvents() {
 }
 async function init() {
   const response=await fetch("./data/awards.json",{cache:"no-store"}); state.data=await response.json();
-  els.updated.textContent=state.data.updatedAt; els.updated.dateTime=state.data.updatedAt; bindEvents(); render();
+  let lastUpdated=state.data.updatedAt;
+  try {
+    const crawlResponse=await fetch("./data/program-crawl-candidates.json",{cache:"no-store"});
+    if(crawlResponse.ok){ const crawlData=await crawlResponse.json(); if(crawlData.generatedAt) lastUpdated=crawlData.generatedAt.slice(0,10); }
+  } catch (_) {}
+  els.updated.textContent=lastUpdated; els.updated.dateTime=lastUpdated; bindEvents(); render();
 }
 init().catch(error => { els.list.innerHTML=`<div class="empty">資料載入失敗：${escapeHtml(error.message)}</div>`; });

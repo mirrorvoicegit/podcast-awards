@@ -1,9 +1,14 @@
-name: Monthly Mirror Voice program crawl
+name: Biweekly Mirror Voice program crawl
 
 on:
   schedule:
-    - cron: "0 20 1 * *"
-  workflow_dispatch: {}
+    - cron: "0 20 * * 1"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "略過兩週間隔檢查，強制立即執行"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -21,6 +26,8 @@ jobs:
         with:
           node-version: "20"
       - run: node scripts/crawl-mirror-programs.mjs
+        env:
+          FORCE_CRAWL: ${{ github.event.inputs.force }}
       - name: Commit and push if data changed
         run: |
           git config user.name "github-actions[bot]"
@@ -30,7 +37,7 @@ jobs:
             echo "No substantive data change; nothing to commit."
             exit 0
           fi
-          git commit -m "chore: monthly Mirror Voice program crawl"
+          git commit -m "chore: biweekly Mirror Voice program crawl"
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
