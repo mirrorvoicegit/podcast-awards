@@ -1,0 +1,36 @@
+{
+  "frequency": "weekly",
+  "queries": [
+    "Podcast 徵件 台灣",
+    "Podcast 報名 台灣",
+    "Podcast 甄選 台灣",
+    "Podcast 獎 台灣",
+    "播客 徵件 台灣",
+    "播客 報名 台灣",
+    "播客 獎 台灣",
+    "Podcast 徵件 香港",
+    "Podcast 獎 香港",
+    "播客 獎 香港",
+    "SOPA Podcast",
+    "中文播客 獎"
+  ],
+  "requireAnyTitleTerms": ["podcast", "播客"],
+  "excludedTitleTerms": [
+    "大專院校學生",
+    "學生組",
+    "校園組",
+    "高中生",
+    "CPA中文播客獎",
+    "Asia Podcast Awards",
+    "亞洲播客大獎",
+    "得獎",
+    "獲獎",
+    "優選",
+    "入圍",
+    "得主",
+    "頒獎",
+    "出爐",
+    "公布結果",
+    "揭曉"
+  ]
+}
