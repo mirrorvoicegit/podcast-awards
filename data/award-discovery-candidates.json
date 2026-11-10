@@ -1,23 +1,32 @@
 {
-  "generatedAt": "2026-11-03T02:51:08.850Z",
+  "generatedAt": "2026-11-10T03:20:55.791Z",
   "reviewRequired": true,
   "errors": [],
   "candidates": [
+    {
+      "id": "discovery-5Y2a5oGp6buY6KqNcG",
+      "title": "博恩默認「Podcast月收百萬」 業配排到明年4月：很舒服 - ETtoday星光雲",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE56N3dJczhzVld5RUc1eVE2VzVmYjNCTHFPaFg2WnJpcERJZ2lSOTJQOW04TzRfWklIcDZKbC14WjFXUngtamxvNExNSHJ3QdIBTEFVX3lxTFBoTXREWVBqM0liYTcyTW1aX3VvY0tsOEQ5cmZZT2Q2OEtaY08xSVpHazN1N0tRazdicEhVX05iMkhIVjB5eGJYUjUxTnQ?oc=5",
+      "publishedAt": "2026-10-18",
+      "matchedQuery": "中文播客 獎",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-6YeR6ZCYNjHljZrmga",
+      "title": "金鐘61／博恩《博音》奪Podcast生活風格獎 放話訪到黃仁勳就收山 | CTWANT - LINE TODAY",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9SSU95Nmw2WVg2NUFVcGZ5SUI0bXVTR0p5Q0p0VEVDcEowMnhrZ2dkZDRKbWhLVlFMY0hfLTF6Ml9fQzctMFI4akNNdDNXYVIxNC1tT2hZamJjemtvYV9JMUFXSklSd1dqdTk0U3JzN240S19l?oc=5",
+      "publishedAt": "2026-10-17",
+      "matchedQuery": "Podcast 獎 香港",
+      "status": "review_needed",
+      "note": null
+    },
     {
       "id": "discovery-6YeR6ZCYNjHljZrmga",
       "title": "金鐘61／博恩《博音》奪Podcast生活風格獎 放話訪到黃仁勳就收山 - Yahoo新聞",
       "link": "https://news.google.com/rss/articles/CBMi7AJBVV95cUxOS25SbDMza1FSQTFDS1RNLVpIMGVmQlhOX19Ma2s2VDl5bXVDc05fMlBqWXg2TnE5VzFTMEhONTNHOTZWb0h3WHM3TG1aSXloajRQR3VXTkdHWmU5bUVBaUR4Y1dZaEV0Sk16aWRmVHk5ckFxYnZ3QUVKcF9aU2Q0TTVoX19YS2lOdGJ2dDZnelpfR29ZWnB2MU55RWYwT05YUUJjZkFqOUdnemlPV3ZMbi1nTWF2S2RCX1h2OVdCajNMZU1pOFloQkY0NnBmSHgzeTNra2RDS0hlVDlnRlRHaEpNVy1xSHBfVFBiWE9JOWg2bVEwb2lZYmdxV1R4TmdnNmlIRjJZRElubldYRnF1RGtvcFM4c0ZZSWRwOHEyWk9HQlVCaGlPM0JmRTlhaC1ucVZ3Q3FtNmw2RHlHYVJSekdlbVlMOWVzd0Vkd0R3Z0ROc0hhNHB2SXZsd0VpTUMyTmNpV0tYbUU4bU42?oc=5",
       "publishedAt": "2026-10-17",
-      "matchedQuery": "Podcast 獎 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第221集-文字客服導入智能AI - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1WVzZwZlozRHVpSnBaYnp4d2dZVWtRNHl4cl90TDJncmhvTXRVRXlqV2ZwbkNyZS14c1Q1WWJkSkI3cDBqRGVrTkRnZGMzV2ROTElRUW1FbEtMNWthd08yU2J4WTk2NlRacWx2cTNqRXc5Zw?oc=5",
-      "publishedAt": "2026-09-21",
-      "matchedQuery": "Podcast 甄選 台灣",
+      "matchedQuery": "中文播客 獎",
       "status": "review_needed",
       "note": null
     },
@@ -31,38 +40,20 @@
       "note": null
     },
     {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第218集-韓國「電力國家」戰略：電源、電網及需求面三管齊下，打造AI產業用電堅實後盾 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5Ka3dYTTE5X3NieHpJdUpTdlBpYUFuX2FFNF9nRG13NERiOFNVdlRRRTJyZnZpNWh1YV82STlJUnlZYUJnUmtUVERjRjJUS3BsQ044OXV0UGdwTjdTWG9HcTBMUC1tMGNFSFFoWjM0Q1JJdw?oc=5",
-      "publishedAt": "2026-08-10",
-      "matchedQuery": "Podcast 甄選 台灣",
+      "id": "discovery-c2JzY2FudG9uZXNl5b",
+      "title": "SBS Cantonese 廣東話節目. . 港產片《再見UFO》在今年金像獎奪得5個奬項，導演梁栢堅贏得「最佳導演」。電影在澳洲公映之際，梁栢堅接受SBS廣東話訪問，分享為何這些掌聲對他是得來不易。 全文: https://www.sbs.com.au/language/chinese/zh-hant/podcast-episo - Facebook",
+      "link": "https://news.google.com/rss/articles/CBMi-wZBVV95cUxPVmZiNm1aT2RLaFpFd2lha1o4a29YNk9KTUYzNFVNU2ZwcmhfeUt1U0ExZ1ZWcHhNOVZGQXdEV0ZURFhDVW5Tcmd2QzZQZVVBRGdqdTB4UlRtcGlwZDFOdUppdFBiVzJVQjhwZGVFSWROUUxNSkFpcEVJYmptcTVzWE05ODRqN2g2VW1SWkNuV0liMS12OGN5Tlo2NGJiSTRsVjR1MkRIajJtaGdISWZEaklsWjFoNk1ueGZpeXFVT3N6RUhLZHRNM0N1aDZlejB4QTdJWU1RUUtDa3JRSE5HWTdZOC1Gdk9aQ3NHRmVpalRFdll4TjU2OUtzRWcyVUtSLTFNZHotXzVVUDRyeWdZS1RUemNXNFFianVFbVpVUURQQ2ZGemROQTlicXNlekh5RFRFaGpqYjJobjZvSkV2cmtOX2V0RDl6WVp4S3NBZElTdVhCT002VVBWUkcwRllCalVTSWN0bkU4ZjB5SXZNa2NLWHpnLWRFbVhoX2o4LW9jc1Z3RENrQVBmVHdNU0tVdFhBaUZ4bWVKdktYZk9Yc2lEOW16VHdJWVoxUllhaUhWb1I0SXZBeFpWS3dVdTh2aFYzeW95N19HdXZ3c1Q0dGNWOWNtOTcwQm1kRXR6SmhNa2puT3Y5T1RKTkVuM1Rib0JTTlU2OHRqSzRmQUl0Qi1qZlBaWkF0b3JVNVBfaHNXUXRuN00xN3dkdWVHbzdxNGtRZGw2c25ocDZleGlicTEyUzhVUWVEeTdSMkl1ZnRPaVNEZXZfRV95NG9TMTFaRm5majJTVWdfUFBUNVh1NWhEalhBa1JVLWpXc0JlYkVTeDVKdk1FanlYaDA2VTZWZ2lNdXQtYjdBZHNjWk1fV2w4V0o1RU1UbVFJN3VQRHowblF5NG9GLTFlY2h1d1JFMTFBa2ZsRWNwaURpVXVRVXA0R0QwUmhjVGM2U2N0TXJBWEhvc2RDU2tDYUdhN1dUejNsM0c5bUFhVHNXTGpUTlN5SUVtZmtJMDZETHhqOHFVOXZTTElhSjUyVHc0VVNmUURmbHhmZ3hTdnBiZExMY0h5UXVKWE1vaVVQVnhJR3BrWVl2QUV2WWhaTXhZRG9VTWtobm5UVXN0ZlN1M04zY2tzbm1Vb25TUjJWVURaTFlWMXIxUy1kZm1zRTZSR0ZfTUJvZlZ3Wk9rQTQ?oc=5",
+      "publishedAt": "2026-05-26",
+      "matchedQuery": "播客 獎 香港",
       "status": "review_needed",
       "note": null
     },
     {
-      "id": "discovery-c2FtYWx0bWFu5o-Q6K",
-      "title": "Sam Altman 提議 AI 生成家庭 Podcast 網民質疑：不如直接跟小朋友聊天 - unwire",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBsQkVOZWE2b2xEbWxpNzAtNVFWWFVBR3Q0Z1NnWHgxdGtqSWtVNjJHS2gxMmkzVTRlYjNzQjFSTTAzVmdxeGZ6N1A4UmRJblVxMG5qYTNoNUo1cTlmNDI0SmhwQzZieG5Lc2xOZ1V1WmdmUDVrb1NKaVRWTQ?oc=5",
-      "publishedAt": "2026-08-02",
-      "matchedQuery": "Podcast 獎 香港",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第216集-簡介IEA發布的「2026全球能源回顧」 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBrY3hhSG5uVTJoVTE0VkhPUFVySDk3bjF1U3lmVXB3anlKNTI2YlJZcGVCVXY0RklvbjRteEtmVzVfMkozQ29BSUpnUUtPV0tvY0FxVWROYXF6QnNILVdVTlZuSmd0RmgtdHlhNGczekMwQQ?oc=5",
-      "publishedAt": "2026-07-13",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-55-96LC3cG9kY2FzdO",
-      "title": "矽谷Podcast連2集熱議台灣命運！共識「台海現狀正在倒數」 - 自由時報",
-      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5nMW4zMzFpZ2JjZ1JXcTlQUF9rdXpTdW43QjdUYVJwbHlNbEFaLUgyTVIxMW5xZ0ZLM1ZDLTlpT3Q1dWJnSVpVbG0wSGNaNmhBYWFRWG1NWU14dHRKS09HX1RURjdROTMtQ0HSAW9BVV95cUxNaUw1RC1WcktqLWNXZXdvaFFESjQ3MHktYndjblI5WHEzZkxaYnIxallPa2otX2ZHeDZSVWwtSTVEckhSZDdIMWt2VWk0a1ZDT0ZZbktfdzNDVUlKaGt3a2NiSzNlZG02SHpmN3N4Zk0?oc=5",
-      "publishedAt": "2026-07-04",
-      "matchedQuery": "Podcast 獎 香港",
+      "id": "discovery-cG9kY2FzdOaVheS6i-",
+      "title": "【Podcast】故事與現實都環繞著「翻譯」的《臺灣漫遊錄》：文學譯者如何打破「隱形人」的出版體制，在世界為台灣發聲？ - 報導者The Reporter",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5EbC1jbWZYRHh5Q29ib1duRndFdVpSc3hqcU5qNDNLQ1VNWjZhVkQ3cTNmUXh5M1QxRFZUX0M5VGF3aWljZ1plWTlwc3U2R0FTQlE1MDhRQ0lhWFE?oc=5",
+      "publishedAt": "2026-05-21",
+      "matchedQuery": "Podcast 獎 台灣",
       "status": "review_needed",
       "note": null
     },
@@ -72,15 +63,6 @@
       "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBoc2dFcExyaG9VaDRqUUd3b1JVMTdFT2ZvYWlQOVRUOUtfNjctWWFkZk53Rlc5Q3VXOFJTRVFFQ0ZiQXpfQkNpbUg2dkxKUnNFWlRrekw1WDJsRURQV29uM1FkZk8?oc=5",
       "publishedAt": "2026-05-05",
       "matchedQuery": "Podcast 報名 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第211集-淺談變電所中高空電磁脈衝的防護與應用 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5la1E3RThQZTRnQlVMdm5pUjdJQWdOaTV5SFFkMVMzR2wwbTVTRWdUZjRxc1JjTHk1ZzJ1Z0ZGOEJYT3VJTVVweWZhRkhHTHd2a1ZGWlZ1ZmtKSjA2WEstMlRkeDliY0tnUFhrbmx3cGxmQQ?oc=5",
-      "publishedAt": "2026-04-27",
-      "matchedQuery": "Podcast 甄選 台灣",
       "status": "review_needed",
       "note": null
     },
@@ -121,20 +103,20 @@
       "note": null
     },
     {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第207集-簡介IEA發布的「2026年電力市場報告」 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ISnh2SkplbU9IRnR3ZkpaQklzVG9qMjhIVXo2b21ia2FJQnJHLUF1MGlBbnpWS0tzd2RnMGFpejd5eWkzb3lJRUxybS12eWxBS1VlSEJTMnlDWjZPOXRmeFRVX1FUZUUwdjRCbV9BaW9DZw?oc=5",
-      "publishedAt": "2026-03-02",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
       "id": "discovery-5aSu5buj5o6o5YuVeW",
       "title": "央廣推動「Young Voice 100」青年培育計畫 「未來播客就是你」營隊開放報名 - Rti 中央廣播電臺",
       "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE8weXAwdy0tOWxZek5RSl9DX1d0OU1WRDJWRFJjX21ORDRmanJrNk1DUkN4eTFzczk3bzM2LWloZmxxWUFMaU5ZeHVOcnZLSWRWbjJZVWQwQQ?oc=5",
       "publishedAt": "2026-02-11",
       "matchedQuery": "播客 報名 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5Lit6Zu76L6m5buj5p",
+      "title": "中電辦廣播比賽 逾百學生化身播客 以聲音導航綠色未來 - 香港01",
+      "link": "https://news.google.com/rss/articles/CBMimANBVV95cUxOeVdtMnhNTmZBWDdLcjBqOWIxSW83dHFnSUFrcVJpVlBQOFkySUV1MGYtUjdoT0lybHhDenM1LXJSXy1talgzZEEtREpfSm9kNzM4bVVEaEdiMmIteVQ0U3psR0xjZWVrazBOVlp0YXNyZnYyZnB0S01taEJrclVvZWFoZGloWGY4Wi1ORDRyRHg3aEhVM1hhMnpaUlJQUDBuc3BhNk9MXzF6NWxybzZ0cGZwVnNCeC1VQU5LUWJrOXNWZ2Z2OGNRODJNRy1CMlJZNlNOQkZ3aFBjeHAzd1NEb0dPMmlaZ3dJeEhFcHA3bjl0UElyWkFHTDFIYU1VdWZtdHBRUGtDNnptYkNCT3NOYzV4SWtkSloyOFdhX2M0cUkybG1QMkxHNEhPREs5MlJ2dzFWOUNmM0VQVmVZVlMySGtuX3NLalRwcGdWNk9HZWhmQXQ0MEMtdVFyYjRlMWFJazZlM2JUWGswTF9vSy16a3pxaWVLZnd2ajZxeHZILUlodDVTTE1OQnFPcWFpanJ0VFM1Qzc0VEU?oc=5",
+      "publishedAt": "2026-01-30",
+      "matchedQuery": "播客 獎 香港",
       "status": "review_needed",
       "note": null
     },
@@ -148,20 +130,29 @@
       "note": null
     },
     {
-      "id": "discovery-5oy66YGO54OP6b6N6J",
-      "title": "挺過烏龍藥檢，台灣鯛王子靠AI養魚翻轉養殖產業，專訪口湖漁類生產合作社總經理王益豐｜微笑款款聽Podcast Ep.170 - 微笑台灣",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1uTGpqdzhwTW9KMm9WUk9WQjA1aTJwX0ZjQ1p2aGRqU2YxVFRrdXEzWWdIZ1FjVGhIdmRTMmdtRDRTcWdjTUt6eF9FaHRWeUYwTldwYw?oc=5",
-      "publishedAt": "2026-01-13",
-      "matchedQuery": "Podcast 獎 台灣",
+      "id": "discovery-6YeR6J6N5qWt6aaW5a",
+      "title": "金融業首家！第一銀行Podcast勇奪2025播客年會SDGs永續節目獎 - 一銀新聞 | 第一銀行 - firstbank.com.tw",
+      "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBHZTRPOWMteHpFVzBLVFMzSFF3c3plRTRmMm1oSkl5eEQ2MTBZYm1pZEY2dEJ5YVFWVHE0ajd3NFBYUTVwRUN5WnhjRFlxTmRlanBBVGQ1c0pybUE1T1ZWMy01OVZ5MExaemc?oc=5",
+      "publishedAt": "2025-12-08",
+      "matchedQuery": "Podcast 獎 香港",
       "status": "review_needed",
       "note": null
     },
     {
-      "id": "discovery-6YeR6J6N5qWt6aaW5a",
-      "title": "金融業首家第一銀行Podcast勇奪2025播客年會SDGs永續節目獎- 金融 - 工商時報",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFBTOEk5ek1qVEl5MmYwNUxCOUI0Wmh2TmhiZDNoSDZkdldvYURSLXZQXzV4WTh3c3k0Z1p3cnNTLWNpMldTUVJsZ01xUTBDd0VzaEFnMVRWTkxxbDdfWFZz?oc=5",
-      "publishedAt": "2025-12-09",
-      "matchedQuery": "Podcast 獎 台灣",
+      "id": "discovery-dGhlcmVzdGlzaGlzdG",
+      "title": "《The Rest Is History》榮登 Apple Podcast「2025 年度節目」 - Apple",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOMVB1cTZ2UVFhYzFhM2VXVThsY1hEVGhlR0lEcHJVeW9lc3lQaVR2UHppUkR0ckNGUF92cW1JYWpIQzJkc2FsQnN0ZmthTTE0U19hMkluSWFFSTh5bzFIV2FYTXVocVJ2Z1NjcTBodDRxZmlLMmo3aWwyV05XMmhHT3ZRekRYZ3ctQjVqZkRMWmhtb3JHTUp2S3pJQkE5SUREUTZ4dXJyTGhheDliTWc?oc=5",
+      "publishedAt": "2025-12-04",
+      "matchedQuery": "Podcast 獎 香港",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5bm05bqm5pyA5L2zcG",
+      "title": "年度最佳Podcast節目會頒給誰？2026播客最新趨勢 - 天下雜誌",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9LclJCa0dTQXVUX3JEeFAxaDlmQTlDTS1KNGkweDBkNWF1amZEZURaTmRfQ0IxdndsTzFWNl8wc2ZvXzBHT0R4OFdUZ3VhUQ?oc=5",
+      "publishedAt": "2025-12-04",
+      "matchedQuery": "中文播客 獎",
       "status": "review_needed",
       "note": null
     },
@@ -170,7 +161,7 @@
       "title": "【Podcast】專訪《大風之島》導演和樂生青年：哭著走進樂生，笑著走出來──院民的生命力給她們力量和勇氣 - 報導者The Reporter",
       "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBvSjVPdjA4bWRCT3J0MC0zMTlYNzlaVlQzZXZGUlZhNXdVTjJ1LUhpYnUzSkRpVGM2S2Q5THVYRGxDbVVHRVhGRUhqdTZ5Y1V3bkJxSzFiUGZEQnM?oc=5",
       "publishedAt": "2025-11-12",
-      "matchedQuery": "播客 獎 台灣",
+      "matchedQuery": "Podcast 獎 台灣",
       "status": "review_needed",
       "note": null
     },
@@ -184,20 +175,29 @@
       "note": null
     },
     {
-      "id": "discovery-56u557ij5bqc5pSc5o",
-      "title": "竹縣府攜手 Firstory 推出Podcast 以聲音開啟青年公共對話 - 蕃新聞",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9wS0dvQWVJdE16dGZ5ZjRiZlpISjhkcm1SbXQ1Zk5kNE1TNDBWcEpYTVU2NERUMzdLd1dxcW1SYldidXVjbnBiNzdQSDZ4N3psMGc?oc=5",
-      "publishedAt": "2025-10-31",
-      "matchedQuery": "播客 徵件 台灣",
+      "id": "discovery-cG9kY2FzdOS4lueVjO",
+      "title": "[Podcast] 世界電力新聞週報第198集-點亮智慧未來－淺談生成式AI與能源產業的應用 - 台灣電力公司",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1FVzJUdjhMTmktZkZMaUQtcGxlUUtGU2ZtZzd6aVp4YzRXQmhFU2hTY0l4NUh2ZEhHWHpraE9vLVpCckYwaXlMLUtYY3V5MTlTS0FtRXRPOHNzTEhMSmJoZjROeW1XTFJSWEpBZ3phZWJqUQ?oc=5",
+      "publishedAt": "2025-10-28",
+      "matchedQuery": "Podcast 甄選 台灣",
       "status": "review_needed",
       "note": null
     },
     {
-      "id": "discovery-55So6IGy6Z-z6KiY6Y",
-      "title": "用聲音記錄大林蒲變遷記憶 高雄鳳林國中奪廣播金鐘播客獎 - 自由時報",
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPb0pfZTNPbW9IallTMzRGbGJNR2Y0SkpkOGU3MFp0ZFRWOTRCcWhhNkV1NlROaU1tSW5QUUNtblhiQUVadGJVc2thYWhVc19BY3YzT093MjZhRFZsVmdTcGFsZGozVVVnOVV5WDNPNy13bm1rdE54UVlsSkN5TVlGRnBYM3dLUQ?oc=5",
-      "publishedAt": "2025-10-12",
-      "matchedQuery": "Podcast 獎 台灣",
+      "id": "discovery-5buj5pKt6YeR6ZCYNj",
+      "title": "廣播金鐘60 一起說故事獲播客兒童節目獎 (圖) - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxNWmJIN3c5c3ZFZmV1SndMc1JHTjJVRlpjN1pPLWRINW5jQnZsQ3N4eUs3WUNjalB4UFZRb2o1TUVVSzVCRFdaX3JpYUZfSmhBNEktSDBnRjY0ZE9udnRrcU5Rc095cVR0ODk1dTI1SVp2SFNJM2ZvemJqZ0kycm5wRVRWV2tGeGI1WUREWXpNQk0zYVo4dTdNbEFuS1dVU0YxaFp0b1VSQmw2emNlOUo2RGZMLU9scUdGaEswZGVJNGc4WFE3NVJpaXJlZ3RjVnB2M1lOWDUzV1BCRktLc1dFV3pUR3A3NXp4RWdQbnJWLVlPYVF5OGMyUXpsTm0tanA5dHQ3QlJESG1jelM5UXpxNGwwZ0tPdTFMZEpMbldmTHJsaW5H?oc=5",
+      "publishedAt": "2025-10-11",
+      "matchedQuery": "播客 獎 香港",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5b-D6Lqr6Zuj6Lev5L",
+      "title": "心身難路上的身心科獲金鐘播客生活風格節目獎 (圖) - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMi3AJBVV95cUxOdmlhLWlxTmVkTmlFU2QwRi00M2JSV1ZUeGJha0QzX1I5RnJfZUFJMFFPdmQyazMxb1JOVWdOaE9rTWdteW5DT2dBckNKVUtUQWxaci15QjlBOFJCRW8xWnVYYnQ2ZEZ3NFl0aWlHQ0RmY1huMnY2U1lQNDFQNWFMbDN3R1VTWGRITlhwcE84ZGRUdUs2Nmc0R0hBaHNSOXpUQWFycldPMkF1NU1GRHlRNU9MMndCZGR0YkY3TWZMekJQdzU2Q2VvbEJkQVI1LVpRclFZdW1kVUpPa3lGUXIxaWhLcVZHVGcwcVhzTWprdW9tR1lVZ1VBeVBqNUNFZzVNc3ZnbW1Fc3k0YmRWY2E4TUphVy16QWtGa1QtX2pjR2trRDYtZVNDSDlOTDh2dGFUTEEzTm9VSGxVZExpeVF4MXl4ZjkwU1BiaXd2Z1dYRF9pUEtTOTI3NExPdnI?oc=5",
+      "publishedAt": "2025-10-11",
+      "matchedQuery": "播客 獎 香港",
       "status": "review_needed",
       "note": null
     },
@@ -206,15 +206,15 @@
       "title": "廣播金鐘60 週報時光機獲播客少年節目獎 (圖) - Yahoo新聞",
       "link": "https://news.google.com/rss/articles/CBMisAJBVV95cUxOdWlJRG9sbkg1U3hXZG8zcmdOZ1lwQTJEcFMyVFRpZTlxN1dyYk42aG9Td0M3N1ZjdTJ1SV9MR01tNDJNNFlKWl9iT1VVcWhxYjJjUVJ3QUxTOTdZUGVrTzQxN21JQ2MtbzVfczJuaU10SnFEeUNSQVJxOWxfM3JKb2ZEemE0NkpnS2NKdzc2anhRVVRrVmFXNFdUcC1FbkhsZXdMNGVTWEFfZF80T2FCNkRLNU9zNFNVLVI4V3hDcTcxdFJkNjRndDNVcTBYVm9hQjlGMkpGRERkeU01dmdhdlBJYkZtdS1yWVhOQjRJOW4zX0J5ODZ6REs1YVgyZng3dkFaR2t0N21GUFJic1RQXzdxWnlVNG83Z1FMMElESE91aEpvWGJ0S1lXSU9FTURS?oc=5",
       "publishedAt": "2025-10-11",
-      "matchedQuery": "Podcast 獎 台灣",
+      "matchedQuery": "中文播客 獎",
       "status": "review_needed",
       "note": null
     },
     {
-      "id": "discovery-56eR5oqA5ZyS5YWs5Y",
-      "title": "科技園公司聯同《Tatler》舉辦創科早餐會與《The Diary of a CEO》Podcast 主持人及創業家Steven Bartlett 點燃香港創業家精神 - Hong Kong Science and Technology Parks Corporation (HKSTP)",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxObTV3WUstYWFTUnZQb3RiaUExTmhnTW9RLUhGbnNSa2ptc25OY0JrM3NyTkpVTVd5N3Zpb1ZpOTE4TmRoaWV5LWJlemZvOW5sT3ZyRzV0TWlHeWdFVnFFVVNMWDJqQXRfTW9xYm1HQlo2YVB1QWJqQ3RfV01XOGRWRDRXTHF1MkxDVXpDN3M0a1JyeTZmSlVWRnZkYjhET3hXUzMzZlI4R1BKYnBlZU1qS1dLSW1SMGFOeDZnMldsTi1aTU0yNlZ3R3lVaw?oc=5",
-      "publishedAt": "2025-10-02",
+      "id": "discovery-cG9kY2FzdOmCo-eJh-",
+      "title": "【Podcast】那片片雪花，是墜下的人⋯⋯「李老師不是你老師」揭官媒看不到的畫面：中國人是公民不是奴才 - 報導者The Reporter",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9sdW5fYTZuaXoyUGdlX2x6U2dBNWhkR01OWFJxdUVMLXY2bTJkdWI2b2hpQnZ1dXZDV2Fad0VEMEp1T0JCRlVnUjY4MFJaQlBNd0ZNaFhkUEVRNEU?oc=5",
+      "publishedAt": "2025-10-01",
       "matchedQuery": "Podcast 獎 香港",
       "status": "review_needed",
       "note": null
@@ -229,11 +229,29 @@
       "note": null
     },
     {
-      "id": "discovery-56u557ij5o6o5Ye66a",
-      "title": "竹縣推出首度青年 Podcast 活動 鼓勵創意青年關注地方議題 - 台灣好報",
-      "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9ZRjNRcjBPTXdSczJCUW9vMlFGU2p3dlJGQW1FUGl2Q1BIOW1CTzU2VjhPZEIzQjhrTVd4WXM1Ymd2SG9sQzUxUldmVHIyQmlrUWc0?oc=5",
-      "publishedAt": "2025-09-18",
-      "matchedQuery": "播客 徵件 台灣",
+      "id": "discovery-6IGy6Z-z55qE5bi45o",
+      "title": "聲音的常態化：從獎項與市場看台灣 Podcast 五年進化 - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMixAJBVV95cUxNTUR5aUgxU0RYOHpyM2htcHNlTzhVN2FSSU4xOUx1bXA2Tm5JY0JLQWFBX3RoYUdFVXRXanl6ZzZKcFNoSXNvb0Y1cHZVX3UtbWg3MjBRdXlpd3VNcl9leWlGTE03ZTZ0M295UG5Za3RFZkNNZDZ3ci1VNy1uWThib1hOdmE0eVpoS25DQnRPUFhkSGgzd2RxY1FfenpQc1BLQlVNOXNpeld2aW5ObkZNRjV3QWRLMkNGS3AzMkttaEpvaDE5ekQ0WVlNczhBYktnWVZkSzhyYTgtV29sZGs4N0t4Q1YtMWtod055MTRYYnQzb3RxeVdrVGtieWNkQmFvTGY3NmRtVzIwODdyS0I2R2h1eGVVNFVlSFhnWkJkQWt2YXJyd2xOY2JVY2ZaTGhvS2Z2bUZIaC1TeXVJbUpzNmd2bUs?oc=5",
+      "publishedAt": "2025-08-24",
+      "matchedQuery": "Podcast 獎 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5o-Q6aaZ5riv6KiA6K",
+      "title": "提香港言論自由與黎智英 梁文道播客遭中國全面封殺 - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMi6AJBVV95cUxNR0ZZSTlocXpXX2JpdDVyYm5PWElzWXVVelRkZmo0bUZlTERMdUlCU2xyRjk4MFZGeTVVa1VZU3Q5YWZ5OU5KZFprX1dHWmpNQmk3Y3hEaHBONzlTay1LOERjXzZpNmdTTU5DcDI1aWx5T19uWkJUWXpNcm4ta195Y0x6ai1FSXVuVUw1SHVWalk3SFB4ZEpMb0xJY2VGOXN0dVJGT2lxdU1NUkxnWWVVNGZKbTdRblJ3ZnJQNFVRV1EyZ1ZzaDVYZXB1c19VWmJHZEZnZHlQVjEzOVdqSVFKQ3RWZEVVRC1MNkoyUndkV2xERE1sOWotdm1zMk11SnotZnpRS1UtMklmek1tRHRRZUtkSWJ4dTVQZXNSeXNOZlN2SnYyaXhETHVuOWpKVUlTNUp1MVlBdG4tRkVsZV9NRGFDMEFBLUppbV9GZWxpa2Nob2Q0TDA4T1JBUFowZWFjMHBiVnAzaWs?oc=5",
+      "publishedAt": "2025-08-21",
+      "matchedQuery": "播客 獎 香港",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-cG9kY2FzdOS4lueVjO",
+      "title": "[Podcast]世界電力新聞週報第193集-淺談OECM - 台灣電力公司",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1VLUpUVExLdW01cVBfckRhZ2VQZFJzNEN6OTNTM05lVWdaaWFyYlVlZVlqNlVHNWZ2RlBBbnhwNy0tblp1OVlsUXJJWlVMTXlZLV9CWE02QjA3UmpTQi1xRVYzak5pd0I4Wk1MMEI1V3pUdw?oc=5",
+      "publishedAt": "2025-08-19",
+      "matchedQuery": "Podcast 甄選 台灣",
       "status": "review_needed",
       "note": null
     },
@@ -256,28 +274,19 @@
       "note": null
     },
     {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第191集-斷路器線上動作時間監測系統 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1qRGpTbW9TZTlialNUdXBKd0R6VzEza2VxX3NGUGFaeWQxbWxrSFNVaHg1Ykp2czVyQXBOZ2tYQTllRWNEeU1ya29qcWpUY0RjSVJKT1B5U291aXc5V2k1OU5nY2dydVhhbU50M2VLWVpwQQ?oc=5",
-      "publishedAt": "2025-07-28",
-      "matchedQuery": "Podcast 甄選 台灣",
+      "id": "discovery-5rC06YeM5pW45L2N5q",
+      "title": "水里數位機會中心 舉辦podcast教學體驗 - 台灣生活新聞",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5hb2dFZm5OQng5NEJxU0dkdGx1dWNxMm5Tajc4aDFLZHE2THhXNk5jcHMtamtOU29wT0N6dUxPM1lOT2cxbFc0anppOVdqYmJ3?oc=5",
+      "publishedAt": "2025-07-26",
+      "matchedQuery": "Podcast 報名 台灣",
       "status": "review_needed",
       "note": null
     },
     {
-      "id": "discovery-6aaZ5riv6ZaL5ZKq5Y",
-      "title": "【香港】開咪即展場：廣東話藝術Podcast的逆襲- 20250725 - 明報 Our Lifestyle",
-      "link": "https://news.google.com/rss/articles/CBMi1AJBVV95cUxOc0YyeXF3alF4NVFfREE2ZEhwNDJJcmtsMFZaM3lFTDZCM2xqbWJyV25zNXlmQmFqUk9OUy1DODB0NHBtNnhwQVZTM1c3S1lwSWR1MVFxVUVlTjF4YTNsVFpnUzYzS1oyaGpRS1piUXNNTzItZ2o1Zll5eGl4bzlmVjN1T2hSSlZaZEhKN2g0aXE2TzJMcU5FWWRuZjZQdUQzS09icXdMY29ZMUxiYVpUSXdodUIwVUNSNkJrelo1OVVCellDNUdsSDN4RlVCYTEzUHB4ZnRSbFM4MXlITVdiRkVna0lDWnZTS2JjZkhPV1VCdTFzaTRfQnR2QzdBOFFDa0NIcW02MUhOSWd2ZGJhQmVSbWtyUTFwWmxmekNYbEtjTmtYU1BZdFF6c1JFU2dMMVA1R09XWGN0MUlvLUFMeGFuTDRIN3ItN2h2TlhlOGxtWmNa?oc=5",
-      "publishedAt": "2025-07-25",
-      "matchedQuery": "Podcast 獎 香港",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-56ys5LqM5bGG5Yip55",
-      "title": "第二屆利百代小小播客比賽徵件倒數 邀國小生用聲音訴說運動夢想奪總價值萬元大獎 - 鉅聞天下",
-      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5CeC12RlV3MEpjUk5HZ21ycnZ3Sm9TWG5XZzZSVlVlR2pfT3IxM1oweGxfUXQzT2d3NnRialF0Wi1NclJpNkpfZm5LWlVaYVZ3dEY5bnlmNnZLTUMxeWc?oc=5",
-      "publishedAt": "2025-07-07",
+      "id": "discovery-5q2j6IGy6KiKMjAyNX",
+      "title": "【正聲訊】2025 Podcast YeAr播客年會x優質聲音節目競賽8月開跑！ - 正聲廣播電台",
+      "link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE9fUnJkVEd0VHNaeUtRSEVzT3dmaDdxV01CS01lY0NaLUYzZEhBNkEzaVZlT3pjR0syN1R0VHpyQnlma0Zl?oc=5",
+      "publishedAt": "2025-06-25",
       "matchedQuery": "Podcast 徵件 台灣",
       "status": "review_needed",
       "note": null
@@ -301,6 +310,15 @@
       "note": null
     },
     {
+      "id": "discovery-cG9kY2FzdOS4lueVjO",
+      "title": "[Podcast]世界電力新聞週報第185集-揭密電網「隱形支柱」：慣量解鎖行動 - 台灣電力公司",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5yMzFfZUV0a1pvU3hoc3pwaDJidXNIS25nakpuQ3FHVTBTcVNyYjY1V1pPeFBxTkE5ZE1EMklKeGpQNTB1UXJUeGx5WGdJd0xYNmlRVnJTTENleFZ6UU0wU1AwSWE?oc=5",
+      "publishedAt": "2025-05-23",
+      "matchedQuery": "Podcast 甄選 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
       "id": "discovery-5b6u6LufY29waWxvdO",
       "title": "微軟Copilot如何使用？新版可做Podcast，兼陪伴 - 遠見雜誌",
       "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE02ejhienVucHRQampNWXR3c2RnQklfb1JldFAtR19JbjQ3SGtlY2h0aGVTWFo5NFFkM3ZOU1NVNGdqZ3dvcFJKcnpPSEUxQQ?oc=5",
@@ -310,20 +328,11 @@
       "note": null
     },
     {
-      "id": "discovery-5ou_5LiL6YeR6ZCY5o",
-      "title": "拿下金鐘提名的Podcast製作公司，聲歷其境如何策劃每一集節目打中人心 - 數位時代",
-      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB4V3JGY3ZRbmtxUjFTNDVkOWw3aVdnbGxoQ0N3LXN1Z3ozVklJOU9fdFBsdmp1X0owcjVUUVpjQl9hMC1McXN5NWY3Z2xiYU0zSV9PeHF5c2gyRkwtSTgzc21Obw?oc=5",
-      "publishedAt": "2025-03-26",
-      "matchedQuery": "Podcast 獎 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第181集-美國川普總統上任後的能源政策轉變 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5qLXYweEswV2F3VjZGUU5SRXpRVl91R2lKMmg3OV84QlRucnEwREFzaGhkSUZodXpoZGxQZlVkWThkWkZfa2hCa3JaNU56ZS1Bd0hWaFpCUnlrTlRZeWUyNzc1bXJRN0w5OTM3VkthcnRSdw?oc=5",
-      "publishedAt": "2025-03-03",
-      "matchedQuery": "Podcast 甄選 台灣",
+      "id": "discovery-Z29vZ2xlZ2VtaW5p5o",
+      "title": "Google Gemini推Canvas、能夠生成Podcast，如何使用？ - 遠見雜誌",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE0zMVlmWl9MVUtWSFBMU3UxNE8xWm5HNWFrYkhDUUNQeTNzaUVhVzJSb0NNTTF4eUxEREFydUhtNmlaNUVUb25ZdFdOckN0Zw?oc=5",
+      "publishedAt": "2025-03-19",
+      "matchedQuery": "Podcast 徵件 台灣",
       "status": "review_needed",
       "note": null
     },
@@ -346,11 +355,11 @@
       "note": null
     },
     {
-      "id": "discovery-5q2j5ZyL5pyD5Lit5Y",
-      "title": "正國會中台灣空戰開打！《議想天開》podcast週更政治、生活連育兒經都談| Newtalk - LINE TODAY",
-      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1zZU9IcGNJZDNGR1VHQU9hdjljYUU2OU5pRUFyVndWSFUzcFowdFZ3QTFIejQwQy10OWoyN0lXQTRTQ21ncmN0TUNpV1NNczZoNXlLU3JB?oc=5",
+      "id": "discovery-5Lit5Y2A5ZyL56iF5b",
+      "title": "中區國稅局「哈利播客擂台」Podcast徵件競賽展現廉能稅務宣導數位化成果| 勁報 - LINE TODAY",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1qVDRucmFpN2ZkSF9teDNMNjZ4U3lRbzNkZnhxOGVWdG5icmZEN0Q3cXJwbUlVOTlqZFlkLWd4UnVRc25MSVk0VU1LeXo2bHNKcTA4VTB3?oc=5",
       "publishedAt": "2024-12-09",
-      "matchedQuery": "Podcast 甄選 台灣",
+      "matchedQuery": "Podcast 徵件 台灣",
       "status": "review_needed",
       "note": null
     },
@@ -359,16 +368,7 @@
       "title": "網際智慧VoAI絕好聲創推出「一鍵生成台灣口音中文Podcast」 3分鐘快速生成- 產業 - 工商時報",
       "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE43NDhZSWt1OGtDZ0U2TFI2NDVzZlF2WVlOdDdRSnF4MFV5QWZmSW9KOWNERTdKUkNaaExBeUZsbXgwR2FwSWxaR2lPYkhfblMxMDU4SHJ4eEpQSTNqZlI4?oc=5",
       "publishedAt": "2024-11-05",
-      "matchedQuery": "Podcast 獎 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-5LiN55m75bGx5pyD5q",
-      "title": "不登山會死的他們！金鐘導演程紀皓談：登山的追尋與生命的抉擇 專訪《群山之島與不去會死的他們》導演 程紀皓｜微笑款款聽Podcast Ep.127 - 微笑台灣編輯室 - 微笑台灣 - 用深度旅遊體驗鄉鎮魅力 - 微笑台灣",
-      "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1FRHF2ZHJwVXNING5IUzhOQ2pyT3ZkbTROS2l4Wm96Zzg0N01BcEk5SFQzZ1l1cWE2LXVFcTVRbzZPZmJEeG5IRjlwWUtqNUZxVEYyRQ?oc=5",
-      "publishedAt": "2024-10-19",
-      "matchedQuery": "Podcast 獎 台灣",
+      "matchedQuery": "中文播客 獎",
       "status": "review_needed",
       "note": null
     },
@@ -377,7 +377,16 @@
       "title": "2024第59屆廣播金鐘獎：首度增設Podcast獎項，唐綺陽擊敗博恩奪生活風格節目獎 - TNL The News Lens 關鍵評論網",
       "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9kQWhrcHd0WDNiZ2ZEWWZ4ejBTRkwxWnhSc2lZQ1NpRWNTZWJHMG9FcU8yV0VEUTZ2Ny1nUmpEWk1kc3UxdGZmWkt6azRQdmRRXzducA?oc=5",
       "publishedAt": "2024-10-12",
-      "matchedQuery": "播客 獎 台灣",
+      "matchedQuery": "Podcast 獎 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5ZSQ57a66Zm95Zyf5p",
+      "title": "唐綺陽「土星回歸」 獲廣播金鐘Podcast類獎項 - 大紀元",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1VTlYwTDRvbkRCZ1Z1elRob3lNbHF2aGNNU1pIQ1c5akFBa2RCVmhNVmYxY0tKUjJPM2E4UlNjUlotdWFOaXk2LU1LREI2eU9WTFRlbEFKUDJQMW96WEJNeUR30gFnQVVfeXFMTzUtRUNvaWF4OXFWaVlrQ1VwWTIweGl6RVVhVkNWN1lYNWg0dFNSY0VHMmtkOUkxdi1MclQ1Qkw3SGlrV3JiYUh3eUNtalFGSE9vVWJ4VWgzaXZQVlU2ZjdwWHpzUmZ5TQ?oc=5",
+      "publishedAt": "2024-10-12",
+      "matchedQuery": "Podcast 獎 香港",
       "status": "review_needed",
       "note": null
     },
@@ -401,17 +410,8 @@
     },
     {
       "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第126集-微電網節能辦公室 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5fYS1oRnFOMzZFc3owYzhRaHNSSFRmdnAyaF9aV1dCSEVPM0VVMFB6SGVNRjYxd250QkdrcER4Tk1POGNIeFFjTzR3TUtqa0oxZlBOa1IxSDE5QkUyTWhYMUFSYjU?oc=5",
-      "publishedAt": "2024-09-11",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast]世界電力新聞週報第99集－台灣電動車用電需求及因應策略 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBFc2pvTkFBWHNDdktqeTRodWFXQ2Q4cGpxajdSOG14VWl6eDNXT3kxRWZLUEQ2b0JqVFBlcG9zelc1NVdTWnFiVjZnZl9pcmlLNmFLS2lnQ1ExSS1iVkxfRkN6LUw?oc=5",
+      "title": "[Podcast] 世界電力新聞週報第87集－台灣離岸風電的發展 - 台灣電力公司",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1ScXo1RF9uQW51TDIyeXA3TU9GRVRJY2ROQWtQMkJYdEJpeXZpOXdFMFVqVEFBZTMtY2U2SGhRSHpmSVhXZTJLTWh5NVZTTEdSdU0yX0JOZDB2ZjQ1WllNaWh6dWU?oc=5",
       "publishedAt": "2024-09-06",
       "matchedQuery": "Podcast 甄選 台灣",
       "status": "review_needed",
@@ -419,163 +419,28 @@
     },
     {
       "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第37集－中國各省限電限產政策的主要原因與造成的影響 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5yQmQtTHk5RUtWWkRuVGc4NGs2R0cyR1lmTWdRdzdiS1oyWkpnWk04XzlLMnRGYWdmd1ExazBiQWYteW9fWkZtUUdvMGdQM3E1TWhNSjdfUkJPVV92SjZsSlpWeWY?oc=5",
+      "title": "[Podcast] 世界電力新聞週報第152集-碳中和新法寶－「電子燃料(e-fuel)」 - 台灣電力公司",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5sZE9SNS1HNXdKaTJBTVVfTmM0aWRTVkI1d0twQ2NHVlRocGVVSlE5TFNENjZLd1FaTEdZVFpEU0JpRk15X2xvWTBCTV9zcWM2cno4aHg5elIxdTJaS2dWa2xxNFQ?oc=5",
+      "publishedAt": "2024-09-06",
+      "matchedQuery": "Podcast 甄選 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-cG9kY2FzdOS4lueVjO",
+      "title": "[Podcast] 世界電力新聞週報第112集-離岸風廠海上工作甘苦談 - 台灣電力公司",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5Hd054c0hjbFFYaXRIb09EcGFwWkhlYnc4RFd6NG9Xb25ha0psRDROVThhRmhPejl4b1JWNTliZlYwOUhUT29vYkVYaTY1b2VRbUJreFU0SXl2bldtNmpGYkpYM1U?oc=5",
       "publishedAt": "2024-09-05",
       "matchedQuery": "Podcast 甄選 台灣",
       "status": "review_needed",
       "note": null
     },
     {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第33集 - 氫氣在全球碳中和趨勢下的應用層面及發展現況 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE85cUJiQzY1WTlXWXRybnc1OURyZUlxM2RBcWpIZnQ2WGdOd2k5endvNFNQY0hoZHFlLTRwbE9WMWZfX0R0eFJtSW1pdHdMdE9fM1JOX1hPMkt4TWZ1R3IzQVEtR0I?oc=5",
-      "publishedAt": "2024-09-05",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第55集－美國Long Ridge電廠及混氫燃燒發電 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBlTWJqdWpFaXhhYmVQckhDaXY4NktpQkJ6d3ExQ2NGbUQwck01T3VnR2tBVTdxSkZzRVR6S3hrbEU5bWpRMi1rTkozMDA2cGhDaHJjNGowbGJueWUxNWVPb0w2NGk?oc=5",
-      "publishedAt": "2024-09-05",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第124集-因應再生能源增加的新尖離峰時間電價 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE82cHFUNE9tNGsyLVlzZkF1ZzFtT2R0UEcxWFE5YnVCaFc1Y2hNOW85NEhIV1JiUDE0azBWZ05yVnhGaUxab1k3QUpTam15U3lwQXlCXzY2ZnRrZEVHUXNORVN6dWY?oc=5",
-      "publishedAt": "2024-09-05",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第51集－歐盟永續金融分類標準增列天然氣與核能之各方看法與可能影響 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE83NVBIeThiWVZYajRscmxpYkVMeXMtR21YRHFEVmZsbjU1RmdmVzlNMHJpNFhRdWFIWUlfVjlFS3V3WEJDX0kwbkZzc1lEOFd5RTY4b2t5RjRzZHF4c2l2Q3NRYlY?oc=5",
-      "publishedAt": "2024-09-05",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast]世界電力新聞週報第154集-混氫發電在興達 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE5IVm5maGxGVXV4SFBCSFZ4QVpkRW5kdGtkYVU5Qkc2cHFJTktZbVpuWFN3MGRtTHJOTDIzQmNfNkpVc3Q3SVFmWVlMd1VCRHhVNDNzSzBQTmpqVFJrMWtmaXFIdl9IOW9NWWhMbS1JM1Bhdw?oc=5",
-      "publishedAt": "2024-08-17",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第71集－淺談儲能系統功能及安全規劃 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1iTnkzdUIzVW1rbFZTY3VHUDVteTFQWE1BRFV0ZElsOFRZbWpnTFdLZFJ6MUIyR2tibHB3VU9mSWFuMGpwcXp1YklyenRFLXVwak5iRTdRbmUtQ29zQ2xhOTNhZnZ0Y21Hem40RVpjS28tQQ?oc=5",
-      "publishedAt": "2024-08-10",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast]世界電力新聞週報第113集-IPCC最新警告：全球氣候變暖接近不可逆，要大動作才可以改善 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9GaXo0bWh0M2FzVGtHZXhiMjJxY2tPdjRjRm9hR0RGMHg0Z1lmZzR3SDAzWlhwUUZkUUtDb2U0YkZYUzZEVkpzYXBGODJzbW9wVWY0ZlRBVFNPUzlIdW5mbWxHR1NJLVdMRDNXZnVaUTU1UQ?oc=5",
-      "publishedAt": "2024-08-09",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第32集 - 氨氣在全球碳中和趨勢下的應用層面及發展現況 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFA4Vi1weFdLN0dXMTQ3WUUzNXVkVEFlZ3YtMG9VRHVFOTF1ZHRXZ1hXS0xfZ2xXRGJkb3R2UVo1MnN3eHFpMGs2ZkJLa3ZQbklHX1l1SmJsWk9OVDB0Vi1HMHRxLXc?oc=5",
-      "publishedAt": "2024-08-09",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast]世界電力新聞週報第54集－俄烏緊張情勢對天然氣供需的影響與因應 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE00c2xhR01BRWQ1N0RjS2ZkYXJTUkZSZVprRkhfTXd2Zy1BcEpZN29oVjJGLTZGQWJPbkNtZWpxenUzaU55d1RSUEV1ZGMzdjZPNTJJOTQ1SVRaTDBzUE1OTkY1TW0?oc=5",
-      "publishedAt": "2024-08-06",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第150集-繳電費so easy！你怎還沒下載台電APP啦 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFA0ZlMxaTNOQlR4ZmdmVV94TEdKWi13bFYwQUV1QWF1Q091NGJIZHhmdkNSbGpJcGZWV2ktYWlsSXFFT19mZUJpOGN6RjFnMFBHLVA2VThxeGZMakpyTF9jaE9IektydTAzYWdEckV2MWVOUQ?oc=5",
-      "publishedAt": "2024-08-06",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast]世界電力新聞週報第61集－陸域風力發電機設置與營運友善生態的對策 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5MaGVmTERDX3c5UnhLRlp0XzRKRDJ4dEFxeDVYelhEWHAzekVWYlVFSnFqYmhSYkMwak1ON3F2N3R6Yks3XzdoNUNIekZia3NaNlZSU1RFRW1Td3U3UkNvZFg4TXI?oc=5",
-      "publishedAt": "2024-08-06",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast]世界電力新聞週報第159集-因應數位應用之電力通信發展 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE45bk5FTVFkNGxmVTdVTW1famVQZ1htMHk1QXNsbFdfNFZTYU1IUHZ3QVY5U0duSWZHWGpJYW1vMVlpcHpOZm93bVJZeEdkX3NGeHNQOUtGMGVKdk9VR0N3S2R5eW5hT0dZX2pkZHgweV9ldw?oc=5",
-      "publishedAt": "2024-08-03",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第163集-打造智慧低碳新生活：家庭能源管理新模式 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBpejJNODg3aTBTRUpZZzFpTHNkTmNMOFRZaEo0dWNjU0RKODR6WmJNTVBEYXJEX1hfQW5qSWxtcVJVaEtHUnlLdEdwSG40M29hSVdiVDZ3TTBTamFvMHF5VTlhWFRhVzd4RERoMjhBNk41QQ?oc=5",
-      "publishedAt": "2024-08-03",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast]世界電力新聞週報第156集-電力纜線地下化的迷思 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE14d1VtaUE0c1dhLTF4NUJSX29HQWVJTG1ZelIxYm5DMTdFR0VuamFGb04xbU10Sjk5SzhDYzNVcWJJSngtZG9pTW9VbTJaYVA2U3h5QVFyaXhWMUNZTGUwdFp5TDQyZ3R3dHVVNERwVkg0Zw?oc=5",
-      "publishedAt": "2024-08-03",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOS4lueVjO",
-      "title": "[Podcast] 世界電力新聞週報第165集-儲能系統架構及建置流程 - 台灣電力公司",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9Qb21UaFg4dS1qZUJUUTBxUmdGVzhsWTJTVEpaQTRNMV9OcG9IMEt1eUNXU29GRDEwU1hjNmlxTnFsY1MwQjhRYXc0cGRwYlFzRURKSHJqZExSTHhDOEFZTmJ3a0ZLeDY1OUhwaWJoVmN3dw?oc=5",
-      "publishedAt": "2024-08-03",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-6aas5YWL5L-h566x5Z",
-      "title": "《馬克信箱》、《呱吉》都不是第一！10大通勤必聽Podcast頻道，冠軍讓網友大讚： 一聽就停不下來 - 風傳媒",
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE15eVR3ZEdrWXEtcGk0ZkJvczlkV18tVHdiQ2lEc3dWeTdKdUJ3VTR0LUhLTDRaOF92SWlBSzZXNUp4ZWF5ZGVjbTQ4RllCSGM?oc=5",
-      "publishedAt": "2024-06-06",
-      "matchedQuery": "Podcast 甄選 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-5b6e55yL55qE6K6K5o",
-      "title": "從看的變成用聽的也行！台灣人氣YouTuber經營Podcast頻道Top10 - Yahoo新聞",
-      "link": "https://news.google.com/rss/articles/CBMixwJBVV95cUxPc3J1WnF2UDZqckx1Vzh4TkdYN2pubVdoWWxSOEp6QjRvWG1mZFpZaE9KanJSdXNFZ1ZuSG5OaWw5SnI4TG4xVVNBdmxLMFhnNjZ3SUlEbURGSUQ0UlE1ekJ5eDZwSEZKbUYxdElRbUJFOEprNFZQd0hnQmF4dVRvdFQ4TlQ0Mi11SmpSbzlIUTlyWGtwdHJwcndYNWtOODZIR0czSHJsZG9DR21PVFVoZzJLNjI4VGhJZi1jbWRwaG81akY2cDd6Y1RZV1c1Z3FSa2pHQnUwYW5CUFd0ZWN0WC1xUmVIRFRabHlvU3hrNVB6VW5fcFBOMHFjbFpoVmFrSGh3S2VQbWFzUVkyTTh5ejdKYmo0bWFTR3hvV3BoNG4wWFBrN0JJOW9td2prZjhWSnRkenJrZm42UmFVMU9xd293cW8wU2M?oc=5",
-      "publishedAt": "2024-05-30",
-      "matchedQuery": "Podcast 獎 台灣",
+      "id": "discovery-5aSn5LiA5Lit5paH6K",
+      "title": "大一中文課寫Podcast腳本？東海文學院推AI互動術 - 遠見雜誌",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1XTV9BekZaeXhWMEpuMlJmQ1FNV1VvLTZwQk16M3RSMHEyem5tc1pYVTd5YWREUTd2Z3JhaUg1V2FjNjM5SkZGMm5CVUNzZw?oc=5",
+      "publishedAt": "2024-07-11",
+      "matchedQuery": "中文播客 獎",
       "status": "review_needed",
       "note": null
     },
@@ -584,7 +449,7 @@
       "title": "《轉角國際》緬甸專題報導 榮獲 2024 人權新聞獎 Podcast 榮譽獎 - 轉角國際udn Global",
       "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBrXzdISWZ0MjVmamRTbVpCRFFaSldhb0w0TzJMZ1FnaU9vQmhzbndkamZBdDJNQk1QMk44V09KbUJJR193ZTJVaDBHcjRxYl9La0tpVEYyTTZwMUZXbU5DZEw4eHhDZ9IBa0FVX3lxTFBSWGpoNkc1QWJOUTMzMzhReEJtY3Y0ZUJkRkY4aUloU0Z0Qkt6R3N0dDdQRHctMGNqdkx5QkdoWXFaeVJmU3puc2VKVW5DeGJiLUxjc3I5RVN1djBTaWF6VmlTSk5tdzV1UFdv?oc=5",
       "publishedAt": "2024-05-09",
-      "matchedQuery": "Podcast 獎 台灣",
+      "matchedQuery": "Podcast 獎 香港",
       "status": "review_needed",
       "note": null
     },
@@ -607,19 +472,28 @@
       "note": null
     },
     {
-      "id": "discovery-5aiB6YCj5L2g5LmfcG",
-      "title": "《威～連你也Podcast了！》S12E10：其實越南人很少自己在家煮河粉？《赴億文化》黃晨凱想帶台灣人了解不同的文化想讓新二代明白自己的獨特美好 - BeautiMode 創意生活風格網",
-      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE15RlphVFVRX3JndFNsT1kxQWdicWVib1pkTUZselVaTE80cGdURXE0d3hTMlFUOUVKeUFnMWg3MGkzRThBc0pEWHQ5cDhQc0hKZ0ZIb2FtcWFVLWJJOWc?oc=5",
-      "publishedAt": "2024-03-15",
-      "matchedQuery": "Podcast 甄選 台灣",
+      "id": "discovery-5ZCD57Sg6LW36aCt6Z",
+      "title": "吃素起頭難？台灣首位蔬食Podcast主持人謝豐嶸怎麼看蔬食？ - 食力 foodNEXT",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAxb1Q4TjVtQzQwcld6SzVJLTZsaVBoYkJZNHdIOVBSWGtmUTRuVDRPNG1jcUdsZ2N4RUJSbm9salpteEF1XzkyYWhNbVM3NWh1ZFQyYy1Fd2ZGZGFYZGp1UXQ2TU42YkU?oc=5",
+      "publishedAt": "2024-03-09",
+      "matchedQuery": "Podcast 徵件 台灣",
       "status": "review_needed",
       "note": null
     },
     {
-      "id": "discovery-cG9kY2FzdOaOqOS7iz",
-      "title": "Podcast推介｜5個必聽高質播客節目：旅遊文化/星座/趣味故事 - Cosmopolitan HK",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9EbHowejJ5Tm9FNUpkZWh3RjVhVDhQYUh1X3d3MzNDNzc1aHFhT3dZeU5odnkxQ19rSzlBTklqQVh2N0xWSFJNenFsX0JKNXZpc21VdUFXT0FlRXRnTTlRMGJTNk9JU05HTTByVGJUM29YQ0lmeF9RMXBpMldocEE?oc=5",
-      "publishedAt": "2024-03-14",
+      "id": "discovery-5Z-66ZqGcG9kY2FzdO",
+      "title": "基隆Podcast要滿1周年了！有獎徵答開跑 特別獎基隆塔積木模型 - ETtoday新聞雲",
+      "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5fYUxmLWRJTXpoLWZfTy16OFVCZlgtU2xRQV9ORjhRME5BX1NZTXJwMU4yTXktMTFuYzFPQlB4NnZFQ25MSDYyRWl6T0hTaWFuakl0eUV5bnhjMEcxWHfSAUtBVV95cUxOMktPUlYzMWZUekQyNFEzeENFMk9keDIyZkdPOXdGQ2ZEUm52azZHV2JxaDVIWjhXal9sYzctZjMwSlBsbVF3dWF0aTQ?oc=5",
+      "publishedAt": "2024-01-26",
+      "matchedQuery": "中文播客 獎",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-6Kyb5a6i6Zu76Ie656",
+      "title": "講客電臺節目全新改版再推Podcast 重磅節目《客座教授！安烈炫》上線 - 中央社 CNA",
+      "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAtYm11dVlPQThUX0lzR1A4c00tRzFlZWZTTWlET245Rk1DeldLei1US2s4bUZtcjk4aEpjWjhPMFN1bEluUzRDd2J4SEJNMmVUanppWmtn?oc=5",
+      "publishedAt": "2024-01-05",
       "matchedQuery": "Podcast 獎 香港",
       "status": "review_needed",
       "note": null
@@ -638,16 +512,7 @@
       "title": "講客廣播電臺推Podcast讓客語走入生活 近30節目元旦接力上線 - 中央社 CNA",
       "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFBuMC1rVnVDVkxhTnV5QXk2REJ0clN3LTFlZzFNYUs1a0RZc0VnWXBHa25FN0JqcHBjalBCMWw0NzVSTVU2cnRzSXExZWZIb3V5TkVXUHpn?oc=5",
       "publishedAt": "2023-12-25",
-      "matchedQuery": "Podcast 獎 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-cG9kY2FzdOiVrembhe",
-      "title": "【Podcast】蕭雅全 × 王誌成：入行就遇到大魔王侯孝賢，鏡頭外真功夫， 讓角色活起來 - 報導者The Reporter",
-      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE93dHlwMUFudUVxVFlTVGZBbjNyRy1wM2M3Q0MwR2JJcG9ldlZISTcybko5U0pzNnVsenVqeXVfU3l3UjluSThaYzc1RHU3NGREWFhpclh0dGgzWEE?oc=5",
-      "publishedAt": "2023-12-14",
-      "matchedQuery": "Podcast 獎 台灣",
+      "matchedQuery": "Podcast 獎 香港",
       "status": "review_needed",
       "note": null
     },
@@ -657,24 +522,6 @@
       "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE16TFlLM09xbzkwMjItbVBwZzk1eDhDYUl1T2hnaEVOV1RFQXl1Q0hmYkUxQVZIZkdkRXlWV21ySndjVURiVm5NUg?oc=5",
       "publishedAt": "2023-11-16",
       "matchedQuery": "Podcast 徵件 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-6Lef6JGX5pKt5a6i57",
-      "title": "跟著播客紅人賺流量、精進創作力！2023 Podcast YeAr播客年會「雙11」講座場次報名倒數中 - 立報傳媒",
-      "link": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE9yNmlSaHNoRXRMTGZEcXgzRHBmbFNnVllEbm9fVUpteHNocktGYmZRMkRacTlqdXE0OUxBLXNWY0hQclVWOEpkSlV30gFKQVVfeXFMT3I2aVJoc2hFdExMZkRxeDNEcGZsU2dWWURub19VSm14c2hyS0ZiZlEyRFpxOWp1cTQ5TEEtc1ZjSFByVVY4SmRKVXc?oc=5",
-      "publishedAt": "2023-11-02",
-      "matchedQuery": "Podcast 報名 台灣",
-      "status": "review_needed",
-      "note": null
-    },
-    {
-      "id": "discovery-5oCn6ai36Zu25a655b",
-      "title": "性騷零容忍Podcast「報嘉音」 嘉市警製播防治篇 - 台灣好報",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1SSUFJbW01dENVQ3NLeXJfZ29iUml2NlJOWHZGMDdmMkdzMG1wczFYMjBnWWlxQzlvY1dmOTFObVo3d3dFQVV0QUJ0dmZYQ0xjREE?oc=5",
-      "publishedAt": "2023-10-12",
-      "matchedQuery": "Podcast 獎 台灣",
       "status": "review_needed",
       "note": null
     },
@@ -719,7 +566,160 @@
       "title": "紀錄土地25年 獲總統文化社會改革獎｜公視我們的島Podcast番外篇 - 我們的島",
       "link": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5tNHhBb0RZOHgxaDdzd21JSUE0dWpqNkJpa0NXalNiclFXYWNTNmVGU2ZkTEQwM2QxZ0tUUzIxVDFsOWdVN2NuU1Vja0x4RUp3UkhvbA?oc=5",
       "publishedAt": "2023-07-24",
-      "matchedQuery": "播客 獎 台灣",
+      "matchedQuery": "Podcast 獎 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-6IiH5pmC5L-x6YCycG",
+      "title": "與時俱進，Podcast《請聽，哈佛管理學！》破千萬下載 - 遠見雜誌",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFB4OURLa2hTaGJld1pmZW94WWszLUpFakdKOGdENmJvNWdsXzRUZFhiYzdjUmpWZEoybGZIZmZwQjlVYmxKMUVETjZOT1lIQQ?oc=5",
+      "publishedAt": "2023-05-25",
+      "matchedQuery": "Podcast 徵件 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5paw5L2P5rCR5Ym15o",
+      "title": "新住民創意Podcast營 學習在網路時代用聲音打造影響力 - 蕃新聞",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBMYTFQLUViWkRsNmhaYWNhR2h4NG1DWjBDT3U1eGU5ZVhkaWlSSnNxQVNvTDlDTmFna1c2OHdkWi1YUnd0T2otQWJfR2FmbmNKX2c?oc=5",
+      "publishedAt": "2023-03-06",
+      "matchedQuery": "Podcast 報名 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5q2j6IGy6KiKMjAyMu",
+      "title": "【正聲訊】「2022播客年會 Podcast YeAr!」商務論壇 開放報名 - 正聲廣播電台",
+      "link": "https://news.google.com/rss/articles/CBMiREFVX3lxTE1CZHQ2cHVjTWs0c0ZuNTQ4MXlJUHpfMnMtdzBRNElveFZ5czBRbUdvMTFPNWlJdm9IX3JqaFlLQU9YT2cz?oc=5",
+      "publishedAt": "2022-11-28",
+      "matchedQuery": "Podcast 報名 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5YWs5Y-46ZaL6Kqy5b",
+      "title": "公司開課帶員工認識LGBTQ+，聯合利華想打造年輕人也認同的企業價值｜永續會Podcast Ep.27 - CSR@天下",
+      "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1tNDNvbzJMWGxKcVhWeEtQbnVQSjBhWnlsajY5NzZyR3VVRzRSeFd6QU5qbk0xNm9oa1ZuN3hQY0t0bU41b3NlR1hQVQ?oc=5",
+      "publishedAt": "2022-11-25",
+      "matchedQuery": "Podcast 徵件 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5pyJbGl2ZeWKh-WgtO",
+      "title": "有Live、劇場，還有台通的Podcast：TCCF「奇幻樂園」如何勾勒未來世界的流行音樂表演？ - VERSE雜誌",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE04TThESUd1YUdhX21PbGRINW92ODZnZDQtQ09tZGx1ODlHSndldDVvM1haLVZtaURwOFp3dzFFYzJiWk1zZGdITGc0WVFZMmMzQnJMRF9hYlNOcU54MjI0?oc=5",
+      "publishedAt": "2022-11-11",
+      "matchedQuery": "Podcast 獎 香港",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5aW55bi257SZ5pys6Z",
+      "title": "她帶紙本雜誌做Podcast，拿下廣播金鐘獎！「反正我們講笑話也不會好笑」 - 天下雜誌",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBDdXI4R2J6OTZSR2o4STFqZXN0ajExVnNPTUx4amVXWlJ6dFppbDJtNU5iRlFndm1LTVh2WWowWDcwN3ltVlhEb2t2MkpWdw?oc=5",
+      "publishedAt": "2022-10-18",
+      "matchedQuery": "中文播客 獎",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-bWxi5Lit5paHcG9kY2",
+      "title": "MLB中文Podcast他搶頭香 《Hito大聯盟》屹立不搖 - Yahoo新聞",
+      "link": "https://news.google.com/rss/articles/CBMingJBVV95cUxOMUtocU5KSzh4NndCaTBSMW40UHBvYW9mTWExSWl5OFo2YWcwcjlmT2g4SDFkdDhSS2xVTGlMUDFkOGJNSTBuNWlFQ1VLNWVINEpMalJnb3l6NzBtU1BQazJVUjFJUGN4SkwwRF9UcEtMNHoxTjlQX05pNzhKaldEcUw2SUMyeW0yYUlxZ1NVelVuaVptajlPZjJ0ZUNLSElCVEtRUVRiSVV5RXg0OWVSNXpZNmtlanFBQ3llM3RKeURhNmtxTGl1andlbHJjaVVfbmVIYTFMNlNMOTRPQlUwLXVHcFN1VnJ6U0hBMExPTG0zZ0RlQ1gyaDBtTlBSZDBMeDl6QVVuQlBPaU5OYUFEdFk0V0thMUNFbklaLUJB?oc=5",
+      "publishedAt": "2022-09-16",
+      "matchedQuery": "中文播客 獎",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-6Y-h5aW96IG95Y6f5Y",
+      "title": "鏡好聽原創能量爆發 十檔獨家Podcast鉅獻 - 鏡週刊Mirror Media",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE4zdmt2WVVIN09mUElFV1JLV00yN1Nfa1drb19waGUxVWtwa0tsdXUtVGtUZ1hWQzV4Y3l2cjdiemlvdFpiWnhfSDM1cEMtUnpXT3VSYWUwNEhmN3PSAWBBVV95cUxPRTRqWnI3RE5EVE0zU3BtQW1qeGhnbFo0ak5IWEFqQ1VKeEVPdUsyM21MZmVYZ2VkaVJOR0lGUlhxa3oyVkJmaVdKamUyckljTUFISmFvMGdRVHdwTWg2dWM?oc=5",
+      "publishedAt": "2022-06-30",
+      "matchedQuery": "Podcast 獎 香港",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-cG9kY2FzdOmHkemQmO",
+      "title": "【Podcast】金鐘獎男配角蘇達：人生沒有「但是」，只要努力面對就能心想事成 - 康健雜誌",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBPMWRlTEo5Y2FKWDhXRDZfczVhNzhWN3lIVzRCRm55RzNnTmF5ZW1DenBZSXlxVXB6aVZRNHVtUll0ZFZtOWZ4ODVLTnYzd1VMNm9DVzlZLXc?oc=5",
+      "publishedAt": "2022-05-26",
+      "matchedQuery": "Podcast 獎 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5bCI6KiqbGl2ZXBvZG",
+      "title": "【專訪】Live Podcast ! 方序中的轉錄人生：記錄對話、整理聲音，留下那些值得珍惜的日常小事 - ShoppingDesign",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBoMXFNVi1fRFBlX1A1NlFaUzVHOVlsZDdaS3RpanZuUVdNcURQdm5vWEx1Rm5PRjFCb1d2LWYtQXZXeG1fRDNSeUJTbFhsclBDZFlxNW9HYlJ0RDNB?oc=5",
+      "publishedAt": "2022-01-27",
+      "matchedQuery": "播客 報名 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-57K-6YG4OOWAi3BvZG",
+      "title": "精選 8 個 Podcast 推薦！閒聊暢談生活趣事、撫慰心靈成長，為疫情新日常安頓身心 - ShoppingDesign",
+      "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9xV3pFUUxYVjZMR0tFbFhNdGk2QlJ6Z01paDRucERrbWR0cVYzWkRCX05aRUY0dmU4MVRqLXVaN1dhTElvSkVveVEzenFsOTVaVTFET1JzemRHMXkt?oc=5",
+      "publishedAt": "2021-06-29",
+      "matchedQuery": "Podcast 報名 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-55ar5oOF5Zyo5a625L",
+      "title": "疫情在家不能出國，可以收聽這11個東南亞主題的中文Podcast節目 - TNL The News Lens 關鍵評論網",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBtN0pIcFpnTW1NbU5IMlRTWmRfbnJ2dUdLb1dNU1cxa0pUamdSUy1pcTY4ZmpSN3F2R0s5WUR1TTJzWDhhWF9ONW9SelB4ZlVvM21hTmZOelBtREV5YzJ3RDducnM4dw?oc=5",
+      "publishedAt": "2021-05-27",
+      "matchedQuery": "中文播客 獎",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-cG9kY2FzdOeIhue0he",
+      "title": "Podcast爆紅「台通」高雄開講高市青年局：報名上線就秒殺- 生活 - 自由時報",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1LbUprZ1VuYlc0ZHFBZUpDbDROTkRGTnRTU3p0c2UyVjRCMkg4UlFGSl9tSmozVFZOWWo3RVVHb0xxcWRhamVoRWR3TjU0VG5aQWVoa2FpazNWcV95MVVCOWJjbk0?oc=5",
+      "publishedAt": "2021-04-17",
+      "matchedQuery": "Podcast 報名 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5pS-5qOE5pWZ6IG36L",
+      "title": "放棄教職轉戰媒體圈！Podcast新聞獎製作人藍婉甄：正面看待自己的不足，沒有框架反而學更快 - 天下學習Cheers快樂工作人",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8xMWtQSmI2V281M1g3Zmh4Ml93dlV1cy1YRmRoMm5YeU9raUR3ZC1nMFpJOTFXYmtQa2U2UTU3SXdVSTlRMTU2X2FfUGJjall0akxiS19CVUZLSjl4SkUxWXd3UlRJeFJCNE04?oc=5",
+      "publishedAt": "2021-02-22",
+      "matchedQuery": "Podcast 獎 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-6L-O5o6l5Y-w54GjcG",
+      "title": "迎接台灣Podcast元年！英文三步驟 教你成為播客主 - www.englishok.com.tw",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE8yZWp6RVZzeUpjMzdQUTF3bWxWMngxV3lhTnpHOXpHWU8zbFZHaUE3YTNUZGs5VmpqVzlmMHBTSW5aMG5hOVNQd1R1bmVaYUhqT3VqdkFMVlRKeVZGc0RRTG82MmI?oc=5",
+      "publishedAt": "2021-02-05",
+      "matchedQuery": "Podcast 甄選 台灣",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5YyX5Lqs5pS26Z-z5L",
+      "title": "北京收音介紹大媽廣場舞 王遵銘奪首屆播客大賽冠軍 - 鏡週刊Mirror Media",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5nUDNTeG1ZSFN0cWc0dU9WM0hLdFhtcmpPM1VGcFFpYk5reUZ3ZkxSV1pmekl4QnMweXN3WmpteTNobHRCcThBYlZoeHNtTXI0Y3hKVGdJdERrc2vSAWBBVV95cUxOREFnSVdfMkViSWwxaHhRSEhCaEc0ejlsWGNYZXp4N1ZRVkVWSkhWa01YeEVkN0M1cVdkNzJpNW4tUkY4M2xOb1kwbmNxZmNsN05RVmdYdHhWQWRnN2d0cTM?oc=5",
+      "publishedAt": "2021-02-05",
+      "matchedQuery": "播客 獎 香港",
+      "status": "review_needed",
+      "note": null
+    },
+    {
+      "id": "discovery-5LiA5YCL5rOV5b6L6Z",
+      "title": "一個法律電台，竟拿下國內第一個Podcast新聞獎！法客紅什麼？ - 天下雜誌",
+      "link": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5sTW9EQ29vaVhsRXEzX1BMWDkzQnVjdjF3dkJBdkMwTEVoV3BWOWNYTVpSa1NBaFZ6VWJTQzN1SVdsMFhkT0VvVkFSZFRadw?oc=5",
+      "publishedAt": "2020-12-14",
+      "matchedQuery": "Podcast 獎 台灣",
       "status": "review_needed",
       "note": null
     }
