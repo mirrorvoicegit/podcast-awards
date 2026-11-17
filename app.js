@@ -1,8 +1,6 @@
-import { buildRecommendations, recommendationRuleFor } from "./recommendation-engine.js?v=28";
-
 const state = { data:null, view:"upcoming", selected:null };
 const $ = selector => document.querySelector(selector);
-const els = { list:$("#applicationList"), monitors:$("#monitorList"), monitorSection:$("#monitorSection"), summary:$("#summary"), empty:$("#emptyState"), detail:$("#detailPanel"), backdrop:$("#panelBackdrop"), updated:$("#lastUpdated"), upcomingCount:$("#upcomingCount"), archiveCount:$("#archiveCount") };
+const els = { list:$("#applicationList"), monitors:$("#monitorList"), monitorSection:$("#monitorSection"), summary:$("#summary"), empty:$("#emptyState"), detail:$("#detailPanel"), backdrop:$("#panelBackdrop"), updated:$("#lastUpdated"), period:$("#periodLabel"), dataStatus:$("#dataStatus"), notice:$("#dataNotice"), upcomingCount:$("#upcomingCount"), archiveCount:$("#archiveCount") };
 const dateText = new Intl.DateTimeFormat("zh-TW", { year:"numeric", month:"long", day:"numeric" });
 const shortDate = new Intl.DateTimeFormat("zh-TW", { month:"numeric", day:"numeric" });
 
@@ -61,29 +59,10 @@ function render() {
   els.upcomingCount.textContent = upcomingTotal; els.archiveCount.textContent = archiveTotal;
   document.querySelectorAll(".view-tab").forEach(tab => { const active = tab.dataset.view === state.view; tab.classList.toggle("active",active); tab.setAttribute("aria-selected",String(active)); });
   els.list.innerHTML = applications.map(renderApplication).join(""); renderMonitors();
-  els.summary.textContent = state.view === "upcoming" ? `共 ${applications.length} 個已公開報名資訊，依截止日排序` : `共 ${applications.length} 個已結束徵件，依截止日倒序`;
+  els.summary.textContent = state.view === "upcoming" ? (applications.length ? `已核實 ${applications.length} 筆尚未截止的徵件，依截止日排序` : "目前沒有已核實且尚未截止的徵件；不代表其他獎項沒有開放報名。") : `共 ${applications.length} 筆已結束徵件，依截止日倒序`;
   els.empty.hidden = applications.length > 0 || (state.view === "upcoming" && monitorItems().length > 0);
 }
 
-function recommendationBlock(awardId) {
-  const fitMeta = {
-    "高度相符":{ rank:3, className:"fit-high" },
-    "優先檢視":{ rank:2, className:"fit-priority" }
-  };
-  const rule = recommendationRuleFor(state.data,awardId);
-  const recommendations = buildRecommendations(state.data,awardId).map(item => ({ ...item, fitMeta:fitMeta[item.fit] }));
-  if (!recommendations.length) {
-    const note = rule?.emptyNote || "只有通過獎項門檻、節目類型、主題重合與單集證據檢查後才會出現推薦。";
-    return `<div class="recommendation-empty"><strong>目前沒有足夠相符的候選節目</strong><span>${escapeHtml(note)}不為了填滿清單而推薦。</span></div>`;
-  }
-  const exampleBlock = episodes => {
-    episodes = episodes.slice(0,2);
-    if (!episodes.length) return `<div class="episode-pending">推薦集數待進一步比對</div>`;
-    return `<div class="episode-examples"><span class="episode-label">推薦集數舉例</span>${episodes.map(episode => `<a class="episode-link" href="${escapeHtml(episode.url)}" target="_blank" rel="noreferrer"><span><strong>${escapeHtml(episode.title)}</strong><small>${escapeHtml(episode.publishedAt)} 發布</small></span><span>↗</span></a>`).join("")}</div>`;
-  };
-  return `<div class="recommendation-note">系統依獎項門檻、節目類型、主題詞與單集線索即時計算；仍須人工確認語言、原創採訪與報名資格。</div><div class="selection-disclaimer"><strong>選件提醒</strong><span>單集只會作為選件例子，不代表已確認符合參賽期間。</span></div>
-    <div class="recommendation-list">${recommendations.map(item => `<article class="recommendation-item ${item.fitMeta.className}"><div class="recommendation-main"><span class="fit-tag">${escapeHtml(item.fit)}</span><a class="program-link" href="${escapeHtml(item.program.url)}" target="_blank" rel="noreferrer"><strong>${escapeHtml(item.program.name)}</strong><span>節目頁 ↗</span></a><small>${escapeHtml(item.program.category)} · ${escapeHtml(item.program.host)}</small><span class="recommendation-reason">${escapeHtml(item.reason)}</span>${exampleBlock(item.matchedEpisodes)}</div></article>`).join("")}</div>`;
-}
 function renderDetail(type,id) {
   const application = type === "application" ? state.data.applications.find(item => item.id === id) : null;
   const award = application ? awardFor(application.awardId) : awardFor(id); const statusClass = application ? (isClosed(application) ? "archive" : "") : "monitor";
@@ -101,8 +80,7 @@ function renderDetail(type,id) {
     <p class="detail-organizer">${escapeHtml(award.organizer)}</p>
     ${deadlineBlock}
     <section class="detail-section"><h3>參賽資訊</h3><dl class="detail-meta">${entryFeeRow}<div><dt>類別</dt><dd>${escapeHtml(award.category)}</dd></div><div><dt>主題</dt><dd>${escapeHtml(award.topic)}</dd></div><div><dt>可報主體</dt><dd>${escapeHtml(award.applicant)}</dd></div></dl></section>
-    <section class="detail-section source-section"><a class="source-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">${sourceLabel} <span>↗</span></a></section>
-    <section class="detail-section recommendation-section"><div class="detail-section-heading"><h3>鏡好聽節目建議</h3><span>內部初篩</span></div>${recommendationBlock(award.id)}</section>`;
+    <section class="detail-section source-section"><a class="source-link" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer">${sourceLabel} <span>↗</span></a></section>`;
   els.detail.classList.add("show"); els.detail.setAttribute("aria-hidden","false"); els.backdrop.hidden = false;
   els.detail.querySelector(".detail-close").addEventListener("click",closeDetail);
 }
@@ -112,13 +90,22 @@ function bindEvents() {
   document.querySelector(".view-tabs").addEventListener("click",event => { const tab=event.target.closest("[data-view]"); if(!tab)return; state.view=tab.dataset.view; closeDetail(); render(); });
   els.list.addEventListener("click",handleCardClick); els.monitors.addEventListener("click",handleCardClick); els.backdrop.addEventListener("click",closeDetail); document.addEventListener("keydown",event => { if(event.key==="Escape")closeDetail(); });
 }
+function renderDataStatus() {
+  const updated=state.data.updatedAt;
+  const today=todayStart();
+  const age=updated ? Math.floor((today-localDate(updated))/86400000) : Infinity;
+  const old=!Number.isFinite(age)||age>45;
+  els.updated.textContent=updated || "未提供";
+  if (updated) els.updated.dateTime=updated;
+  els.dataStatus.textContent=old ? "獎項資料待人工更新" : "已整理官方徵件資料";
+  els.notice.textContent=old
+    ? `正式獎項資料最後核對日期為 ${updated || "未知"}，目前已超過 45 天。系統會搜尋候選新聞，但新獎項必須人工確認後才會公布；請勿將此頁當作完整的即時徵件清單。`
+    : "正式獎項資料來自人工核對的官方公告。自動搜尋到的候選資訊，不會直接視為已開放徵件。";
+  const dates=(state.data.applications||[]).map(a=>a.deadline).filter(Boolean).sort();
+  els.period.textContent=dates.length ? `${dates[0].slice(0,7).replace("-",".")} — ${dates[dates.length-1].slice(0,7).replace("-",".")}` : "暫無已核實徵件";
+}
 async function init() {
   const response=await fetch("./data/awards.json",{cache:"no-store"}); state.data=await response.json();
-  let lastUpdated=state.data.updatedAt;
-  try {
-    const crawlResponse=await fetch("./data/program-crawl-candidates.json",{cache:"no-store"});
-    if(crawlResponse.ok){ const crawlData=await crawlResponse.json(); if(crawlData.generatedAt) lastUpdated=crawlData.generatedAt.slice(0,10); }
-  } catch (_) {}
-  els.updated.textContent=lastUpdated; els.updated.dateTime=lastUpdated; bindEvents(); render();
+  renderDataStatus(); bindEvents(); render();
 }
 init().catch(error => { els.list.innerHTML=`<div class="empty">資料載入失敗：${escapeHtml(error.message)}</div>`; });
