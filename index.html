@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Podcast 報獎雷達：徵件截止、官方公告核對與獎項日曆" />
-  <title>Podcast 報獎雷達</title>
+  <meta name="description" content="Podcast 報獎雷達 Beta：獎項徵件截止、官方公告查證與獎項日曆" />
+  <title>Podcast 報獎雷達｜Beta</title>
   <meta name="theme-color" content="#ffffff" />
   <link rel="icon" href="./radar-favicon.svg?v=29" type="image/svg+xml" sizes="any" />
   <link rel="shortcut icon" href="./radar-favicon.svg?v=29" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=30" />
+  <link rel="stylesheet" href="./styles.css?v=31" />
 </head>
 <body>
   <header class="topbar">
-    <div class="brand"><img src="./radar-favicon.svg?v=29" alt="" /><h1>Podcast 報獎雷達</h1></div>
+    <div class="brand"><img src="./radar-favicon.svg?v=29" alt="" /><h1>Podcast 報獎雷達 <span class="beta-badge">Beta</span></h1></div>
     <div class="monitor-state"><span class="pulse"></span><strong id="dataStatus">獎項資料確認中</strong><span>已核對資料日期 <time id="lastUpdated"></time></span></div>
   </header>
 
@@ -23,7 +23,7 @@
     </section>
 
     <div class="data-notice" id="dataNotice" role="status"></div>
-    <div class="site-actions"><a href="./awards.ics" class="site-action">下載獎項日曆（ICS）</a><a href="./review.html" class="site-action secondary">審核新獎項候選資料</a></div>
+    <div class="site-actions"><a href="./awards.ics" class="site-action">下載獎項日曆（ICS）</a></div>
     <details class="calendar-help"><summary>如何訂閱會持續更新的獎項日曆？</summary><p>Google 日曆：開啟「其他日曆」旁的 ＋ →「從網址新增」，貼上下方網址。這是訂閱，不是匯入一次性的檔案。系統只收錄已核實的徵件資訊，未核實的候選新聞不會出現在日曆中。</p><div class="calendar-url"><code id="calendarUrl">https://mirrorvoicegit.github.io/podcast-awards/awards.ics</code><button id="copyCalendarUrl" type="button">複製網址</button></div><p id="copyCalendarFeedback" class="copy-feedback" aria-live="polite"></p></details>
 
     <nav class="view-tabs" role="tablist" aria-label="排程檢視">
