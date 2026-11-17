@@ -261,3 +261,12 @@ footer { width:min(1060px,calc(100% - 48px)); display:flex; justify-content:spac
   .detail-deadline strong { font-size:33px; }
   footer { width:min(100% - 32px,1060px); flex-direction:column; }
 }
+
+/* 資料可信度提醒與入口 */
+.data-notice { margin-top:28px; padding:16px 18px; border-left:3px solid #8a6b25; background:#faf7ef; color:#473c27; font-size:14px; line-height:1.75; }
+.site-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+.site-action { display:inline-block; padding:10px 16px; border:1px solid #171717; border-radius:8px; color:#fff; background:#171717; text-decoration:none; font-size:14px; }
+.site-action.secondary { color:#171717; background:#fff; }
+.site-action:hover { text-decoration:underline; }
+footer a { color:inherit; text-underline-offset:3px; }
+@media (max-width:600px) { .site-actions{display:grid;} .site-action{text-align:center;} .data-notice{font-size:13px;} }
