@@ -11,6 +11,8 @@ const awards = (await readJson("data/awards.json")).awards;
 let previous = null;
 try { previous = await readJson("data/award-discovery-candidates.json"); } catch (_) {}
 const previousCandidates = previous?.candidates || [];
+let reviews={entries:[]};
+try { reviews=await readJson("data/discovery-reviews.json"); } catch (_) {}
 
 const decodeXml = value => String(value || "")
   .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
@@ -22,6 +24,7 @@ const clean = value => decodeXml(value).replace(/<[^>]*>/g, " ").replace(/\s+/g,
 const normalize = value => clean(value).toLocaleLowerCase("zh-Hant").replace(/第\d+屆/g, "").replace(/先生/g, "").replace(/[^\p{L}\p{N}]/gu, "");
 const element = (xml, name) => clean(xml.match(new RegExp(`<${name}[^>]*>([\\s\\S]*?)<\\/${name}>`, "i"))?.[1]);
 const previousByTitle = new Map(previousCandidates.map(item => [normalize(item.title), item]));
+const reviewedByTitle = new Map((reviews.entries || []).map(item => [normalize(item.title), item]));
 const knownNames = awards.flatMap(award => [award.name, ...(award.aliases || [])]).map(normalize).filter(name => name.length >= 4);
 
 function isKnown(title) {
@@ -38,6 +41,7 @@ async function search(query) {
     const item = match[1];
     const title = element(item, "title");
     const prior = previousByTitle.get(normalize(title));
+    const reviewed = reviewedByTitle.get(normalize(title));
     const pubDate = element(item, "pubDate");
     return {
       id:`discovery-${Buffer.from(normalize(title)).toString("base64url").slice(0,18)}`,
@@ -45,8 +49,9 @@ async function search(query) {
       link:element(item, "link"),
       publishedAt:pubDate ? new Date(pubDate).toISOString().slice(0,10) : null,
       matchedQuery:query,
-      status:prior?.status || (isKnown(title) ? "known_award" : "review_needed"),
-      note:prior?.note || null
+      status:reviewed?.status || prior?.status || (isKnown(title) ? "known_award" : "review_needed"),
+      note:reviewed?.note || prior?.note || null,
+      officialUrl:reviewed?.officialUrl || prior?.officialUrl || null
     };
   });
 }
