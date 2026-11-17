@@ -1,39 +1,74 @@
 # Podcast 報獎雷達
 
-以截止日為核心的 Podcast 獎項處理工具。只要報名資訊已公開且尚未截止，就放在「處理中」；截止隔天自動移進「歷史紀錄」。尚未公布完整報名時程的獎項保留在「持續監控中」。點擊卡片後才會展開右側詳細資料。
+以官方徵件資訊與截止日期為核心的 Podcast／聲音相關獎項追蹤工具。
 
-## 資料更新
+公開頁面：https://mirrorvoicegit.github.io/podcast-awards/
 
-前端只讀取 `data/awards.json`：
+## 現在可以做什麼
 
-- `awards`：獎項系列主檔；資格不明者不可自動標為「明確可報」。
-- `applications`：每屆徵件資訊，包含資訊是否公開、開放日、截止日，以及直接指向該屆徵件公告／規則的 `sourceUrl`；主頁狀態由截止日自動判定。
-- `entryFee` 與 `entryFeeUrl` 只在官方已明確公布費用時填寫與顯示；沒有確定金額時整列省略，不推測免費，也不顯示待確認文字。
-- `timeline`：排程節點。`date` 為 ISO 日期；沒有精確日期時可設為 `null`，並將 `phase` 設為 `monitor`。
-- `phase`：`open`（徵件／截止）、`result`（入圍／得獎）、`monitor`（待公告／待確認）。
-- `mirrorPrograms`：固定監測的鏡好聽節目主檔。每兩週爬蟲產出的結果須先人工確認，不直接覆寫已核實欄位。
-- `recommendationRules`：每個獎項的通用推薦門檻，包含允許的節目類型、節目主題詞、單集題材詞與最低分數。系統會將所有已核實節目套用同一套規則，不設定特定節目黑名單。
-- `recommendation-engine.js`：依獎項門檻、節目類型、主題重合與具體單集線索即時計分。只輸出「高度相符」及「優先檢視」；未達門檻時留白，不為了填滿清單而推薦。
+- **正式獎項清單**（`index.html`）：依徵件截止日排列；截止後自動移入歷史紀錄。只將人工核對的 `data/awards.json` 視為正式資料。
+- **資料新鮮度提醒**：首頁明確顯示 `data/awards.json` 的 `updatedAt`，超過 45 天未核對就提醒資料可能不完整。爬蟲執行日期不可取代正式資料更新日期。
+- **候選資訊審核**（`review.html`）：可將搜尋結果標記為「值得查證／已有獎項／無關資訊」，附備註與官方網址。變更暫存於瀏覽器，下載 JSON 才能交給維護者整併；**不會因為按下審核選項就修改網站**。
+- **獎項日曆**（`awards.ics`）：只從已核對且有本屆公告來源的 `applications` 產生開始與截止日期，絕不根據上一屆日期推測本屆日期。
+- **Email 通知預覽**：每週一台灣時間上午九點由 GitHub Actions 產生摘要，已核實新徵件（須有 `verifiedAt`）及 28／14／7 天內的截止提醒才會符合通知條件，並保留已寄送識別碼以避免重複提醒。
 
-畫面會依使用者當下日期，自動把已過徵件截止日的該屆卡片移到「歷史紀錄」，仍可點開檢視。`eligibility`、`eligibilityNote` 與 `reviewNote` 僅供推薦引擎及人工維護資料使用，不顯示在側欄。
+**節目推薦功能已停用。** 網站不再維護特定節目清單、節目爬蟲、節目與單集推薦。
 
-「持續監控中」會自動從最近一屆 `applications` 推算徵件月份；若沒有屆次資料，則以 `timeline` 最近一次開始徵件日期作為參考，並明示仍以本屆公告為準。
+## 資料來源與人工核對
 
-## 鏡好聽節目監測
+1. `scripts/discover-awards.mjs` 每週搜尋 Google News RSS，將候選資訊寫到 `data/award-discovery-candidates.json`。
+2. 候選資料**不會自動寫入**正式獎項主檔；人工核對必須查看該屆官方公告。
+3. `review.html` 的審核結果可以下載為 `報獎雷達_候選審核結果.json`，維護者收到後在專案根目錄執行：
+   ```bash
+   node scripts/apply-review-decisions.mjs /path/to/報獎雷達_候選審核結果.json
+   ```
+   這只會更新候選分類與 `data/discovery-reviews.json`，**不會**把「值得查證」當成「已確認徵件」。
+4. 真正確認當屆徵件資訊時，人工編輯 `data/awards.json` 的獎項、`applications`、`sourceUrl`、`openDate`、`deadline`，並依實際人工核實日期填寫 `verifiedAt`；若完成完整巡檢，再更新 `updatedAt`。日期使用 `YYYY-MM-DD`，沒有官方日期就不要推測。
+5. `data/discovery-reviews.json` 保存人工候選分類；爬蟲下一次執行時會保留這些決定，避免重新把已排除的無關新聞標記為待審。
 
-GitHub Actions 排程是每週檢查一次，但 `scripts/crawl-mirror-programs.mjs` 會比對上次真正執行（`program-crawl-candidates.json` 的 `generatedAt`）是否已滿 14 天，未滿就直接略過、不發送任何網路請求，確保實際爬取頻率是真正的兩週一次，而不是被 cron 語法概略湊出來的天數。也可在 Actions 頁面手動執行「Biweekly Mirror Voice program crawl」，勾選 `force` 可略過兩週間隔限制立即執行。
+### 日曆訂閱
 
-爬到的結果寫入 `data/program-crawl-candidates.json`，只供人工比對，不會直接改動推薦結果，避免網站改版或解析錯誤污染正式資料。首頁「最後整理」顯示的就是這份檔案的 `generatedAt`（爬蟲真正跑過的日期），不是 `data/awards.json` 的人工維護日期；若爬蟲從未成功執行過，才會退回顯示 `data/awards.json` 的 `updatedAt`。
+日曆公開網址：
 
-側欄的「推薦集數舉例」由推薦引擎從已人工核對的 `programEpisodes` 中，依該獎項的單集題材詞自動挑選。單集只作為選件例子，不代表已確認符合參賽期間；每次爬蟲抓到的新單集仍須人工確認後才能加入正式資料。
+```
+https://mirrorvoicegit.github.io/podcast-awards/awards.ics
+```
 
-主排程遵守「每個獎項每一屆只有一張徵件卡」：開始日、複選、入圍及頒獎不會產生第二張主卡；主卡只依初次徵件截止日排序與歸檔。
+使用 Google 日曆電腦版左側「其他日曆」旁的 ＋ →「從網址新增」，貼入網址。**訂閱**會隨日曆網址更新；直接下載 `.ics` 再匯入則是一次性動作，不會跟著更新。訂閱同步時間由 Google 日曆決定。
 
-## 新獎項巡檢
+日曆可用以下指令重建：
 
-固定名單只會越來越跟不上新獎項出現的速度，所以另外用 GitHub Actions 每週執行 `scripts/discover-awards.mjs`，依 `data/discovery-config.json` 的關鍵字查詢 Google News RSS。這個功能曾經因為抓到大量無關內容（例如一般文學獎、企業 ESG 獎）被整個移除過一次，這次重新加入時做了兩個關鍵調整：
+```bash
+node scripts/build-calendar.mjs
+```
 
-- `requireAnyTitleTerms`：標題必須實際包含「Podcast」或「播客」才會保留，這是硬性正面篩選，比起無止盡地列黑名單更能應付未來持續冒出的新獎項類型。
-- `excludedTitleTerms` 額外排除「得獎／獲獎／優選／入圍／得主／頒獎／出爐／公布結果／揭曉」等結果類字眼，避免把「某節目得了 OO 獎」這種得獎新聞誤當成新獎項候選——這類內容本來就不該進資料庫，本站已經不追蹤得獎節目。
+## Email 通知（預設關閉）
 
-候選結果只寫入 `data/award-discovery-candidates.json`，**不會顯示在網站上**，`status` 為 `review_needed` 的項目一律要人工看過、確認是台灣／香港的華語 Podcast 相關獎項後，才手動整理進 `data/awards.json`；`status` 為 `known_award` 代表標題比對到既有獎項名稱，通常是該獎項的既有報導或得獎消息，不需要當成新候選處理。也可在 Actions 頁面手動執行「Weekly award discovery scan」。
+GitHub Actions 工作流程：`.github/workflows/awards-calendar-and-notify.yml`。
+
+**目前沒有任何寄件者、收件者或寄信金鑰設定，不能宣稱已啟用實際通知。**
+
+若日後確定要開啟寄信，先由管理者建立並驗證 Resend 寄件網域，將下列值設在 GitHub Repository 的 Actions 設定，絕對不要寫進公開的程式碼：
+
+- **Variable**：`AWARDS_NOTIFY_ENABLED`＝`true`
+- **Secret**：`AWARDS_RESEND_API_KEY`＝寄信服務 API 金鑰
+- **Secret**：`AWARDS_NOTIFY_FROM`＝已驗證的寄件地址
+- **Secret**：`AWARDS_NOTIFY_TO`＝收件者地址（多個以逗號隔開）
+
+在開啟寄信前，應先用 GitHub Actions 的 `workflow_dispatch` 並保持 `preview_only=true` 核對摘要。實際寄送會使用 API 冪等識別碼及 `data/notification-state.json` 的已通知識別碼避免重複寄送，但寄送 API 成功不代表收件人郵箱已完成投遞。
+
+**資料保護**：若正式資料 `updatedAt` 超過 45 天未核對，通知腳本會自動阻止寄送。候選新聞、待查證及已結束徵件不會因為單純搜尋到就變成寄送內容。未啟用通知時，排程只會產出預覽並更新獎項日曆。
+
+測試：
+
+```bash
+node --test scripts/lib/notification-digest.test.mjs
+```
+
+## 維護與署名
+
+- 此專案為公開 GitHub Pages 網站，不應將任何 API Key、私人資料或未授權內容寫入 repo。
+- 候選審核頁會將結果存於操作當下的瀏覽器 `localStorage`；請適時下載 JSON 保存。
+- 報獎雷達首頁和通知不再推薦任何特定鏡好聽節目。
+- 工具企劃與維護：**Ryuushouin Touga**
+- 聯絡信箱：**fywgogowild@gmail.com**
