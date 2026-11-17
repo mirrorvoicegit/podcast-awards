@@ -232,3 +232,6 @@ footer a { color:inherit; text-underline-offset:3px; }
 .calendar-url code{font-size:12px;overflow-wrap:anywhere;padding:8px;background:#f6f6f6;border-radius:6px}
 .calendar-url button{padding:8px 14px;border:1px solid #171717;background:#fff;border-radius:6px;cursor:pointer}
 .copy-feedback{font-size:13px}
+
+/* Beta 版本標示 */
+.beta-badge { display:inline-flex; align-items:center; vertical-align:middle; margin-left:7px; padding:2px 9px; border-radius:999px; font-size:11px; line-height:1.6; font-weight:650; letter-spacing:0.035em; color:#795700; background:#fff1c7; }
