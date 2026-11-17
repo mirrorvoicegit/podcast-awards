@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#ffffff" />
   <link rel="icon" href="./radar-favicon.svg?v=29" type="image/svg+xml" sizes="any" />
   <link rel="shortcut icon" href="./radar-favicon.svg?v=29" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=29" />
+  <link rel="stylesheet" href="./styles.css?v=30" />
 </head>
 <body>
   <header class="topbar">
@@ -23,7 +23,8 @@
     </section>
 
     <div class="data-notice" id="dataNotice" role="status"></div>
-    <div class="site-actions"><a href="./awards.ics" class="site-action">訂閱獎項日曆（ICS）</a><a href="./review.html" class="site-action secondary">審核新獎項候選資料</a></div>
+    <div class="site-actions"><a href="./awards.ics" class="site-action">下載獎項日曆（ICS）</a><a href="./review.html" class="site-action secondary">審核新獎項候選資料</a></div>
+    <details class="calendar-help"><summary>如何訂閱會持續更新的獎項日曆？</summary><p>Google 日曆：開啟「其他日曆」旁的 ＋ →「從網址新增」，貼上下方網址。這是訂閱，不是匯入一次性的檔案。系統只收錄已核實的徵件資訊，未核實的候選新聞不會出現在日曆中。</p><div class="calendar-url"><code id="calendarUrl">https://mirrorvoicegit.github.io/podcast-awards/awards.ics</code><button id="copyCalendarUrl" type="button">複製網址</button></div><p id="copyCalendarFeedback" class="copy-feedback" aria-live="polite"></p></details>
 
     <nav class="view-tabs" role="tablist" aria-label="排程檢視">
       <button class="view-tab active" role="tab" aria-selected="true" data-view="upcoming">處理中 <span id="upcomingCount"></span></button>
@@ -43,6 +44,6 @@
   <aside class="detail-panel" id="detailPanel" aria-live="polite" aria-hidden="true"></aside>
 
   <footer><span>獎項與截止日須以該屆官方公告為準，候選搜尋結果不等於已核實資訊。</span><span>工具企劃與維護｜Ryuushouin Touga · <a href="mailto:fywgogowild@gmail.com">fywgogowild@gmail.com</a></span></footer>
-  <script type="module" src="./app.js?v=29"></script>
+  <script type="module" src="./app.js?v=30"></script>
 </body>
 </html>
