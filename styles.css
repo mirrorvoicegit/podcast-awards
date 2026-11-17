@@ -223,3 +223,12 @@ footer { width:min(1060px,calc(100% - 48px)); display:flex; justify-content:spac
 .site-action:hover { text-decoration:underline; }
 footer a { color:inherit; text-underline-offset:3px; }
 @media (max-width:600px) { .site-actions{display:grid;} .site-action{text-align:center;} .data-notice{font-size:13px;} }
+
+/* 日曆訂閱說明 */
+.calendar-help{margin-top:16px;color:var(--muted);font-size:14px}
+.calendar-help summary{cursor:pointer;text-decoration:underline;text-underline-offset:4px;color:var(--ink)}
+.calendar-help p{margin:12px 0}
+.calendar-url{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
+.calendar-url code{font-size:12px;overflow-wrap:anywhere;padding:8px;background:#f6f6f6;border-radius:6px}
+.calendar-url button{padding:8px 14px;border:1px solid #171717;background:#fff;border-radius:6px;cursor:pointer}
+.copy-feedback{font-size:13px}
