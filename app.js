@@ -103,10 +103,10 @@ function renderDataStatus() {
   const old=!Number.isFinite(age)||age>45;
   els.updated.textContent=updated || "未提供";
   if (updated) els.updated.dateTime=updated;
-  els.dataStatus.textContent=old ? "獎項資料待人工更新" : "已整理官方徵件資料";
+  els.dataStatus.textContent=old ? "官方徵件資料待重新查證" : "官方徵件資料已查證";
   els.notice.textContent=old
-    ? `正式獎項資料最後核對日期為 ${updated || "未知"}，目前已超過 45 天。系統會搜尋候選新聞，但新獎項必須人工確認後才會公布；請勿將此頁當作完整的即時徵件清單。`
-    : "正式獎項資料來自人工核對的官方公告。自動搜尋到的候選資訊，不會直接視為已開放徵件。";
+    ? `正式獎項資料最後核對日期為 ${updated || "未知"}，距今已超過 45 天。系統會自動搜尋獎項資訊，並由定期 AI 查核比對當屆官方公告後更新；尚未證實的消息不會列為正式徵件。目前清單可能不完整，請以主辦單位公告為準。`
+    : "已收錄的徵件資訊須有當屆官方公告佐證。新增獎項由自動搜尋與 AI 定期查核，不要求使用者自行審核；尚未證實的消息不會列為正式徵件。";
   const dates=(state.data.applications||[]).map(a=>a.deadline).filter(Boolean).sort();
   els.period.textContent=dates.length ? `${dates[0].slice(0,7).replace("-",".")} — ${dates[dates.length-1].slice(0,7).replace("-",".")}` : "暫無已核實徵件";
 }
