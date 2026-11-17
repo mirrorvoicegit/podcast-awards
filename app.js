@@ -87,6 +87,12 @@ function renderDetail(type,id) {
 function closeDetail() { els.detail.classList.remove("show"); els.detail.setAttribute("aria-hidden","true"); els.backdrop.hidden = true; }
 function handleCardClick(event) { const card = event.target.closest("[data-type]"); if (card) renderDetail(card.dataset.type,card.dataset.id); }
 function bindEvents() {
+  const copyButton=document.getElementById("copyCalendarUrl");
+  if(copyButton)copyButton.addEventListener("click",async()=>{
+    const url=document.getElementById("calendarUrl").textContent.trim();
+    try { await navigator.clipboard.writeText(url); document.getElementById("copyCalendarFeedback").textContent="網址已複製，可貼到 Google 日曆的「從網址新增」。"; }
+    catch(_) { document.getElementById("copyCalendarFeedback").textContent="無法自動複製，請直接選取上方網址複製。"; }
+  });
   document.querySelector(".view-tabs").addEventListener("click",event => { const tab=event.target.closest("[data-view]"); if(!tab)return; state.view=tab.dataset.view; closeDetail(); render(); });
   els.list.addEventListener("click",handleCardClick); els.monitors.addEventListener("click",handleCardClick); els.backdrop.addEventListener("click",closeDetail); document.addEventListener("keydown",event => { if(event.key==="Escape")closeDetail(); });
 }
