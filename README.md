@@ -1,4 +1,4 @@
-# Podcast 報獎雷達
+# Podcast 報獎雷達（Beta）
 
 以官方徵件資訊與截止日期為核心的 Podcast／聲音相關獎項追蹤工具。
 
@@ -8,7 +8,7 @@
 
 - **正式獎項清單**（`index.html`）：依徵件截止日排列；截止後自動移入歷史紀錄。只將人工核對的 `data/awards.json` 視為正式資料。
 - **資料新鮮度提醒**：首頁明確顯示 `data/awards.json` 的 `updatedAt`，超過 45 天未核對就提醒資料可能不完整。爬蟲執行日期不可取代正式資料更新日期。
-- **候選資訊審核**（`review.html`）：可將搜尋結果標記為「值得查證／已有獎項／無關資訊」，附備註與官方網址。變更暫存於瀏覽器，下載 JSON 才能交給維護者整併；**不會因為按下審核選項就修改網站**。
+- **候選資訊核對**：自動搜尋到的新聞僅供維護者／AI 查找獎項線索。一般使用者不需要處理候選資料；公開網站已移除人工審核入口。需要由維護者對照當屆官方公告後才會寫入正式資料。
 - **獎項日曆**（`awards.ics`）：只從已核對且有本屆公告來源的 `applications` 產生開始與截止日期，絕不根據上一屆日期推測本屆日期。
 - **Email 通知預覽**：每週一台灣時間上午九點由 GitHub Actions 產生摘要，已核實新徵件（須有 `verifiedAt`）及 28／14／7 天內的截止提醒才會符合通知條件，並保留已寄送識別碼以避免重複提醒。
 
@@ -18,7 +18,7 @@
 
 1. `scripts/discover-awards.mjs` 每週搜尋 Google News RSS，將候選資訊寫到 `data/award-discovery-candidates.json`。
 2. 候選資料**不會自動寫入**正式獎項主檔；人工核對必須查看該屆官方公告。
-3. `review.html` 的審核結果可以下載為 `報獎雷達_候選審核結果.json`，維護者收到後在專案根目錄執行：
+3. 若已有審核結果 JSON，維護者可在專案根目錄執行（這是維護用途，**不是一般使用者必須做的事**）：
    ```bash
    node scripts/apply-review-decisions.mjs /path/to/報獎雷達_候選審核結果.json
    ```
@@ -68,7 +68,7 @@ node --test scripts/lib/notification-digest.test.mjs
 ## 維護與署名
 
 - 此專案為公開 GitHub Pages 網站，不應將任何 API Key、私人資料或未授權內容寫入 repo。
-- 候選審核頁會將結果存於操作當下的瀏覽器 `localStorage`；請適時下載 JSON 保存。
+- 候選核實由維護者／AI 負責，不要求一般使用者手動分類新聞。
 - 報獎雷達首頁和通知不再推薦任何特定鏡好聽節目。
 - 工具企劃與維護：**Ryuushouin Touga**
 - 聯絡信箱：**fywgogowild@gmail.com**
