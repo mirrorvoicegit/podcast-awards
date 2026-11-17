@@ -20,7 +20,7 @@ else for(const item of items){
   lines.push(item.edition+"，截止："+item.deadline);
   lines.push("官方公告："+item.url,"");
 }
-lines.push("所有日期與資格仍以本屆官方簡章為準。通知不含任何節目推薦。");
+lines.push("報名資訊以主辦單位官方公告為準。");
 const digest=lines.join("\n")+"\n";
 if(process.env.GITHUB_STEP_SUMMARY)await appendFile(process.env.GITHUB_STEP_SUMMARY,digest);
 console.log(digest);
