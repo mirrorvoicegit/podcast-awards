@@ -19,7 +19,6 @@
     "播客"
   ],
   "excludedTitleTerms": [
-    "大專院校學生",
     "CPA中文播客獎",
     "Asia Podcast Awards",
     "亞洲播客大獎",
@@ -40,7 +39,8 @@
     "中學生專屬",
     "青少年專屬參賽",
     "僅限未成年人",
-    "僅限校園參賽"
+    "僅限校園參賽",
+    "僅限大專院校學生"
   ],
   "eligibilityPolicy": {
     "formalListRequires": "本屆官方公告證實台灣成年製作人或台灣合資格媒體可報名，且有 Podcast／聲音／音訊新聞等相關參賽類別",
