@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>候選獎項審核｜Podcast 報獎雷達</title>
+<link rel="stylesheet" href="./review.css?v=1">
+</head>
+<body>
+<main class="review">
+  <header class="review-head">
+    <a href="./">← 返回報獎雷達</a>
+    <h1>新獎項候選資料審核</h1>
+    <p>搜尋結果不代表正式獎項資訊。先判斷是否值得核對，再依官方徵件簡章補齊報名日期及資格。這裡的操作只會暫存在目前瀏覽器，不會直接發布到網站。</p>
+  </header>
+  <section class="review-status" aria-live="polite">
+    <div><strong id="pendingCount">—</strong><span>待處理</span></div>
+    <div><strong id="reviewedCount">—</strong><span>已作決定</span></div>
+    <div><strong id="scanDate">—</strong><span>最後掃描</span></div>
+  </section>
+  <div class="review-tools">
+    <label>查看狀態
+      <select id="filter">
+        <option value="pending">待處理</option>
+        <option value="all">全部候選</option>
+        <option value="reviewed">已作決定</option>
+      </select>
+    </label>
+    <label>搜尋標題
+      <input id="search" type="search" placeholder="輸入獎項名稱或關鍵字">
+    </label>
+    <button id="export" class="primary" type="button">下載審核結果 JSON</button>
+  </div>
+  <div class="note" id="reviewNotice">只有正式獎項資料經人工確認後，才會出現在報獎雷達和通知摘要。這裡的「值得查證」不是「確認開放報名」。</div>
+  <section id="candidates" class="candidate-list" aria-live="polite"></section>
+  <p class="end-note">審核結果下載後，可將 JSON 檔交給維護者整併到 GitHub。重新整理頁面不會清除本機的審核選項；換電腦或換瀏覽器則不會自動同步。</p>
+</main>
+<script src="./review.js?v=1" defer></script>
+</body>
+</html>
