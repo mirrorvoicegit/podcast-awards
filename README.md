@@ -70,5 +70,5 @@ node --test scripts/lib/notification-digest.test.mjs
 - 此專案為公開 GitHub Pages 網站，不應將任何 API Key、私人資料或未授權內容寫入 repo。
 - 候選核實由維護者／AI 負責，不要求一般使用者手動分類新聞。
 - 報獎雷達首頁和通知不再推薦任何特定鏡好聽節目。
-- 工具企劃與維護：**Ryuushouin Touga**
+- 工具製作與維護：**Ryuushouin Touga**
 - 聯絡信箱：**fywgogowild@gmail.com**
