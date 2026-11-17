@@ -1,0 +1,55 @@
+name: Verified awards calendar and notification preview
+
+on:
+  push:
+    paths:
+      - "data/awards.json"
+  schedule:
+    - cron: "0 1 * * 1"
+  workflow_dispatch:
+    inputs:
+      preview_only:
+        description: "只產生預覽，不發信"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: podcast-awards-data-update
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Test notification logic
+        run: node --test scripts/lib/notification-digest.test.mjs
+      - name: Generate verified awards calendar
+        run: node scripts/build-calendar.mjs
+      - name: Prepare digest, optionally send only when configured
+        run: node scripts/notification-digest.mjs
+        env:
+          NOTIFY_ENABLED: ${{ vars.AWARDS_NOTIFY_ENABLED }}
+          PREVIEW_ONLY: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.preview_only) }}
+          AWARDS_RESEND_API_KEY: ${{ secrets.AWARDS_RESEND_API_KEY }}
+          AWARDS_NOTIFY_FROM: ${{ secrets.AWARDS_NOTIFY_FROM }}
+          AWARDS_NOTIFY_TO: ${{ secrets.AWARDS_NOTIFY_TO }}
+      - name: Commit generated calendar and sent keys
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add awards.ics data/notification-state.json
+          if git diff --cached --quiet; then
+            echo "No generated change."
+            exit 0
+          fi
+          git commit -m "chore: refresh awards calendar and notification state"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
