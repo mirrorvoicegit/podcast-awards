@@ -3,24 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Podcast 報獎雷達：徵件截止、獎項追蹤與鏡好聽節目推薦" />
+  <meta name="description" content="Podcast 報獎雷達：徵件截止、官方公告核對與獎項日曆" />
   <title>Podcast 報獎雷達</title>
   <meta name="theme-color" content="#ffffff" />
-  <link rel="icon" href="./radar-favicon.svg?v=28" type="image/svg+xml" sizes="any" />
-  <link rel="shortcut icon" href="./radar-favicon.svg?v=28" type="image/svg+xml" />
-  <link rel="stylesheet" href="./styles.css?v=28" />
+  <link rel="icon" href="./radar-favicon.svg?v=29" type="image/svg+xml" sizes="any" />
+  <link rel="shortcut icon" href="./radar-favicon.svg?v=29" type="image/svg+xml" />
+  <link rel="stylesheet" href="./styles.css?v=29" />
 </head>
 <body>
   <header class="topbar">
-    <div class="brand"><img src="./radar-favicon.svg?v=28" alt="" /><h1>Podcast 報獎雷達</h1></div>
-    <div class="monitor-state"><span class="pulse"></span><strong>資料持續監控中</strong><span>最後整理 <time id="lastUpdated"></time></span></div>
+    <div class="brand"><img src="./radar-favicon.svg?v=29" alt="" /><h1>Podcast 報獎雷達</h1></div>
+    <div class="monitor-state"><span class="pulse"></span><strong id="dataStatus">獎項資料確認中</strong><span>已核對資料日期 <time id="lastUpdated"></time></span></div>
   </header>
 
   <main class="main-view">
     <section class="intro">
       <div><h2>徵件排程</h2></div>
-      <div class="period"><span>資料區間</span><strong>2025.07 — 2026.08</strong></div>
+      <div class="period"><span>已收錄徵件期間</span><strong id="periodLabel">讀取中</strong></div>
     </section>
+
+    <div class="data-notice" id="dataNotice" role="status"></div>
+    <div class="site-actions"><a href="./awards.ics" class="site-action">訂閱獎項日曆（ICS）</a><a href="./review.html" class="site-action secondary">審核新獎項候選資料</a></div>
 
     <nav class="view-tabs" role="tablist" aria-label="排程檢視">
       <button class="view-tab active" role="tab" aria-selected="true" data-view="upcoming">處理中 <span id="upcomingCount"></span></button>
@@ -39,7 +42,7 @@
   <div class="panel-backdrop" id="panelBackdrop" hidden></div>
   <aside class="detail-panel" id="detailPanel" aria-live="polite" aria-hidden="true"></aside>
 
-  <footer><span>資料以官方公告為準，資格不明項目須經人工核對。</span><span>已截止項目會自動移入歷史紀錄。</span></footer>
-  <script type="module" src="./app.js?v=28"></script>
+  <footer><span>獎項與截止日須以該屆官方公告為準，候選搜尋結果不等於已核實資訊。</span><span>工具企劃與維護｜Ryuushouin Touga · <a href="mailto:fywgogowild@gmail.com">fywgogowild@gmail.com</a></span></footer>
+  <script type="module" src="./app.js?v=29"></script>
 </body>
 </html>
