@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - "data/awards.json"
+      - "scripts/lib/notification-digest.mjs"
+      - "scripts/lib/notification-digest.test.mjs"
+      - ".github/workflows/awards-calendar-and-notify.yml"
   schedule:
     - cron: "0 1 * * 1"
   workflow_dispatch:
