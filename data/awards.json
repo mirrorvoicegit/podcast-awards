@@ -180,6 +180,36 @@
       "confidence": "高｜2026 官方規則",
       "reviewNote": "雖涵蓋全亞洲，依專案篩選規則僅保留此獎項。",
       "url": "https://sopawards.com/"
+    },
+    {
+      "id": "INT001",
+      "name": "紐約市 Podcast 獎（NYC Podcast Awards／LIBBY Awards）",
+      "region": "國際（美國）",
+      "organizer": "Silver Sound",
+      "type": "國際 Podcast 專門獎",
+      "eligibility": "明確可報",
+      "eligibilityNote": "2027 屆官方規則開放全球創作者，台灣個人及公司均可報名；作品須為 2025-01-01 起製作、公開可聽且擁有投稿授權。學生專屬獎項不適用於一般製作人。",
+      "category": "最佳新聞 Podcast、最佳紀實 Podcast、最佳訪談 Podcast、最佳剪輯等",
+      "topic": "Podcast、音訊紀實、新聞、聲音製作",
+      "applicant": "全球個人 Podcast 創作者及製作公司",
+      "confidence": "高｜2027 官方參賽規則",
+      "reviewNote": "2026-11-15 正常報名已截止；2026-11-16 至 2026-12-01 可逾期報名，費用加收 50%。一般組 US$150／類、公司組 US$225／類；一般非逾期費用為 US$100／US$150。此獎項開放全球，已確認台灣可參加。",
+      "url": "https://www.silver-nyc.com/nycpodcastawards/enter"
+    },
+    {
+      "id": "INT002",
+      "name": "亞洲 Podcast 大獎（Asia Podcast Awards）",
+      "region": "亞洲（國際）",
+      "organizer": "radioinfo／Radiodays Asia",
+      "type": "國際 Podcast 專門獎",
+      "eligibility": "明確可報",
+      "eligibilityNote": "2026 官方規則明列 Taiwan 為合資格亞洲／太平洋地區，並開放獨立與大型製作單位；另有學生專屬組，但一般專業組亦可參賽。",
+      "category": "Best News Podcast、Best Factual Podcast、Podcast Audio Producer of the Year 等",
+      "topic": "Podcast、新聞、訪談、音訊製作",
+      "applicant": "亞洲及太平洋地區（含台灣）個人及機構",
+      "confidence": "高｜2026 官方參賽規則",
+      "reviewNote": "2026 屆已於 2026-09-01 至 09-03 公布獲獎結果；未查得可核實的 2027 徵件時間，僅列追蹤獎項，不建立本屆申請日期。",
+      "url": "https://radiotoday.awardsplatform.com/about/WQrmAPdX"
     }
   ],
   "timeline": [
@@ -609,6 +639,18 @@
       "openDate": "2026-08-03",
       "deadline": "2026-08-12",
       "sourceUrl": "https://feja.org.tw/82653/"
+    },
+    {
+      "id": "app-INT001-2027",
+      "awardId": "INT001",
+      "edition": "2027 第2屆 LIBBY Awards",
+      "infoPublished": true,
+      "openDate": "2026-07-04",
+      "deadline": "2026-12-01",
+      "sourceUrl": "https://www.silver-nyc.com/nycpodcastawards/enter",
+      "verifiedAt": "2026-11-23",
+      "entryFee": "一般報名已於 2026-11-15 截止。逾期報名至 2026-12-01，費用加收 50%：獨立製作人 US$150／類、公司 US$225／類。",
+      "entryFeeUrl": "https://www.silver-nyc.com/nycpodcastawards/enter"
     }
   ]
 }
