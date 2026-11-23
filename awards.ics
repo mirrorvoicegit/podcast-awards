@@ -247,4 +247,26 @@ DESCRIPTION:2026 第25屆。報名規則與日期以本屆官方公告為
  準：https://feja.org.tw/82653/
 URL:https://feja.org.tw/82653/
 END:VEVENT
+BEGIN:VEVENT
+UID:app-INT001-2027-open@podcast-awards.mirrorvoicegit
+DTSTAMP:20260720T000000Z
+DTSTART;VALUE=DATE:20260704
+DURATION:P1D
+SUMMARY:紐約市 Podcast 獎（NYC Podcast Awards／LIBBY Awards）｜
+ 開始徵件
+DESCRIPTION:2027 第2屆 LIBBY Awards。報名規則與日期以本屆官
+ 方公告為準：https://www.silver-nyc.com/nycpodcastawards/enter
+URL:https://www.silver-nyc.com/nycpodcastawards/enter
+END:VEVENT
+BEGIN:VEVENT
+UID:app-INT001-2027-deadline@podcast-awards.mirrorvoicegit
+DTSTAMP:20260720T000000Z
+DTSTART;VALUE=DATE:20261201
+DURATION:P1D
+SUMMARY:紐約市 Podcast 獎（NYC Podcast Awards／LIBBY Awards）｜
+ 報名截止
+DESCRIPTION:2027 第2屆 LIBBY Awards。報名規則與日期以本屆官
+ 方公告為準：https://www.silver-nyc.com/nycpodcastawards/enter
+URL:https://www.silver-nyc.com/nycpodcastawards/enter
+END:VEVENT
 END:VCALENDAR
